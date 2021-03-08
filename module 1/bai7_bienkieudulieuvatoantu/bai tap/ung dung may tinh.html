@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form >
+    <h2>Caculator</h2>
+    <input type="number" id="number1">
+    <input type="number" id="number2"><br>
+    <button type="button" onclick="add()">Addition(+)</button>
+    <button type="button" onclick="sub()">Subtraction(-)</button>
+    <button type="button" onclick="mul()">Multiplication(X)</button>
+    <button type="button" onclick="divi()">Division(/)</button>
+
+
+    <script>
+        function add() {
+            let  a =parseInt (document.getElementById('number1').value) ;
+            let  b =parseInt (document.getElementById('number2').value) ;
+            let c=a+b;
+            alert("result="+c);
+
+
+        }
+        function sub() {
+            let  a =parseInt (document.getElementById('number1').value) ;
+            let  b =parseInt (document.getElementById('number2').value) ;
+            let c=a-b;
+            alert("result="+c);
+
+
+        }
+        function mul() {
+            let  a =parseInt (document.getElementById('number1').value) ;
+            let  b =parseInt (document.getElementById('number2').value) ;
+            let c=a*b;
+            alert("result="+c);
+
+
+        }
+        function divi() {
+            let  a =parseInt (document.getElementById('number1').value) ;
+            let  b =parseInt (document.getElementById('number2').value) ;
+            let c=a/b;
+            alert("result="+c);
+
+
+        }
+    </script>
+</form>
+
+</body>
+</html>

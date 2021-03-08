@@ -5,20 +5,20 @@
     <title>Title</title>
 </head>
 <body>
-<form action="">
+<form action="" method="">
     <label> Amount</label>
     <label style="margin-left:150px">From Currency</label>
     <label style="margin-left: 25px">To Currency</label>
         <br>
 
 <input type="number" name="number" id="number">
-<select name=" number1 " id="FromCurrency" style="margin-left: 30px;width: 95px">
+<select  id="FromCurrency" style="margin-left: 30px;width: 95px">
     <option value="vn">VietNam</option>
     <option value="usd">USD</option>
 
 
 </select>
-    <select name=" number2 " id="ToCurrency" style="margin-left: 30px;width: 95px">
+    <select  id="ToCurrency" style="margin-left: 30px;width: 95px">
         <option value="vn">VietNam</option>
         <option value="usd">USD</option>
 
@@ -42,7 +42,7 @@
                   d=a*23000;
               }
           }
-          alert("relsut :"+d)
+         document.write("relsut :"+d)
 
         }
 
