@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <input type="text" id ="so"><br>
+    <button type="button" onclick="nhap(1);">1</button>
+    <button type="button" onclick="nhap(2);">2</button>
+    <button type="button" onclick="nhap(3);">3</button>
+    <button type="button" onclick="nhap('+');">+</button>
+    <br>
+    <button type="button" onclick="nhap(4);">4</button>
+    <button type="button" onclick="nhap(5);">5</button>
+    <button type="button" onclick="nhap(6);">6</button>
+    <button type="button" onclick="nhap('-');">-</button>
+    <br>
+    <button type="button" onclick="nhap(7);">7</button>
+    <button type="button" onclick="nhap(8);">8</button>
+    <button type="button" onclick="nhap(9);">9</button>
+    <button type="button" onclick="nhap('*');">x</button>
+    <br>
+    <input type="reset" value="C">
+    <button type="button" onclick="nhap(0);">0</button>
+    <button type="button" onclick="bang();">=</button>
+    <button type="button" onclick="nhap('/');">/</button>
+
+</form>
+<script>
+
+    function nhap(kyTu) {
+        document.getElementById("so").value += kyTu;
+    }
+
+    function  bang() {
+        document.getElementById("so").value=eval(document.getElementById("so").value);
+    }
+
+</script>
+</body>
+</html>

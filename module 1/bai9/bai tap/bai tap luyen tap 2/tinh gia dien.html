@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    sodien= prompt('nhap so dien tieu thu (kWh):');
+    if(sodien>400){
+        let tientra1= sodien*2927;
+        alert('so tien phai tra : '+tientra1)
+    }else if(sodien>300) {
+        let tientra2=sodien*2834;
+        alert('so tien phai tra : '+tientra2)
+    }else if(sodien>200) {
+        let tientra3=sodien*2536;
+        alert('so tien phai tra : '+tientra3)
+    }else if(sodien>100) {
+        let tientra4=sodien*2014;
+        alert('so tien phai tra :'+tientra4);
+    }else if(sodien>50) {
+        let tientra5=sodien*1734;
+        alert('so tien phai tra :'+tientra5);
+    }else {
+        tientra6=sodien*1678;
+        alert('so tien phai tra :'+tientra6);
+    }
+</script>
+</body>
+</html>
