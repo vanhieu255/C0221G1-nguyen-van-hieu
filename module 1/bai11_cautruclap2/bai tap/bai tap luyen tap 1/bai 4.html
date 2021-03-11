@@ -11,10 +11,14 @@
     let c;
     let i=0;
     while( i<20){
+        document.write(a+"<br>");
         c= a+b;
         a=b;
         b=c;
-        document.write(a+"<br>");
+        if(a%5==0) {
+            document.write('so chia het cho 5 dau tien :'+a);
+            break;
+        }
         i++
         }
 
