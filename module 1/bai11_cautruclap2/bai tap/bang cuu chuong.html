@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let ban="<table border= '1'>";
+    for (let i=1;i<10;i++) {
+        ban=ban+ "<tr>";
+
+        for (let j=2;j<10;j++) {
+            ban= ban+"<td>"+j+"x"+i+"="+ i*j+"</td>";
+
+        }
+        ban= ban+ "</tr>";
+
+    } ban =ban+"<table>";
+    document.write(ban);
+</script>
+</body>
+</html>

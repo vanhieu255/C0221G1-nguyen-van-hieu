@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<form >-->
+<!--    <input type="number" id="tiengui">-->
+<!--    <input type="number" id="thanggui">-->
+<!--    <input type="number" id="laigui">-->
+<!--    <input type="button" onclick="tong();" value="tinhtien">-->
+<!--    <label id =ketqua> ketqua:</label>-->
+<!--</form>-->
+<!--<script>-->
+<!--function tong() {-->
+<!--    let a=parseFloat(document.getElementById("tiengui").value);-->
+<!--    let b=parseFloat(document.getElementById("thanggui").value);-->
+<!--    let c=parseFloat(document.getElementById("laigui").value);-->
+<!--    for(let i=0;i<=b;i++) {-->
+<!--        a=a+a*c;-->
+<!--        document.getElementById('ketqua').innerText='so tien nhan dc :'+a;-->
+<!--    }-->
+
+<!--}-->
+
+<!--</script>-->
+<script>
+    let von= parseFloat(prompt('nhap tien gui'));
+    let month= parseFloat(prompt('nhap thang gui'));
+    let laiXuat= parseFloat(prompt('nhap lai gui'));
+    for(let i=0;i<=month;i++) {
+     von= von +von*laiXuat;
+    }
+    document.write(von);
+
+</script>
+</body>
+</html>
