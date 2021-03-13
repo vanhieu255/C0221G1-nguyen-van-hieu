@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let num=parseInt(prompt("nhap vao 1 so :"));
+    let x=[1,2,6,99,8,7];
+
+    var check = false;
+    for (let i = 0; i < x.length; i++) {
+        if (num == x[i]) {
+            check = true;
+            break;
+        }
+    }
+    if (check) {
+        document.write("co trong mang");
+
+    } else {
+        document.write('khong nam trong mang');
+    }
+</script>
+</body>
+</html>
