@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text"id="chuoi1"> <br>
+<input type="button" value="nhap1" onclick="Mang1()"><br>
+<input type="text"id="chuoi2"><br>
+<input type="button" value="nhap2" onclick="Mang2()"><br>
+<input type="button" value="xuat" onclick="display()">
+<div id="ketqua"></div>
+<script>
+    let x=0;
+    let y=0;
+    array=Array();
+    b=Array();
+    function Mang1() {
+        array[x]=document.getElementById("chuoi1").value;
+        x++;
+        document.getElementById("chuoi1").value="";
+
+    }
+    function Mang2() {
+        b[y]=document.getElementById("chuoi2").value;
+        y++;
+        document.getElementById("chuoi2").value="";
+
+    }
+    function display() {
+        if(array.length==b.length){
+            check=false;
+            for(let i=0;i<array.length;i++) {
+                if(array[i]!==b[i]){
+                    check=true;
+                }
+            }
+            if(check){
+                document.getElementById("ketqua").innerText="2 mang khong giong nhau";
+            }else {
+                document.getElementById("ketqua").innerText="2 mang  giong nhau";
+            }
+        }else {
+            document.getElementById("ketqua").innerText = "2 mang khong giong nhau"
+        }
+
+    }
+</script>
+
+
+
+
+</body>
+</html>

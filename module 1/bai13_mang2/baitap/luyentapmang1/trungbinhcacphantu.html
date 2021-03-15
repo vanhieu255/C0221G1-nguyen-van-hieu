@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = Array();
+    let nhap = parseInt(prompt("nhap chieu dai mang"));
+    for (let j = 0; j < nhap; j++) {
+        array[j] = parseInt(prompt("nhap gia tri "));
+    }
+    let total = 0;
+    let max = array[0];
+    for (let i = 0; i < array.length; i++) {
+        if (max < array[i]) {
+            max = array[i];
+        } else {
+            max = max;
+        }
+        total = total + array[i];
+        s = total / (i + 1);
+
+    }
+
+    document.write("so lon nhat là :" + max + "trung binh cac phan ty man là :" + s);
+
+</script>
+</body>
+</html>

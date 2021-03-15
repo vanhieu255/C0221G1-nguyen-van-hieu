@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let nhap = parseInt(prompt("nhap chieu dai mang"));
+    let array = Array();
+    for (let j = 0; j < nhap; j++) {
+        array[j] = (prompt("nhap gia tri mang"));
+    }
+
+    let count = 0;
+    for (let i = 0; i < array.length; i++) {
+        if (typeof array[i] == "number") {
+            count++;
+        }
+
+    }
+    document.write("số  phần tử số trong mảng là :" + count);
+</script>
+</body>
+</html>

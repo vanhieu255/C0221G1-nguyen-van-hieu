@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="so">
+<input type="button" value="nhap" onclick="add()">
+<input type="button" value="xuat" onclick="display()">
+<div id="ketqua"></div>
+<script>
+    let array =Array();
+    let x=0;
+    let b;
+    function add() {
+        array[x] = document.getElementById("so").value;
+        x++
+        document.getElementById("so").value = "";
+
+    }
+   function display() {
+       b = array.reverse();
+       document.getElementById("ketqua").innerHTML=b;
+   }
+
+
+
+
+
+</script>
+</body>
+</html>

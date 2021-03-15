@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="">
+<input type="text" id="tuviet">
+<button type="button" onclick="Dich()">dich</button>
+<script>
+    function Dich() {
+
+        x = document.getElementById("tuviet").value;
+        a = ["maths", "physical", "chemical", "biological", "language"];
+        b = ["toán", "lý", "hóa", "sinh", "ngôn ngữ"];
+        check = false;
+        let e=0;
+        for (let i = 0; i < a.length; i++) {
+            if (x == a[i]) {
+                e=b[i];
+                check=true;
+                break;
+            }
+
+            }
+        if (check) {
+
+            document.write(e);
+        }else {
+            document.write("khong tim thay");
+        }
+    }
+
+</script>
+</form>
+</body>
+</html>

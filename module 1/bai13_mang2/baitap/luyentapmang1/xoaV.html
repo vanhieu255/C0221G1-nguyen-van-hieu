@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = Array();
+    let nhap = parseInt(prompt("nhap chieu dai mang"));
+    for (let i = 0; i < nhap; i++) {
+        array[i] = prompt('gia tri cua mang');
+    }
+    let v = prompt("nhap v");
+
+    let check = false;
+    for (let j = 0; j < array.length; j++) {
+        if (array[j] == v) {
+            array.splice(j, 1);
+            array.push("0");
+            j = j - 1;
+            check = true;
+        }
+    }
+    if (check) {
+        document.write("v is array" + array);
+
+    } else {
+        document.write("v is not array");
+    }
+
+    document.write(c);
+</script>
+
+</body>
+</html>

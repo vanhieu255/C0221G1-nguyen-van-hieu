@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="num"><br>
+<input type="button" value="nhapmangA" onclick="num1()"><br>
+<input type="text"id="so"><br>
+<input type="button" value="nhapmangB" onclick="num2()">
+<input type="button" value="xuat" onclick="display()">
+<div id="ketqua"></div>
+
+<script>
+   let array=Array();
+   let b=Array();
+   let x=0;
+   let y=0;
+   let c=Array();
+   function num1() {
+       array[x]=document.getElementById("num").value;
+       x++;
+     document.getElementById("num").value="";
+
+   }
+   function num2() {
+       b[y]=document.getElementById("so").value;
+       y++;
+       document.getElementById("so").value="";
+
+   }
+   function display() {
+       for (let i = 0; i < array.length; i++) {
+           c.push(array[i]);
+       }
+       for (let j = 0; j < b.length; j++) {
+           c.push(b[j]);
+       }
+       document.getElementById("ketqua").innerHTML=c;
+       }
+
+
+</script>
+</body>
+</html>

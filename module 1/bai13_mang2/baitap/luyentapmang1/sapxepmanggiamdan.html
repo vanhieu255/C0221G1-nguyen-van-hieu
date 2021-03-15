@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text"id="so">
+<input type="button" value="nhap"onclick="add()">
+<input type="button" value="xuat"onclick="display()">
+<div id="ketqua"></div>
+<script>
+    let x=0;
+    let array=Array();
+    let c;
+    function add() {
+        array[x]=document.getElementById("so").value;
+        x++
+        document.getElementById("so").value="";
+    }
+    function display() {
+        c=array.sort(function (a,b) {return b-a;
+        })
+        document.getElementById("ketqua").innerHTML=c;
+
+
+    }
+
+
+
+</script>
+
+</body>
+</html>

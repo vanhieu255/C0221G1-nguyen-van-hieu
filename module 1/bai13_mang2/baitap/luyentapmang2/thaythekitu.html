@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text"id="mang"> <br>
+<input type="button" value="nhap" onclick="Mang()"><br>
+<input type="button" value="xuat" onclick="display()">
+<div id="ketqua"></div>
+<script>// CHƯA RÕ VỀ - Ở ĐÂY LÀ ĐẤU ÂM HAY LÀ GÌ
+    let x=0;
+    let array=Array();
+    function Mang() {
+        array[x]=document.getElementById("mang").value;
+        x++;
+        document.getElementById("mang").value="";
+
+    }
+
+    function display() {
+
+            for(let i=0;i<array.length;i++) {
+                if(array[i]==="-"){
+                   array[i]="_"
+                }
+            }
+            document.getElementById("ketqua").innerHTML=array;
+
+
+    }
+</script>
+</body>
+</html>

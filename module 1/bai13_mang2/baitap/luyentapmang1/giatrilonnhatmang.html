@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let nhap=parseInt(prompt("nhap gia tri mang"));
+    let array=Array();
+    for(let j=0;j<nhap;j++){
+        array[j]=prompt("gia tri mang")
+    }
+    max=array[0];
+    let index;
+    for (let i=1;i<array.length;i++) {
+        if(max<array[i]){
+            max=array[i];
+            index=i;
+        }else {
+            max=max;
+        }
+
+    }document.write("max :"+max+"index :"+index)
+
+</script>
+</body>
+</html>
