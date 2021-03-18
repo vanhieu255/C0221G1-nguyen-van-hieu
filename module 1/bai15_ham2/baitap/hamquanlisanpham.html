@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" placeholder="product name" id="productName">
+<input type="button" value="add product" onclick="add()">
+<input type="button" value="Search" onclick="search1()">
+<span> Số lượng</span> <span id="soLuong"></span>
+<p id="hienThi"></p>
+
+<script>
+
+    let listString = ["SamSung", "Nokia", "iPhone"];
+display(listString)
+
+    function display(list) {
+        list.sort();
+        let tableString = '<table border="1">';
+        tableString += ' <tr>\n' +
+            '    <th>STT</th>\n' +
+            '    <th>TenSanPham</th>\n' +
+            '    <th>Edit</th>\n' +
+            '    <th>Delete</th>\n' +
+            '    </tr>'
+        for (let i = 0; i < list.length; i++) {
+            tableString += ' <tr>\n' +
+                '        <th>' + (i + 1) + '</th>\n' +
+                '        <th>' + list[i] + '</th>\n' +
+                '        <th><input type="button"value="edit"onclick="sua('+i+')"></th>\n' +
+                '        <th><input type="button"value="delete"onclick="xoa('+i+')"></th>\n' +
+                '    </tr>'
+        }
+        tableString += '</table>';
+        document.getElementById("hienThi").innerHTML = tableString;
+        document.getElementById("soLuong").innerHTML = list.length;
+    }
+
+    function add() {
+        let newProductName = document.getElementById("productName").value;
+        listString.push(newProductName);
+        document.getElementById("productName").value = "";
+        display(listString)
+
+    }
+
+    function xoa(index) {
+        let conf = confirm("Do you want to delete produc name" + listString[index]);
+        if (conf) {
+            listString.splice(index, 1);
+            display(listString);
+        } else {
+            alert("not delete");
+        }
+
+    }
+    function sua(index) {
+        let editName=prompt("input new product name :"+listString[index]);
+        listString[index] =editName;
+        display(listString);
+    }
+    function search1() {
+        let searchList=Array();
+        let searchName=document.getElementById("productName").value;
+        for (let j=0;j<listString.length;j++ ){
+            if (listString[j].includes(searchName)) {
+                searchList.push(listString[j]);
+            }
+        }
+        display(searchList);
+
+    }
+
+
+
+
+</script>
+
+</body>
+</html>

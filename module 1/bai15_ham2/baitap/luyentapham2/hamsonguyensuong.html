@@ -6,14 +6,13 @@
 </head>
 <body>
 <script>
-    function giaiThua(x) {
-        let s=1;
-        for(let i=1;i<=x;i++){
-           s*=i;
+    function nguyenDuong(x) {
+        if(x>0){
+            return true
         }
-        return s;
+        return false
     }
-   alert(giaiThua(4));
+    document.write(nguyenDuong(6));
 </script>
 </body>
 </html>

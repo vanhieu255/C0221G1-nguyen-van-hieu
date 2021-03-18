@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function findMin(a,b,c) {
+        let max=a;
+        if(max<b){
+            if(b<c){
+                document.write("max ="+c)
+            }else{
+                document.write("max ="+b)
+            }
+        }else{
+            if(max>b){
+            document.write("max ="+a);
+            }else{
+                document.write("max ="+c);
+            }
+        }
+        return max;
+
+    }
+   findMin(9,6,4);
+</script>
+</body>
+</html>

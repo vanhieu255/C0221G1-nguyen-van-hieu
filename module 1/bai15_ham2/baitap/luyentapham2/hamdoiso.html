@@ -6,14 +6,13 @@
 </head>
 <body>
 <script>
-    function giaiThua(x) {
-        let s=1;
-        for(let i=1;i<=x;i++){
-           s*=i;
-        }
-        return s;
+    function swap(a,b) {
+        c=a;
+        a=b;
+        b=c;
+        document.writeln(a+"<br>"+b)
     }
-   alert(giaiThua(4));
+   alert(swap(50,38));
 </script>
 </body>
 </html>
