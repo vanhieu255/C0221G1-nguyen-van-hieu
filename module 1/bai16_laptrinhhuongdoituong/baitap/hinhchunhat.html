@@ -32,7 +32,8 @@ class Rectangle{
         this.rong=rong;
     }
     print() {
-        let ctx=document.getElementById("myCanvas").getContext("2d");
+        let canvas=document.getElementById("myCanvas");
+        ctx =canvas.getContext("2d");
         ctx.beginPath();
         ctx.fillStyle="FF0000";
         ctx.fillRect(20,20,this.dai,this.rong);
@@ -43,16 +44,20 @@ class Rectangle{
 let t = new Rectangle(10,20);
 t.print();
 
-// let Chunhat= new Rectangle(4,5);
-// let chuVi=Chunhat.getChuVi();
-// let dienTich=Chunhat.getDienTich();
-// alert("dientich"+dienTich+"chuvi"+chuVi);
+// // let Chunhat= new Rectangle(4,5);
+// // let chuVi=Chunhat.getChuVi();
+// // let dienTich=Chunhat.getDienTich();
+// // alert("dientich"+dienTich+"chuvi"+chuVi);
+// //
+// // Chunhat.setDai(8);
+// // Chunhat.setRong(9);
+// // let chuVi2=Chunhat.getChuVi();
+// // let dienTich2=Chunhat.getDienTich();
+// // alert("dientich"+dienTich2+"chuvi"+chuVi2);
 //
-// Chunhat.setDai(8);
-// Chunhat.setRong(9);
-// let chuVi2=Chunhat.getChuVi();
-// let dienTich2=Chunhat.getDienTich();
-// alert("dientich"+dienTich2+"chuvi"+chuVi2);
+// let a=new Rectangle(10,30);
+// a.print();
+
 
 
 

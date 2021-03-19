@@ -5,6 +5,72 @@
     <title>Title</title>
 </head>
 <body>
+<script>
+    class Apple{
+        constructor() {
+            this.weight=10;
+        }
+        getWeight(){
+            return this.weight;
+        }
+        decrease(){
+            this.weight--;
+        }
+        isEmpty(){
+            if(this.weight==0){
+                return "HẾT TÁO";
 
+            }
+
+        }
+
+
+
+    }
+    class Person{
+        constructor(name,gender,weight) {
+            this.name=name;
+            this.gender=gender;
+            this.weight=weight;
+        }
+        getName(){
+            return this.name;
+        }
+        getGender(){
+            return this.gender;
+        }
+        getWeight(){
+            return this.weight;
+        }
+        setName(name){
+            this.name=name;
+        }
+        setGender(gender){
+            this.gender=gender;
+        }
+        setWeight(weight){
+            this.weight=weight;
+        }
+        say(){
+        }
+        eat(apple){
+            if(this.weight>0){
+                this.weight++;
+                apple.decrease();
+            }
+
+        }
+    }
+    let apple=new Apple();
+
+    let Adame=new Person("Adame","nam",65);
+    Adame.eat(apple);
+    console.log(Adame.getWeight());
+    console.log(apple);
+    let Eva= new Person("Eva","nu",50);
+
+
+
+</script>
 </body>
 </html>
