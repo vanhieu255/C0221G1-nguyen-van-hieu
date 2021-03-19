@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <th>a</th>
+        <th>b</th>
+        <th>c</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+    </tr>
+</table>
+<p id="ht"></p>
+<script>
+    let string='<table border="1">\n' +
+        '    <tr>\n' +
+        '        <th>a</th>\n' +
+        '        <th>b</th>\n' +
+        '        <th>c</th>\n' +
+        '    </tr>';
+        for (let  i=0;i<10;i++){
+           string+='<tr>\n' +
+               '        <td>'+i+'</td>\n' +
+               '        <td>i</td>\n' +
+               '        <td>i</td>\n' +
+               '    </tr>' ;
+
+        }
+    // document.getElementById("ht").innerText=string;
+        string+='</table>';
+    document.getElementById("ht").innerText=string;
+    let i =1;
+    alert('fsfsfsdf'+i)
+</script>
+</body>
+</html>

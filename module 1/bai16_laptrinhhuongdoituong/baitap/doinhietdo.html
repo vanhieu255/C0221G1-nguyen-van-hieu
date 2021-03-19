@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        constructor(nhietdo) {
+            this.nhietdo=nhietdo;
+        }
+        getNhietdo(){
+            return this.nhietdo;
+
+        }
+        getF(){
+            let f=(9*this.nhietdo)/5+32;
+            return f;
+        }
+        getK(){
+            let k=this.nhietdo+273;
+            return k;
+        }
+        setNhietdo(nhietdo){
+            this.nhietdo=nhietdo;
+        }
+    }
+    let doC=new Temperature(25);
+    let doF=doC.getF();
+    let doK=doC.getK();
+    document.write("độ F:"+doF+"<br>"+"độ K :"+doK);
+
+
+
+</script>
+</body>
+</html>

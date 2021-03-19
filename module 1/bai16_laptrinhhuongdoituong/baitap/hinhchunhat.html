@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas"></canvas>
+<script>
+class Rectangle{
+    constructor(dai,rong) {
+        this.dai=dai;
+        this.rong=rong;
+    }
+    getDai(){
+        return this.dai;
+    }
+    getRong(){
+        return this.rong;
+    }
+    getChuVi(){
+        return (this.dai+this.rong)*2;
+    }
+    getDienTich(){
+        return this.dai*this.rong;
+    }
+
+    setDai(dai){
+        this.dai=dai
+    }
+    setRong(rong){
+        this.rong=rong;
+    }
+    print() {
+        let ctx=document.getElementById("myCanvas").getContext("2d");
+        ctx.beginPath();
+        ctx.fillStyle="FF0000";
+        ctx.fillRect(20,20,this.dai,this.rong);
+
+    }
+
+}
+let t = new Rectangle(10,20);
+t.print();
+
+// let Chunhat= new Rectangle(4,5);
+// let chuVi=Chunhat.getChuVi();
+// let dienTich=Chunhat.getDienTich();
+// alert("dientich"+dienTich+"chuvi"+chuVi);
+//
+// Chunhat.setDai(8);
+// Chunhat.setRong(9);
+// let chuVi2=Chunhat.getChuVi();
+// let dienTich2=Chunhat.getDienTich();
+// alert("dientich"+dienTich2+"chuvi"+chuVi2);
+
+
+
+
+
+
+</script>
+</body>
+</html>
