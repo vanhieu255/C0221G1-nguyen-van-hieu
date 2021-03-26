@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="">
+    <h1>MENU</h1>
+    <ol>
+        <li>Cafe</li>
+        <li>Cam vắt</li>
+        <li>Nước ép cà rốt</li>
+        <li>Nước ép cà chua</li>
+        <li>Nước lọc</li>
+        <li>Nước dừa</li>
+        <li>Thoát gọi món</li>
+    </ol>
+    <input type="text" id="nhap">
+    <input type="button" value="chọn" onclick="chon();">
+</form>
+<script>
+    let tongtien=0;
+    let sum =0;
+    function chon() {
+        let mon = parseInt(document.getElementById("nhap").value);
+
+            switch (mon) {
+                case 1:
+                    alert("Cafe giá 10k/1ly");
+                    let a = parseInt(prompt("nhập số lượng "));
+                    sum =a * 10000;
+                    tongtien+= a * 10000;
+                    alert("tiền :"+sum);
+                    break;
+                case 2:
+                    alert("Cam vắt giá 9k/1ly");
+                    let b = parseInt(prompt("nhập số lượng "));
+                    sum= b * 9000;
+                    tongtien+= b * 9000;
+                    alert("tiền :" +sum);
+                    break;
+                case 3:
+                    alert("Nước ép cà rốt giá 8k/1ly");
+                    let c = parseInt(prompt("nhập số lượng "));
+                    sum=c * 8000;
+                    tongtien+= c * 8000;
+                    alert("tiền :" + sum);
+                    break;
+                case 4:
+                    alert("Nước ép cà chua giá 8k/1ly");
+                    let d = parseInt(prompt("nhập số lượng "));
+                    sum= d*8000;
+                    tongtien+= d * 8000;
+                    alert("tiền :" + sum);
+                    break;
+                case 5:
+                    alert("Nước lọc giá 5k/1ly");
+                    let e = parseInt(prompt("nhập số lượng "));
+                    sum=e * 5000;
+                    tongtien+= e * 5000;
+                    alert(" tiền :" + sum);
+                    break;
+                case 6:
+                    alert("Nước dừa giá 10k/1ly");
+                    let f= parseInt(prompt("nhập số lượng "));
+                    sum=f*800
+                    tongtien+= f * 10000;
+                    alert(" tiền :" + sum);
+                    break;
+                case 7:
+                    alert(tongtien);
+                    break;
+
+
+            }
+
+
+    }
+
+
+
+
+</script>
+
+
+</body>
+</html>

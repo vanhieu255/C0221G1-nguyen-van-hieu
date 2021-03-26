@@ -6,20 +6,34 @@
 </head>
 <body>
 <script>
+    // let a=0;
+    // let b=1;
+    // let c;
+    // let total = 0;
+    // for( let i=0;i<20 ;i++){
+    //     document.write(a+"<br>");
+    //     total=total +a;
+    //     c= a+b;
+    //     a=b;
+    //     b=c;
+    //
+    //
+    // }document.write('tổng là :'+ total);
+
+
     let a=0;
     let b=1;
     let c;
-    let total = 0;
-    for( let i=0;i<20 ;i++){
+    let tong=0;
+    for(let i=0;i<20;i++){
         document.write(a+"<br>");
-        total=total +a;
-        c= a+b;
+        tong+=a;
+        c=a+b;
         a=b;
         b=c;
 
-
-    }document.write('tổng là :'+ total);
-
+    }
+    document.write("tổng là :"+tong);
 </script>
 
 </body>

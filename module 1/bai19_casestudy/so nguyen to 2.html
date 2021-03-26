@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr1=[];
+    let m=parseInt(prompt("nhap m"));
+    let n=parseInt(prompt("nhap n"));
+    function soNguyenTo(x) {
+        if(x<2){
+            return false;
+        } else {
+            for(let k=2;k<x;k++){
+                if(x%k==0){
+                    return false;
+                }
+            }
+            return true;
+        }
+
+    }
+    let A=Array();
+   for(let i=0;i<m;i++){
+       arr1[i]=[];
+       for (let j=0;j<n;j++){
+           arr1[i][j]=prompt("nhap vao cac phan tu cua mang")
+                if(soNguyenTo(arr1[i][j])){
+               A.push(arr1[i][j]);
+           }
+       }
+   } document.write(A+"<br>"+A.length);
+
+
+   // let max=arr1[0][0];
+   // for(let i=0;i<arr1.length;i++){
+   //     for(let j=0;j<arr1[i].length;j++){
+   //         if(arr1[i][j]>max){
+   //             max=arr1[i][j];
+   //         }
+   //
+   //     }
+   // }document.write(max);
+   //
+   //  let min=arr1[0][0];
+   //  for(let i=0;i<arr1.length;i++){
+   //      for(let j=0;j<arr1[i].length;j++){
+   //          if(arr1[i][j]<min){
+   //              min=arr1[i][j];
+   //          }
+   //
+   //      }
+   //  }document.write(min);
+
+
+</script>
+</body>
+</html>

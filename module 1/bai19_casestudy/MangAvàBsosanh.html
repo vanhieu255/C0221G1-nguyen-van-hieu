@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+let nhapA=prompt("nhapA");
+let A=Array();
+for(let i=0;i<nhapA;i++){
+    A[i]=parseInt(prompt("nhap gia tri"));
+}
+let nhapB=prompt("nhap mang b");
+let B=Array();
+for(let j=0;j<nhapB;j++){
+    B[j]=parseInt(prompt("nhap gia tri"));
+}
+
+    let C=Array();
+for(let k=0;k<B.length;k++){
+    if(A.includes(B[k])==false&&C.includes(B[k])==false){
+        C.push(B[k])
+
+    }
+
+}document.write(C);
+
+
+</script>
+</body>
+</html>

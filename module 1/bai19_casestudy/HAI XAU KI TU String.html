@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = prompt("nhap xau 1");
+    let b = prompt("nhap xau 2");
+    let A = a.split("");
+    let B = b.split("");
+    let dem = 0;
+let C='';
+    for (let i = 0; i < A.length; i++) {
+        for (j = 0; j < B.length; j++) {
+            if (A[i] === B[j]) {
+                C += B.splice(j, 1);
+                dem++;
+                break;
+            }
+        }
+
+    }
+    document.write(dem);
+    document.write(C);
+
+
+// let string1 = 'aabcc';
+// let string2 = 'adcaa';
+// let string3 = '';
+// for (let i = 0; i < 5; i++) {
+//     if (string1.indexOf(string2[i]) !== -1 && string3.indexOf(string2[i]) === -1) {
+//         string3 += string2[i];
+//     }
+// }
+// let result='';let count=0;
+// for (let i=0;i<string3.length;i++){
+//     if(num(string1,string3[i])>num(string2,string3[i])){
+//         count=num(string2,string3[i]);
+//     }
+//     else {
+//         count=num(string1,string3[i]);
+//     }
+//     result +=string3[i]+' xuất hiện '+count+" lần\n";
+// }
+// alert(result);
+// function num(string,char) {
+//     let count=0;
+//     for (let j=0;j<string.length;j++){
+//         if( string[j]==char){
+//             count++;
+//         }
+//     }
+//     return count;
+// }
+
+</script>
+</body>
+</html>

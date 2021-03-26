@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let nhap=parseInt(prompt("nhap1"));
+    let arr=Array();
+    for(let i=0;i<nhap;i++){
+        arr[i]=parseInt(prompt("gia tri mang"));
+    }
+    let nhap2=parseInt(prompt("nhap2"));
+    let b=Array();
+    for(let j=0;j<nhap2;j++){
+        b[j]=parseInt(prompt("gia tri mang"));
+    }
+    let max=arr[0]/b[0];
+    let index;
+    for(k=0;k<nhap;k++){
+        if(arr[k]/b[k]>max){
+            max=arr[k]/b[k];
+            index=k;
+        }
+    }
+    document.write("phân số lớn nhất là "+max+"có chỉ số là "+index);
+</script>
+</body>
+</html>

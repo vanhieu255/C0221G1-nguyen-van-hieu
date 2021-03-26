@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let nhap1=parseInt(prompt("nhap gia tri"));
+    let arr1=Array();
+    for(i=0;i<nhap1;i++){
+        arr1[i]=parseInt(prompt("nhap gia tri mang 1"));
+    }
+
+    let nhap2=parseInt(prompt("nhap gia tri 2"));
+    let arr2=Array();
+    for(j=0;j<nhap2;j++){
+        arr2[j]=parseInt(prompt("nhap gia tri mang 2"));
+    }
+
+
+    let dem=0;
+    let A=[arr1,arr2];
+    for(let row=0;row<A.length;row++){
+        for(let column=0;column<A[row].length;column++){
+            if(soNguyenTo(A[row][column])){
+                dem++;
+            }
+        }
+    } document.write(dem);
+
+    function soNguyenTo(x) {
+        if(x<2){
+            return false;
+        } else {
+            for(let k=2;k<x;k++){
+                if(x%k==0){
+                    return false;
+                }
+            }
+            return true;
+        }
+
+    }
+
+
+
+
+//     var matrix = new Array(10).fill(new Array(5));
+//     for (var row = 0; row < matrix.length; row++) {    for (var column = 0; column < matrix[row].length; column++) {
+//         matrix[row][column] = Math.floor((Math.random() * 100) + 1);
+//     } }
+// console.log(matrix)
+</script>
+</body>
+</html>

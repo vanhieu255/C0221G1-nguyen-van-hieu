@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let nhap=parseInt(prompt("nhap"));
+    let arr=Array();
+    for(let i=0;i<nhap;i++){
+        arr[i]=parseInt(prompt("gia tri mang"));
+    }
+    let b=Array();
+    let sum=0;
+    for (j=0;j<arr.length;j++){
+        sum=sum+arr[j];
+        b[j]=sum;
+    }
+    document.write(b);
+
+</script>
+</body>
+</html>

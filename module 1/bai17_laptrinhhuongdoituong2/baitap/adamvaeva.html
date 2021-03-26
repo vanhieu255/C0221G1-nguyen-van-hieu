@@ -7,8 +7,8 @@
 <body>
 <script>
     class Apple{
-        constructor() {
-            this.weight=10;
+        constructor(weight) {
+            this.weight;
         }
         getWeight(){
             return this.weight;
@@ -54,20 +54,20 @@
         say(){
         }
         eat(apple){
-            if(this.weight>0){
+            if(apple.getWeight()>"10"){
                 this.weight++;
                 apple.decrease();
             }
 
         }
     }
-    let apple=new Apple();
+    let apple=new Apple(10);
 
     let Adame=new Person("Adame","nam",65);
     Adame.eat(apple);
     console.log(Adame.getWeight());
     console.log(apple);
-    let Eva= new Person("Eva","nu",50);
+    // let Eva= new Person("Eva","nu",50);
 
 
 

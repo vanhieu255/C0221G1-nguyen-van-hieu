@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Xổ số CodeGym</h2>
+<p id="nhap"></p>
+<!--<input type="button" value="Mua vé" onclick="mua()">-->
+<!--<input type="button" value="Xem kết quả" onclick="xem()">-->
+
+<table>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+<script>
+    function mua() {
+        let choose = prompt("Bạn có 2 lựa chọn :\n" +
+            "1.Bạn muốn tự chọn số\n" +
+            "2.Hệ thống tự random."
+        );
+       let check=true;
+        do {
+            switch (choose) {
+                case "1" :
+                    nhap();
+                    window.exit();
+                    break;
+                case "2":
+                    ranDom();
+                    window.exit
+                    break;
+                default:
+                    window.exit();
+            }
+        } while (true)
+
+    }
+    let listNumber=[so1,so2,so3,so4,so5,so6]
+    function disPlay(list) {
+        for(i=0;i<list.length;i++)
+        let tableString='<table border="1">'
+        for(let i=0;i<list.length;i++){
+
+        }
+
+        document.getElementById("nhap").innerHTML=tableString;
+
+    }
+    disPlay()
+
+    // function ranDom() {
+    //
+    //
+    //
+    //
+    //
+    // }
+</script>
+
+
+</body>
+</html>

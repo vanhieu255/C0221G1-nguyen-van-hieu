@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let nhap1=parseInt(prompt("nhap gia tri"));
+    let arr1=Array();
+    for(i=0;i<nhap1;i++){
+        arr1[i]=parseInt(prompt("nhap gia tri mang 1"));
+    }
+    let nhap2=parseInt(prompt("nhap gia tri 2"));
+    let arr2=Array();
+    for(j=0;j<nhap2;j++){
+        arr2[j]=parseInt(prompt("nhap gia tri mang 1"));
+    }
+
+    function soChan(x) {
+        let check=true;
+        if(x%2==0){
+            return true;
+        }else {
+            return  false;
+        }
+
+    }
+    let total=0;
+    let A=[arr1,arr2]
+    for(let row=0;row<A.length;row++){
+        for(let column=0;column<A[row].length;column++){
+            if(soChan(A[row][column])){
+                total+=A[row][column]
+            }
+        }
+    } document.write(total);
+
+
+</script>
+</body>
+</html>
