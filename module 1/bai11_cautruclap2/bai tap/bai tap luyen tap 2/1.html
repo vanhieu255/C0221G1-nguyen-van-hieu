@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<canvas id="myCanvas" width="300px" height="300px" style="border: 1px solid #000000">-->
+</canvas>
+</body>
+<!--<script>-->
+<!--    //  let c=document.getElementById("myCanvas").getContext("2d");-->
+<!--    //-->
+<!--    // c.beginPath();-->
+<!--    // c.arc(40,40,20,1/4*Math.PI,Math.PI);-->
+<!--    // c.stroke();-->
+<!--let c=document.getElementById("myCanvas").getContext("2d");-->
+<!--c.fillStyle="#FF0000";-->
+<!--c.fillRect(90,90,50,40);-->
+
+
+
+
+<!--// </script>-->
+
+
+<script>
+    nhapso=parseInt(prompt("nhap số cần kiểm tra :"));
+
+    function inchuoiFibonaci(num) {
+        let a=0;
+        let b=1;
+        let c=0;
+        let ketQua="";
+        for(let i=0;i<num;i++){
+            c=a+b;
+            a=b;
+            b=c;
+            ketQua+=c+",";
+
+        }
+        return ketQua;
+    }
+ let d=inchuoiFibonaci(nhapso).split(",");
+
+    let check=false;
+    for(let j=0;j<=d.length;j++){
+        if(nhapso==d[j]){
+            check=true;
+
+        }
+    }
+    if(check){
+        document.write("là số fibonaci");
+    }else{
+        document.write("không là số fibonaci");
+    }
+</script>
+</html>
