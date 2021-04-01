@@ -11,5 +11,8 @@ public class ChuyenDoiTien {
         float moneyUSD=sc.nextFloat();
         float moneyVND=moneyUSD*rate;
         System.out.printf("Money VNĐ = %f",moneyVND);
+
+
     }
 }
+
