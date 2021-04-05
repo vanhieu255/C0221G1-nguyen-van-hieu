@@ -33,7 +33,7 @@ public class DemSoNgay {
 
         }
         if(daysInMonth!=""){
-            System.out.printf("the month '%d' has %s days!",month,daysInMonth);
+            System.out.printf("the month %d has %s  days!",month,daysInMonth);
         }else
             System.out.print("Invalid input");
     }

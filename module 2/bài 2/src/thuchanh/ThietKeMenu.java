@@ -5,10 +5,6 @@ import java.util.Scanner;
 public class ThietKeMenu {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int choice;
-        System.out.println("Input Choice");
-        choice = sc.nextInt();
-        while (choice != 0) {
 
             System.out.println("Menu");
             System.out.println("1. Draw the triangle");
@@ -16,7 +12,10 @@ public class ThietKeMenu {
             System.out.println("3. Draw the rectangle");
             System.out.println("0. Exit");
             System.out.println("Enter your choice: ");
-
+            while (true) {
+                int choice;
+                System.out.println("Input Choice");
+                choice = sc.nextInt();
             switch (choice) {
                 case 1:
                     System.out.println("Draw the triangle");
@@ -44,8 +43,11 @@ public class ThietKeMenu {
                     break;
                 case 0:
                     System.exit(0);
+                    break;
                 default:
                     System.out.println("No choice!");
+                    break;
+
             }
         }
     }
