@@ -58,7 +58,7 @@ public class Fan {
         this.color = color;
     }
 
-    @Override
+
     public String toString() {
         if (isOn() == true) {
             return "Fan{" +
