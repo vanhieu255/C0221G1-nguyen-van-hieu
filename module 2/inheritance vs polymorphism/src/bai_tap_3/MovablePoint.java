@@ -45,7 +45,7 @@ public class MovablePoint extends Point {
     public float[] move(){
         x+=xSpeed;
         y+=ySpeed;
-        return getSpeed();
+        return super.getXY();
     }
 
     @Override
