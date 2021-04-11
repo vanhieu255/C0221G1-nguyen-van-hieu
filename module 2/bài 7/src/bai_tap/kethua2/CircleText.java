@@ -1,5 +1,4 @@
-package thuc_hanh;
-
+package bai_tap.kethua2;
 
 public class CircleText {
     public static void main(String[] args) {

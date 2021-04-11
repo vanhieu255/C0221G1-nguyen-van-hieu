@@ -1,5 +1,6 @@
 package bai_tap_1;
 
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import ke_thua.thuc_hanh.Circle;
 import ke_thua.thuc_hanh.Rectangle;
 import ke_thua.thuc_hanh.Shape;
@@ -11,13 +12,25 @@ public class TextResizeable {
     public static void main(String[] args) {
         Scanner sc= new Scanner(System.in);
         double percent=Math.random()*100;
+        System.out.println("nhap radius =");
+        double radius=sc.nextDouble();
+        System.out.println("nhap width =");
+        double width=sc.nextDouble();
+        System.out.println("nhap height =");
+        double height=sc.nextDouble();
+        System.out.println("nhap side =");
+        double side =sc.nextDouble();
+        Circle circle=new Circle(radius);
+        circle.resize(percent);
+        Rectangle rectangle=new Rectangle(width,height);
+        rectangle.resize(percent);
+        Square square= new Square(width);
+        square.resize(percent);
+        System.out.println("DIEN TICH HINH CIRCLE :"+circle.getArea());
+        System.out.println("Dien TICH HINH RECTANGLE :"+rectangle.getArea());
+        System.out.println("DIEN TICH HINH SQUARE :"+square.getArea());
 
-        Shape[] arr=new Shape[3];
-        arr[0]=new Circle(4);
-        arr[1]=new Rectangle(4,5);
-        arr[2]= new Square(3);
-        for(Shape i:arr){
-           if(i)
-        }
+// van chua the thay doi side o Square
+
     }
 }

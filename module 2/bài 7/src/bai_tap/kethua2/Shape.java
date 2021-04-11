@@ -1,8 +1,8 @@
-package ke_thua.thuc_hanh;
+package bai_tap.kethua2;
 
-import bai_tap_1.Resizeable;
+import bai_tap_2.Colorable;
 
-public class Shape implements Resizeable {
+public class Shape  {
     private String collor="green";
     private boolean filled =true;
 
@@ -37,8 +37,6 @@ public class Shape implements Resizeable {
                 " and " +( isFilled()? "filler":"not filler");
     }
 
-    @Override
-    public void resize(double percent) {
 
-    }
+
 }

@@ -1,4 +1,4 @@
-package ke_thua.thuc_hanh;
+package bai_tap.kethua2;
 
 public class SquareText {
         public static void main(String[] args) {
@@ -11,7 +11,6 @@ public class SquareText {
 
             square = new Square(5.8, "yellow", true);
             System.out.println(square);
-
         }
     }
 

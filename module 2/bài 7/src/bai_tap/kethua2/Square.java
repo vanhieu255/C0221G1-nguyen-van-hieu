@@ -1,9 +1,8 @@
-package ke_thua.thuc_hanh;
-
-import bai_tap_1.Resizeable;
-
-public class Square extends Rectangle{
-
+package bai_tap.kethua2;
+import bai_tap_2.*;
+public class Square extends Rectangle implements Colorable {
+    private double width=1.0;
+    private double length=1.0;
 
     public Square(){
 
@@ -39,6 +38,11 @@ public class Square extends Rectangle{
                 + super.toString();
     }
 
+
+    @Override
+    public String howToColor() {
+        return "Color all four sides..";
+    }
 }
 
 
