@@ -5,12 +5,12 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
-public class ProductManager {
+public  class ProductManager {
 
-     List<Product> list = new ArrayList<>();
-     Scanner sc = new Scanner(System.in);
+     static List<Product> list = new ArrayList<>();
+     static Scanner sc = new Scanner(System.in);
 
-    public void add() {
+    public static void add() {
         System.out.println("Input id");
         int id = Integer.parseInt(sc.nextLine());
 
@@ -63,13 +63,13 @@ public class ProductManager {
 
 //    }
 
-    public void hienThi() {
+    public static void hienThi() {
         for (Product product : list) {
             System.out.println(product);
         }
     }
 
-    public void delete(int id) {
+    public static void delete(int id) {
         for (Product product : list) {
             if (product.getId() == id) {
                 list.remove(product);
@@ -79,7 +79,7 @@ public class ProductManager {
         hienThi();
     }
 
-    public void edit() {
+    public static void edit() {
         System.out.println("nhap id can sua");
         int id = sc.nextInt();
         System.out.println("chon cai ban can sua");
@@ -130,7 +130,7 @@ public class ProductManager {
 
     }
 
-    public void seach() {
+    public static void seach() {
         System.out.println("nhập ten san pham can tìm");
         String name = sc.nextLine();
         boolean check = false;
@@ -156,7 +156,7 @@ public class ProductManager {
         list.sort(Comparator.comparing(Product::getPrice).reversed());
         hienThi();
     }
-    public void menu() {
+    public static void menu() {
         while (true) {
 
             System.out.println("Các phương thức" + "\n" + "1.add" + "\n" +
