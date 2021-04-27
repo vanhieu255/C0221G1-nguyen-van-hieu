@@ -1,0 +1,4 @@
+File :Luu tru du lieu
+    _text -> read
+    _binary -> khong doc (image)
+ Xin chào
