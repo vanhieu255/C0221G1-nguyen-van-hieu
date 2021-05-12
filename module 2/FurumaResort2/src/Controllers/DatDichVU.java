@@ -16,13 +16,13 @@ public class DatDichVU {
             chon=Integer.parseInt(scanner.nextLine());
             switch (chon){
                 case 1:
-                    datVilla();
+                    CacPhuongThucDatDichVu.datVilla();
                     break;
                 case 2:
-                    datHouse();
+                    CacPhuongThucDatDichVu.datHouse();
                     break;
                 case 3:
-                    datRoom();
+                    CacPhuongThucDatDichVu.datRoom();
                     break;
                 case 4:
                     return;

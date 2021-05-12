@@ -30,11 +30,11 @@ public class MainController {
                     HienThiKhachHang.hienThiKhachHang();
                     break;
                 case 5:
-                    themDat();
-//                    break;
-//                case 6:
-//                    hienThiThongTinNhanVien();
-//                    break;
+                    DatDichVU.datDichVu();
+                    break;
+                case 6:
+                    HienThiNhanVien.HienThiNhanVien();
+                    break;
                 case 7:
                     System.exit(0);
                 default:

@@ -105,7 +105,7 @@ public class Customer extends Services {
 
     @Override
     public String toString() {
-        return  super.toString() + "," + tenKhachHang +
+        return  tenKhachHang +
                 "," + ngaySinh +
                 "," + gioiTinh +
                 "," + cmnd +

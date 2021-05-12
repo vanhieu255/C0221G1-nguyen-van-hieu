@@ -1,6 +1,7 @@
 package Controllers;
 
 import Commons.DocGhiFile;
+import Commons.DocGhiFileCustomer;
 import Models.Customer;
 import Models.Services;
 
@@ -26,10 +27,10 @@ public class PhuongThucThemKhachHang {
         String email=NhapDuLieu.nhapEmail();
         String loaiKhach=NhapDuLieu.nhapLoaiKhachHang();
         String diaChi=NhapDuLieu.nhapDiaChiKhachHang();
-        List<Services> servicesList=new ArrayList<>();
-        Services customer=new Customer(tenKhachHang,ngaySinh,gioiTinh,cmnd,sdt,email,loaiKhach,diaChi);
-        servicesList.add(customer);
-        DocGhiFile.ghiFlie("Customer.CSV",servicesList,true);
+        List<String> customerList=new ArrayList<>();
+         Customer customer=new Customer(tenKhachHang,ngaySinh,gioiTinh,cmnd,sdt,email,loaiKhach,diaChi);
+        customerList.add(customer.toString());
+       DocGhiFileCustomer.ghiFile("Customer.CSV",customerList,true);
     }
 
 }
