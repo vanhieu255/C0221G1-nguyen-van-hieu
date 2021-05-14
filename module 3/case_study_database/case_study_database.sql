@@ -17,7 +17,6 @@ foreign key(id_trinh_do) references trinh_do(id_trinh_do),
 foreign key(id_bo_phan) references bo_phan(id_bo_phan)
 );
 alter table nhan_vien modify ho_ten varchar(45);
-drop table nhan_vien;
 select * from nhan_vien;
 insert into nhan_vien
 values (1,"nguyen van hung",1,1,1,"2000-1-18",123456789,6000000,"0984257141","nguyenvanhung@gmai.com","da nang"),
@@ -26,11 +25,6 @@ values (1,"nguyen van hung",1,1,1,"2000-1-18",123456789,6000000,"0984257141","ng
 (4,"nguyen van tung",2,2,2,"2000-1-18",124356789,6000000,"0984257141","nguyenvanhung@gmai.com","da nang"),
 (5,"nguyen van ngan",3,3,3,"2000-1-19",213456789,8000000,"0948257141","nguyenvanngan@gmai.com","quang tri "),
 (6,"nguyen thi trang",1,2,2,"2000-7-18",125436789,6000000,"9084257141","nguyenvanhung@gmai.com","da nang");
-
-select * from nhan_vien
-where (ho_ten like "n%") and length(ho_ten)>15;
-
-
 
 
 create table `case_study`.`vi_tri`(
@@ -92,7 +86,16 @@ foreign key(id_nhan_vien) references nhan_vien(id_nhan_vien),
 foreign key(id_khach_hang) references khach_hang(id_khach_hang),
 foreign key(id_dich_vu) references dich_vu(id_dich_vu)
 );
-drop table hop_dong;
+
+select *
+from hop_dong;
+insert into hop_dong
+values (1,1,1,1,"2000-12-1","2001-12-1",1000000,15000000),
+(2,1,2,2,"2001-12-1","2002-12-1",1000000,15000000),
+(3,1,3,3,"2002-12-1","2003-12-1",1000000,15000000),
+(4,2,1,1,"2003-12-1","2004-12-1",1000000,15000000),
+(5,2,1,2,"2004-12-1","2005-12-1",1000000,15000000);
+
 
 
 create table `case_study`.`hop_dong_chi_tiet`(
@@ -104,7 +107,16 @@ primary key(`id_hop_dong_chi_tiet`),
 foreign key(id_hop_dong) references hop_dong(id_hop_dong),
 foreign key(id_dich_vu_di_kem) references dich_vu_di_kem(id_dich_vu_di_kem)
 );
-drop table hop_dong_chi_tiet;
+
+select *
+from hop_dong_chi_tiet;
+insert into hop_dong_chi_tiet
+values (1,1,1,1),
+(2,1,2,1),
+(3,2,2,2),
+(4,3,2,1);
+
+
 
 
 create table `case_study`.`dich_vu_di_kem`(
@@ -114,6 +126,16 @@ gia int,
 don_vi int,
 trang_thai_kha_dung varchar(45),
 primary key (`id_dich_vu_di_kem`));
+
+select *
+from dich_vu_di_kem;
+insert into dich_vu_di_kem
+values(1,"massage",200000,1,"open"),
+(2,"karaoke",150000,2,"open"),
+(3,"thuc an",200000,3,"open"),
+(4,"nuoc uong",200000,1,"open"),
+(5,"thue xe",200000,2,"open");
+
 
 create table `case_study`.`dich_vu`(
 id_dich_vu int not null,
@@ -125,11 +147,24 @@ chi_phi_thue varchar(45),
 id_kieu_thue int,
 id_loai_dich_vu int,
 trang_thai varchar(45),
-primary key (`id_dich_vu`)
+primary key (`id_dich_vu`),
+foreign key(id_kieu_thue) references kieu_thue(id_kieu_thue),
+foreign key(id_loai_dich_vu) references loai_dich_vu(id_loai_dich_vu)
 );
-alter table dich_vu add foreign key(id_kieu_thue) references kieu_thue(id_kieu_thue);
-alter table dich_vu add foreign key(id_loai_dich_vu) references loai_dich_vu(id_loai_dich_vu);
-drop table dich_vu;
+
+select *
+from dich_vu;
+insert into dich_vu
+values (1,"thue villa",300,2,2,7000000,1,1,"open"),
+(2,"thue house",300,2,2,6000000,1,3,"open"),
+(3,"thue room",100,2,2,5000000,2,2,"open"),
+(4,"thue villa",400,2,2,7500000,1,2,"close"),
+(5,"thue house",150,2,2,5500000,1,1,"open"),
+(6,"thue villa",600,3,2,10000000,2,3,"open"),
+(7,"thue room",200,2,2,8000000,3,3,"open");
+
+
+
 
 
 create table `case_study`.`khach_hang`(
@@ -141,9 +176,10 @@ so_cmnd varchar(45),
 sdt varchar(45),
 email varchar(45),
 dia_chi varchar(45),
-primary key (`id_khach_hang`)
+primary key (`id_khach_hang`),
+foreign key(id_loai_khach) references loai_khach(id_loai_khach)
 );
-alter table khach_hang add foreign key(id_loai_khach) references loai_khach(id_loai_khach);
+
 select *from khach_hang;
 insert into khach_hang
 values (1,1,"nguyen van ba","2000-9-18","159874526","0901472583","nguyenvana@gmail.com","da nang"),
@@ -155,9 +191,11 @@ values (1,1,"nguyen van ba","2000-9-18","159874526","0901472583","nguyenvana@gma
 (7,1,"tran thi mai","2000-9-18","159874526","0901472583","tranthimai@gmail.com","da nang"),
 (8,4,"nguyen van ti","2000-2-18","159871426","0901472583","nguyenvana@gmail.com","quang tri");
 
-select*
-from khach_hang
-where dia_chi in("da nang","quang tri") and (year(CURDATE())-year(ngay_sinh))>=18 and (year(CURDATE())-year(ngay_sinh))<=50;
+insert into khach_hang(id_khach_hang,ho_ten)
+values (0,"nguyen van ky");
+
+
+
 
 
 create table `case_study`.`loai_khach`(
@@ -181,10 +219,68 @@ ten_kieu_thue varchar(45),
 gia int,
 primary key (`id_kieu_thue`));
 
+select*
+from kieu_thue;
+insert into kieu_thue
+values (1,"ngay",50000000),
+(2,"thang",60000000),
+(3,"nam",70000000);
+
+
+
+
 create table `case_study`.`loai_dich_vu`(
 id_loai_dich_vu int not null,
 ten_loai_dich_vu varchar(45),
 primary key (`id_loai_dich_vu`));
+
+select * 
+from loai_dich_vu;
+insert into loai_dich_vu
+values (1,"normal"),
+(2,"vip"),
+(3,"vvip");
+
+
+
+-- task2--
+select * from nhan_vien
+where (ho_ten like "n%") and length(ho_ten)>15;
+
+
+-- task3--
+select*
+from khach_hang
+where dia_chi in("da nang","quang tri") and (year(CURDATE())-year(ngay_sinh))>=18 and (year(CURDATE())-year(ngay_sinh))<=50;
+
+-- task4--
+select khach_hang.id_khach_hang,khach_hang.ho_ten,hop_dong.ngay_lam_hop_dong, count(hop_dong.id_hop_dong)
+from khach_hang
+inner join hop_dong on khach_hang.id_khach_hang= hop_dong.id_khach_hang
+inner join dich_vu on dich_vu.id_dich_vu=hop_dong.id_dich_vu
+inner join loai_khach on khach_hang.id_loai_khach= loai_khach.id_loai_khach
+where loai_khach.ten_loai_khach="Diamond"
+group by khach_hang.id_khach_hang;
+
+-- task5--
+
+select khach_hang.id_khach_hang, khach_hang.ho_ten, loai_khach.ten_loai_khach, hop_dong.id_hop_dong,dich_vu.ten_dich_vu,hop_dong.ngay_lam_hop_dong,hop_dong.ngay_ket_thuc,(dich_vu.chi_phi_thue +dich_vu_di_kem.gia*dich_vu_di_kem.don_vi) as tontien
+from khach_hang
+left join loai_khach on khach_hang.id_loai_khach=loai_khach.id_loai_khach
+left join hop_dong on hop_dong.id_khach_hang=khach_hang.id_khach_hang
+left join 	dich_vu on dich_vu.id_dich_vu=hop_dong.id_dich_vu
+left join hop_dong_chi_tiet on hop_dong_chi_tiet.id_hop_dong=hop_dong.id_hop_dong
+left join dich_vu_di_kem on dich_vu_di_kem.id_dich_vu_di_kem=hop_dong_chi_tiet.id_dich_vu_di_kem
+
+
+
+
+
+
+
+
+
+
 
 
 
