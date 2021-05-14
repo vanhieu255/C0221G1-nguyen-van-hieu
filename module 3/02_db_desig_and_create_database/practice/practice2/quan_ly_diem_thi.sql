@@ -7,7 +7,7 @@ ngay_sinh datetime,
 lop varchar(20),
 gt varchar(20));
 select *
-from mon_hoc;
+from giao_vien;
 create table mon_hoc(
 ma_mh varchar(20) primary key,
 ten_mh varchar(50));

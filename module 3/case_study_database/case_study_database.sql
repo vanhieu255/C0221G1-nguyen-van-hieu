@@ -27,6 +27,9 @@ values (1,"nguyen van hung",1,1,1,"2000-1-18",123456789,6000000,"0984257141","ng
 (5,"nguyen van ngan",3,3,3,"2000-1-19",213456789,8000000,"0948257141","nguyenvanngan@gmai.com","quang tri "),
 (6,"nguyen thi trang",1,2,2,"2000-7-18",125436789,6000000,"9084257141","nguyenvanhung@gmai.com","da nang");
 
+select * from nhan_vien
+where (ho_ten like "n%") and length(ho_ten)>15;
+
 
 
 
@@ -37,9 +40,16 @@ primary key(`id_vi_tri`));
 select *
 from vi_tri; 
 insert into vi_tri
-values (1,"trong"),
-(2,"trong"),
-(3,"ngoai");
+values (1,"le tan"),
+(2,"phuc vu"),
+(3,"chuyen vien");
+
+insert into vi_tri
+values (4,"giam sat"),
+(5,"quan li"),
+(6,"giam doc");
+
+
 
 
 
@@ -52,8 +62,7 @@ insert into trinh_do
 values (1,"dai hoc"),
 (2,"cao dang"),
 (3,"trung cap"),
-(4,"dai hoc");
-
+(4,"sau dai hoc");
 
 create table `case_study`.`bo_phan`(
 id_bo_phan int not null,
@@ -64,8 +73,9 @@ insert into bo_phan
 values (1,"quan li"),
 (2,"hanh chinh"),
 (3,"phuc vu"),
-(4,"le tan"),
-(5,"bep");
+(4,"sale-marketing");
+
+
 
 
 create table `case_study`.`hop_dong`(
@@ -134,12 +144,36 @@ dia_chi varchar(45),
 primary key (`id_khach_hang`)
 );
 alter table khach_hang add foreign key(id_loai_khach) references loai_khach(id_loai_khach);
+select *from khach_hang;
+insert into khach_hang
+values (1,1,"nguyen van ba","2000-9-18","159874526","0901472583","nguyenvana@gmail.com","da nang"),
+(2,2,"nguyen van hung","2000-7-18","159874256","0910472583","nguyenvanhung@gmail.com","da nang"),
+(3,1,"nguyen van dien","2000-9-18","195874526","0901888583","nguyenvandien@gmail.com","quang tri"),
+(4,1,"nguyen thi thanh huyen","1999-4-26","846274526","0157482583","nguyenthithanhhuyen@gmail.com","hue"),
+(5,1,"huynh ba huy","1995-4-29","159887461","0245272583","huynhbahuy@gmail.com","quang tri"),
+(6,3,"nguyen van cuong","1994-9-18","478154526","0082172583","nguyenvancuong@gmail.com","da nang"),
+(7,1,"tran thi mai","2000-9-18","159874526","0901472583","tranthimai@gmail.com","da nang"),
+(8,4,"nguyen van ti","2000-2-18","159871426","0901472583","nguyenvana@gmail.com","quang tri");
+
+select*
+from khach_hang
+where dia_chi in("da nang","quang tri") and (year(CURDATE())-year(ngay_sinh))>=18 and (year(CURDATE())-year(ngay_sinh))<=50;
 
 
 create table `case_study`.`loai_khach`(
 id_loai_khach int not null,
 ten_loai_khach varchar(45),
 primary key(`id_loai_khach`));
+
+insert into loai_khach
+values (1,"Diamond"),
+(2,"Platinium"),
+(3,"Gold"),
+(4,"Silver"),
+(5,"Member");
+select *
+from loai_khach;
+
 
 create table `case_study`.`kieu_thue`(
 id_kieu_thue int not null,
