@@ -96,6 +96,15 @@ values (1,1,1,1,"2000-12-1","2001-12-1",1000000,15000000),
 (4,2,1,1,"2003-12-1","2004-12-1",1000000,15000000),
 (5,2,1,2,"2004-12-1","2005-12-1",1000000,15000000);
 
+insert into hop_dong
+values (6,2,1,1,"2019-1-1","2020-1-1",1000000,15000000),
+(7,1,1,6,"2019-2-1","2020-1-1",8000000,15000000),
+(8,1,1,7,"2019-3-1","2020-1-1",8000000,15000000),
+(9,1,2,7,"2019-4-1","2020-1-1",8000000,15000000),
+(10,1,1,8,"2019-3-1","2020-1-1",8000000,15000000),
+(11,1,1,9,"2019-4-1","2020-1-1",8000000,15000000);
+
+
 
 
 create table `case_study`.`hop_dong_chi_tiet`(
@@ -161,7 +170,10 @@ values (1,"thue villa",300,2,2,7000000,1,1,"open"),
 (4,"thue villa",400,2,2,7500000,1,2,"close"),
 (5,"thue house",150,2,2,5500000,1,1,"open"),
 (6,"thue villa",600,3,2,10000000,2,3,"open"),
-(7,"thue room",200,2,2,8000000,3,3,"open");
+(7,"thue room",200,2,2,8000000,3,3,"open"),
+(8,"thue room",200,2,2,8000000,3,4,"open"),
+ (9,"thue villa",200,2,2,10000000,3,4,"open");
+
 
 
 
@@ -240,20 +252,27 @@ insert into loai_dich_vu
 values (1,"normal"),
 (2,"vip"),
 (3,"vvip");
+insert into loai_dich_vu
+values (4,"pro");
 
 
 
--- task2--
+-- task2 :2.Hiển thị thông tin của tất cả nhân viên có trong hệ thống có tên bắt đầu là một trong các ký tự “H”, “T” hoặc “K” 
+-- và có tối đa 15 ký tự.--
+
 select * from nhan_vien
-where (ho_ten like "n%") and length(ho_ten)>15;
+where (ho_ten like "h%" or "k%" or "t%") and length(ho_ten)>15;
 
+-- task3 :Hiển thị thông tin của tất cả khách hàng có độ tuổi từ 18 đến 50 tuổi và có địa chỉ ở “Đà Nẵng” hoặc “Quảng Trị”. --
 
--- task3--
 select*
 from khach_hang
 where dia_chi in("da nang","quang tri") and (year(CURDATE())-year(ngay_sinh))>=18 and (year(CURDATE())-year(ngay_sinh))<=50;
 
--- task4--
+-- task4 :4.	Đếm xem tương ứng với mỗi khách hàng đã từng đặt phòng bao nhiêu lần.
+-- Kết quả hiển thị được sắp xếp tăng dần theo số lần đặt phòng của khách hàng.
+-- Chỉ đếm những khách hàng nào có Tên loại khách hàng là “Diamond”.--
+
 select khach_hang.id_khach_hang,khach_hang.ho_ten,hop_dong.ngay_lam_hop_dong, count(hop_dong.id_hop_dong)
 from khach_hang
 inner join hop_dong on khach_hang.id_khach_hang= hop_dong.id_khach_hang
@@ -262,7 +281,9 @@ inner join loai_khach on khach_hang.id_loai_khach= loai_khach.id_loai_khach
 where loai_khach.ten_loai_khach="Diamond"
 group by khach_hang.id_khach_hang;
 
--- task5--
+-- task5 :Hiển thị IDKhachHang, HoTen, TenLoaiKhach, IDHopDong, TenDichVu, NgayLamHopDong, NgayKetThuc, TongTien
+ -- (Với TongTien được tính theo công thức như sau: ChiPhiThue + SoLuong*Gia, với SoLuong và Giá là từ bảng DichVuDiKem) 
+ -- cho tất cả các Khách hàng đã từng đặt phỏng. (Những Khách hàng nào chưa từng đặt phòng cũng phải hiển thị ra).--
 
 select khach_hang.id_khach_hang, khach_hang.ho_ten, loai_khach.ten_loai_khach, hop_dong.id_hop_dong,dich_vu.ten_dich_vu,hop_dong.ngay_lam_hop_dong,hop_dong.ngay_ket_thuc,(dich_vu.chi_phi_thue +dich_vu_di_kem.gia*dich_vu_di_kem.don_vi) as tontien
 from khach_hang
@@ -271,6 +292,38 @@ left join hop_dong on hop_dong.id_khach_hang=khach_hang.id_khach_hang
 left join 	dich_vu on dich_vu.id_dich_vu=hop_dong.id_dich_vu
 left join hop_dong_chi_tiet on hop_dong_chi_tiet.id_hop_dong=hop_dong.id_hop_dong
 left join dich_vu_di_kem on dich_vu_di_kem.id_dich_vu_di_kem=hop_dong_chi_tiet.id_dich_vu_di_kem
+group by khach_hang.id_khach_hang;
+
+-- task 6:Hiển thị IDDichVu, TenDichVu, DienTich, ChiPhiThue, TenLoaiDichVu
+-- của tất cả các loại Dịch vụ chưa từng được Khách hàng thực hiện đặt từ quý 1 của năm 2019 (Quý 1 là tháng 1, 2, 3).--
+
+select dich_vu.id_dich_vu,dich_vu.ten_dich_vu,dich_vu.dien_tich,dich_vu.chi_phi_thue,loai_dich_vu.ten_loai_dich_vu,hop_dong.ngay_lam_hop_dong
+from dich_vu
+inner join hop_dong on dich_vu.id_dich_vu =hop_dong.id_dich_vu
+inner join khach_hang on khach_hang.id_khach_hang= hop_dong.id_khach_hang
+inner join loai_dich_vu on loai_dich_vu.id_loai_dich_vu = dich_vu.id_loai_dich_vu
+where   year(hop_dong.ngay_lam_hop_dong)="2019" and month(hop_dong.ngay_lam_hop_dong) in (1,2,3);
+
+
+-- task7 :Hiển thị thông tin IDDichVu, TenDichVu, DienTich, SoNguoiToiDa, ChiPhiThue, TenLoaiDichVu 
+-- của tất cả các loại dịch vụ đã từng được Khách hàng đặt phòng trong năm 2018 
+-- nhưng chưa từng được Khách hàng đặt phòng  trong năm 2019.
+
+select dich_vu.id_dich_vu,dich_vu.ten_dich_vu,dich_vu.dien_tich,dich_vu.so_nguoi_toi_da,dich_vu.chi_phi_thue,loai_dich_vu.ten_loai_dich_vu,hop_dong.ngay_lam_hop_dong
+from dich_vu
+inner join hop_dong on dich_vu.id_dich_vu =hop_dong.id_dich_vu
+inner join khach_hang on khach_hang.id_khach_hang= hop_dong.id_khach_hang
+inner join loai_dich_vu on loai_dich_vu.id_loai_dich_vu = dich_vu.id_loai_dich_vu
+where   year(hop_dong.ngay_lam_hop_dong)="2000" ;
+
+
+-- task8 --
+select *
+from khach_hang
+group by khach_hang.ho_ten;
+
+
+
 
 
 
