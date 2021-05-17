@@ -7,10 +7,10 @@ from khach_hang
 join hop_dong on khach_hang.id_khach_hang=hop_dong.id_khach_hang
 join dich_vu on dich_vu.id_dich_vu=hop_dong.id_dich_vu
 join hop_dong_chi_tiet on hop_dong_chi_tiet.id_hop_dong=hop_dong.id_hop_dong
-where (year(hop_dong.ngay_lam_hop_dong) ="2019" and (month(hop_dong.ngay_lam_hop_dong) in (4)))
+where (year(hop_dong.ngay_lam_hop_dong) ="2019" and (month(hop_dong.ngay_lam_hop_dong) in (10,11,12)))
 and  dich_vu.ten_dich_vu  not in(select dich_vu.ten_dich_vu 
 from khach_hang 
 join hop_dong on khach_hang.id_khach_hang=hop_dong.id_khach_hang
 join dich_vu on dich_vu.id_dich_vu=hop_dong.id_dich_vu
 join hop_dong_chi_tiet on hop_dong_chi_tiet.id_hop_dong=hop_dong.id_hop_dong
-where (year(hop_dong.ngay_lam_hop_dong) ="2019" and (month(hop_dong.ngay_lam_hop_dong) in (1,2,3))));
+where (year(hop_dong.ngay_lam_hop_dong) ="2019" and (month(hop_dong.ngay_lam_hop_dong) in (1,2,3,4,5,6))));

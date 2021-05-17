@@ -9,4 +9,4 @@ left join hop_dong on hop_dong.id_khach_hang=khach_hang.id_khach_hang
 left join 	dich_vu on dich_vu.id_dich_vu=hop_dong.id_dich_vu
 left join hop_dong_chi_tiet on hop_dong_chi_tiet.id_hop_dong=hop_dong.id_hop_dong
 left join dich_vu_di_kem on dich_vu_di_kem.id_dich_vu_di_kem=hop_dong_chi_tiet.id_dich_vu_di_kem
-group by khach_hang.id_khach_hang,hop_dong.id_hop_dong,tongtien;
+group by khach_hang.id_khach_hang,hop_dong.id_hop_dong;
