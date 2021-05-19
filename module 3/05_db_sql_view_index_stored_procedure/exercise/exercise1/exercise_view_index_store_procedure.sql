@@ -81,15 +81,21 @@ select * from products;
 
 -- Tạo store procedure sửa thông tin sản phẩm theo id -- 
 delimiter //
-create procedure update_info_product( p_id int,p_name varchar(45))
+create procedure update_info_product(p_id int,p_code varchar(45),p_name varchar(45),p_price int,p_amount int,p_descri varchar(45),p_bit bit)
 begin
 update products
-set product_Name=p_name
+set 
+	id=p_id,
+    product_Code=p_code,
+	product_Name=p_name,
+    product_Price=p_price,
+    product_Amount=p_amount,
+    product_Description=p_descri,
+    product_Status=p_bit
 where id=p_id;
 end ; //
 delimiter ;
-
-call update_info_product(4,"BMW 300");
+call update_info_product(5,"K00","BMW 300",8000000,3,"den",1);
 select * from products;
 
 -- Tạo store procedure xoá sản phẩm theo id

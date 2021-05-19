@@ -9,3 +9,5 @@ inner join hop_dong on nhan_vien.id_nhan_vien=hop_dong.id_nhan_vien
 group by nhan_vien.id_nhan_vien
 having  hop_dong.ngay_lam_hop_dong="2000-12-1" and count(hop_dong.ngay_lam_hop_dong)>=1 and nhan_vien.dia_chi="da nang");
 
+
+

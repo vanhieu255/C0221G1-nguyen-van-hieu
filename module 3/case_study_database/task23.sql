@@ -10,3 +10,5 @@ begin
 delimiter ;
 call Sp_1(6);
 select * from khach_hang;
+
+
