@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            background: #282923;
+        }
+        *{
+            text-decoration: none;
+            list-style-type:none ;
+            margin: 0px;
+            padding: 0px;
+            color: white;
+            font-family: Arial;
+        }
+        .nav{
+            background: black;
+            display: flex;
+            height: 4em;
+            line-height: 4em;
+            justify-content: space-between;
+        }
+        .logo{
+            font-size: 2em;
+            padding-left:2em;
+        }
+        .menu{
+            display: flex;
+            flex-direction: row;
+        }
+        .menu li{
+            padding-right:2.5em ;
+            font-size: 17px;
+        }
+        .menu li a:hover{
+            color: #e32879;
+            transition :color 2s ;
+
+        }
+        .menu_down{
+            background: black;
+            width: 180px;
+            height: 10em ;
+            line-height: 3em;
+            margin: 0px auto;
+            position: absolute;
+            top:60px;
+            right: 69px;
+            display: none;
+            /*canh chỉ ra giữa bằng margin o auto*/
+        }
+        .menu_down li{
+            text-align: center;
+            padding: 0px;
+
+        }
+        .menu_down li a :hover{
+            color: orange;
+        }
+        .menu .menu_link:hover .menu_down{
+            display: block;
+
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div class="nav">
+    <a href="#" class="logo">Hazze</a>
+    <ul class="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Blog</a></li>
+        <li class="menu_link">
+            <a href="#"> About</a>
+            <ul class="menu_down">
+                <li><a href="#">menu1</a></li>
+                <li><a href="#">menu2</a></li>
+                <li><a href="#">menu3</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</div>
+</body>
+</html>

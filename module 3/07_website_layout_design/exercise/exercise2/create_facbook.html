@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #header{
+            margin: 0px;
+            padding: 0px;
+            border: 1px solid grey;
+            height: 50px;
+            width: 100%;
+            position: fixed;
+
+        }
+        #nav{
+            margin: 0px;
+            padding: 0px;
+            border: 1px solid blue;
+            height: 50px;
+            width: 100%;
+        }
+        #main{
+            margin: 0px;
+            padding: 0px;
+            border: 1px solid green;
+            height: 400px;
+            width: 100%;
+            position: relative;
+        }
+        #sidebar-left{
+            margin: 1px;
+            padding: 0px;
+            border: 1px solid orange;
+            height: 396px;
+            width: 20%;
+            float: left;
+        }
+        #sidebar-right{
+            margin: 1px;
+            padding: 0px;
+            border: 1px solid pink;
+            height: 396px;
+            width: 17%;
+            float: left;
+            position: absolute;
+            right: 0px;
+
+        }
+        #content{
+            margin: 1px;
+            padding: 0px;
+            border: 1px solid yellow;
+            height: 396px;
+            width: 60%;
+            float: left;
+        }
+        #footer {
+            margin: 1px;
+            padding: 0px;
+            border: 1px solid red;
+            height: 50px;
+            width: 100%;
+            clear: both;
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="header"></div>
+<div id="nav"></div>
+<div id="main">
+    <div id="sidebar-left"></div>
+    <div id="content"></div>
+    <div id="sidebar-right"></div>
+</div>
+<div id="footer"></div>
+
+</body>
+</html>

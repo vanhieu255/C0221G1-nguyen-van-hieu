@@ -1,0 +1,21 @@
+#header{
+    height: 100px;
+    width: 100%;
+}
+#main{
+    background: green;
+    height: 300px;
+    width: 70%;
+    float: left;
+}#sidebar{
+    background: black;
+    height:300px ;
+    width: 30%;
+    float: left;
+ }
+ #footer{
+     background: red;
+     height: 100px;
+     width: 100%;
+     clear: both;
+ }
