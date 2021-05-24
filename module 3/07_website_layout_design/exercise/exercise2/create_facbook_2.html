@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .row::after{
+            content: "";
+            clear: both;
+            display: table;
+        }
+        [class*="col-"]{
+            float: left;
+            padding: 15px;
+        }
+        .col-1 {width: 8.33%;}
+        .col-2 {width: 16.66%;}
+        .col-3 {width: 25%;}
+
+        .col-4 {width: 33.33%;}
+        .col-5 {width: 41.66%;}
+        .col-6 {width: 50%;}
+        .col-7 {width: 58.33%;}
+        .col-8 {width: 66.66%;}
+        .col-9 {width: 75%;}
+        .col-10 {width: 83.33%;}
+        .col-11 {width: 91.66%;}
+        .col-12 {width: 100%;}
+        .header{
+
+            margin: 0px;
+            padding: 0px;
+            border: 1px solid gray;
+            height: 50px;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            background: mediumblue;
+        }
+        .header img{
+            height: 50px;
+            width: 10%;
+        }
+        .header a{
+            margin: 0px;
+            padding: 0px;
+            text-align: left;
+            color: white;
+        }
+
+
+        .header i {
+            font-size: 50px;
+            margin: auto;
+
+        }
+        .header input{
+            width:200px;
+            height: 30px;
+            line-height: 50px;
+            position: absolute;
+            top :9px;
+            left: 155px;
+            border-radius: 20px;
+        }
+
+        .sidebar-left{
+            margin-top: 0px;
+            padding: 0px;
+            height: 850px;
+            list-style: none;
+            display: flex;
+            flex-direction:column ;
+            background: wheat;
+        }
+        .sidebar-left img{
+            height: 50px;
+            width: 50px;
+            border-radius: 100%;
+        }
+        .sidebar-left a{
+            height: 50px;
+            width: 100%;
+            color: royalblue;
+        }
+        .sidebar-left i{
+            font-size: 50px;
+        }
+        .sidebar-left li{
+            list-style: none;
+        }
+        .sidebar-left1{
+            display: flex;
+        }
+        .sidebar-left2 ul,li{
+            margin: 0px;
+            padding: 0px;
+        }
+        .sidebar-left3{
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar-right{
+            background: wheat;
+            height: 850px;
+            margin: auto;
+        }
+        .sidebar-right img{
+            width: 100%;
+        }
+        .content{
+            height: 850px;
+        }
+
+
+    </style>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+<div class="row">
+    <div class="header col-12">
+        <img src="facebook_logo.png" alt="">
+        <input type="text" placeholder="search">
+        <ul></ul>
+        <a href="#"><i class=" material-icons">account_box</i></a>
+        <a href="#"><i class=" material-icons">camera_alt</i></a>
+        <a href="#"><i class=" material-icons">chat_bubble</i></a>
+        <a href="#"><i class=" material-icons">create_new_folder</i></a>
+        <a href="#"><i class=" material-icons">font_download</i></a>
+
+    </div>
+    <div class="sidebar-left col-2">
+        <div class="sidebar-left1">
+            <img src="hieu.jpg" alt="">
+            <h5>Hiếu Nguyễn Văn</h5>
+        </div>
+       <div class="sidebar-left2">
+           <ul>
+               <li><a href="#"><i class=" material-icons">account_box</i></a></li>
+               <li><a href="#"><i class=" material-icons">camera_alt</i></a></li>
+               <li><a href="#"><i class=" material-icons">chat_bubble</i></a></li>
+               <li><a href="#"><i class=" material-icons">create_new_folder</i></a></li>
+               <li><a href="#"><i class=" material-icons">font_download</i></a></li>
+           </ul>
+       </div>
+        <div class="sidebar-left3">
+            <p style="color: gray">Lối tắt của bạn</p>
+            <a href="#">CGDM_kênh trung tâm</a>
+            <a href="#">Codegym đà nẵng confesion</a>
+            <a href="#">Vui Chơi</a>
+            <a href="#">Liên minh huyền thoai</a>
+            <a href="#">Đấu trường chân lí</a>
+            <a href="#">highlight</a>
+        </div>
+
+
+
+
+    </div>
+    <div class="content col-8">
+        <iframe width="300" height="150" src="https://www.youtube.com/embed/BsyMUEvQXA4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="300" height="150" src="https://www.youtube.com/embed/pbQFB07hD9c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="300" height="150" src="https://www.youtube.com/embed/ltporh7sG18" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="300" height="150" src="https://www.youtube.com/embed/wTRah8756-o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="300" height="150" src="https://www.youtube.com/embed/wTRah8756-o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="700" height="150" src="https://www.youtube.com/embed/htFmraLvI30" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <h1>doremon nước nhật thời nguyên thủy lồng tiếng</h1>
+        Doraemon (Nhật: ドラえもん?) là một series manga của Nhật Bản do Fujiko Fujio sáng tác từ tháng 12 năm 1969 đến tháng 4 năm 1996 đăng trên tạp chí CoroCoro Comic của nhà xuất bản Shogakukan. Có tổng cộng 1345 chương truyện được tuyển chọn đóng gói đưa vào 45 tập tankōbon dưới ấn hiệu Tentōmushi Comics cũng do Shogakukan xuất bản; manga đã được dịch và xuất bản bằng nhiều ngôn ngữ trên thế giới bao gồm cả tiếng Việt của Nhà xuất bản Kim Đồng.
+    </div>
+    <div class="sidebar-right col-2">
+        <img src="logoquangcao.jpg" alt="">
+        <img src="ric-win-logo-1.png" alt="">
+        <img src="bay-club-logo.png" alt="">
+        <img src="x8-club-logo.png" alt="">
+    </div>
+</div>
+</body>
+</html>
