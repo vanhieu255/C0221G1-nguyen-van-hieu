@@ -4,78 +4,125 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        #header{
-            margin: 0px;
-            padding: 0px;
-            border: 1px solid grey;
-            height: 50px;
-            width: 100%;
-            position: fixed;
+        *{
+            box-sizing: border-box;
+        }
+        .main::after{
+            content: "";
+            clear: both;
+            display: table;
+        }
+        [class*="col-"]{
+            float: left;
+            padding: 15px;
+        }
+        .col-1 {width: 8.33%;}
+        .col-2 {width: 16.66%;}
+        .col-3 {width: 25%;}
 
-        }
-        #nav{
+        .col-4 {width: 33.33%;}
+        .col-5 {width: 41.66%;}
+        .col-6 {width: 50%;}
+        .col-7 {width: 58.33%;}
+        .col-8 {width: 66.66%;}
+        .col-9 {width: 75%;}
+        .col-10 {width: 83.33%;}
+        .col-11 {width: 91.66%;}
+        .col-12 {width: 100%;}
+
+        .header {
             margin: 0px;
             padding: 0px;
-            border: 1px solid blue;
-            height: 50px;
+            height: 150px;
+        }
+        .header img{
+            height: 150px;
             width: 100%;
         }
-        #main{
+
+        .sidebar{
             margin: 0px;
             padding: 0px;
-            border: 1px solid green;
-            height: 400px;
-            width: 100%;
+            text-align: center;
+            height: 600px;
             position: relative;
         }
-        #sidebar-left{
-            margin: 1px;
-            padding: 0px;
-            border: 1px solid orange;
-            height: 396px;
-            width: 20%;
-            float: left;
+        .sidebar h1{
+            color: cornflowerblue;
+            margin: 0px;
+            padding-right: 113px;
+            font-size: 50px;
         }
-        #sidebar-right{
-            margin: 1px;
-            padding: 0px;
-            border: 1px solid pink;
-            height: 396px;
-            width: 17%;
-            float: left;
+        .sidebar #p1{
+            margin: 0px;
+            padding-right: 33px;
+            font-weight: bold;
+            font-size: 30px;
+        }
+        .sidebar #p2{
+            margin: 0px;
+            padding:0px;
+            color: gray;
+        }
+        .sidebar img{
+            margin: 20px;
             position: absolute;
-            right: 0px;
+            width: 40%;
+            left: 220px;
+        }
+        .sidebar h3{
+            margin: 0px;
+            background-color: rgba(1,1,1,0.5);
+            height: 40px;
+            width: 40%;
+            color: white;
+            text-align:center;
+            position:absolute;
+            bottom: 170px;
+            left: 240px;
+        }
+        .content a {
+            padding-left: 150px;
+        }
 
-        }
-        #content{
-            margin: 1px;
-            padding: 0px;
-            border: 1px solid yellow;
-            height: 396px;
-            width: 60%;
-            float: left;
-        }
-        #footer {
-            margin: 1px;
-            padding: 0px;
-            border: 1px solid red;
-            height: 50px;
-            width: 100%;
-            clear: both;
-        }
+
 
 
     </style>
 </head>
 <body>
-<div id="header"></div>
-<div id="nav"></div>
-<div id="main">
-    <div id="sidebar-left"></div>
-    <div id="content"></div>
-    <div id="sidebar-right"></div>
+<div class="header col-12" >
+    <img src="facbook.jpg" alt="">
 </div>
-<div id="footer"></div>
+<div class="main">
+    <div class="sidebar col-6">
+        <h1>facbook</h1>
+        <p id="p1">Đăng nhập gần đây</p>
+        <p id="p2">Nhấp vào ảnh của bạn hoặc thêm tào khoản</p>
+        <a href="#"><img src="hieu.jpg" alt=""></a>
+        <h3>hiếu</h3>
+    </div>
+    <div class="content col-6">
+        <form action="">
+            <input type="number" style="width: 400px" placeholder="Email hoặc số điện thoại">
+            <br>
+            <br>
+            <input type="password" style="width: 400px" placeholder="Mật khẩu">
+            <br>
+            <br>
+            <input type="button" value="Đăng Nhập" style="width: 400px">
+            <br>
+            <br>
+            <a href="#" style="width: 100px">Quên mật khẩu?</a>
+            <br>
+            <br>
+            <input type="button" value="tạo tài khoản mới" style="width: 400px">
+        </form>
+
+    </div>
+
+</div>
+
 
 </body>
 </html>
