@@ -34,38 +34,68 @@
             margin: 0px;
             padding: 0px;
             border: 1px solid gray;
-            height: 50px;
-            position: relative;
+            height: 60px;
+            position: fixed;
             display: flex;
             justify-content: space-between;
-            background: mediumblue;
+            background: gray;
+
+
+
         }
-        .header img{
-            height: 50px;
-            width: 10%;
-        }
-        .header a{
+        .header1{
             margin: 0px;
             padding: 0px;
-            text-align: left;
+            height:60px ;
+            position: relative;
+            line-height: 50px;
+
+        }
+        .header1 img{
+            height: 50px;
+            width: 20%;
+            line-height: 40px;
+        }
+        .header1 input{
+            width:200px;
+            height: 20px;
+            line-height: 50px;
+            position: absolute;
+            top :15px;
+            left:100px;
+            border-radius: 20px;
+        }
+        .header2{
+            padding: 0px;
+            margin: 0px;
+            display: flex;
+            justify-content: space-between;
+
+        }
+        .header2 a{
+           margin: auto;
+            padding: 0px;
+            color: white;
+
+        }
+        .header3 {
+            padding: 0;
+           margin: 0px;
+            display: flex;
+            justify-content: flex-end;
+
+        }
+        .header3 a{
+            margin: 0px;
+            padding: 0px;
             color: white;
         }
-
-
         .header i {
             font-size: 50px;
             margin: auto;
 
         }
-        .header input{
-            width:200px;
-            height: 30px;
-            line-height: 50px;
-            position: absolute;
-            top :9px;
-            left: 155px;
-            border-radius: 20px;
-        }
+
 
         .sidebar-left{
             margin-top: 0px;
@@ -84,7 +114,7 @@
         .sidebar-left a{
             height: 50px;
             width: 100%;
-            color: royalblue;
+            color: black;
         }
         .sidebar-left i{
             font-size: 50px;
@@ -108,8 +138,9 @@
             height: 850px;
             margin: auto;
         }
-        .sidebar-right img{
-            width: 100%;
+        .sidebar-right a{
+            display: flex;
+            flex-direction: column;
         }
         .content{
             height: 850px;
@@ -122,17 +153,26 @@
 <body>
 <div class="row">
     <div class="header col-12">
-        <img src="facebook_logo.png" alt="">
-        <input type="text" placeholder="search">
-        <ul></ul>
-        <a href="#"><i class=" material-icons">account_box</i></a>
-        <a href="#"><i class=" material-icons">camera_alt</i></a>
-        <a href="#"><i class=" material-icons">chat_bubble</i></a>
-        <a href="#"><i class=" material-icons">create_new_folder</i></a>
-        <a href="#"><i class=" material-icons">font_download</i></a>
+        <div class="col-3 header1">
+            <img src="facebook_logo.png" alt="">
+            <input type="text" placeholder="search">
+        </div>
+        <div class="col-6 header2">
+            <a href="#"><i class=" material-icons">account_box</i></a>
+            <a href="#"><i class=" material-icons">camera_alt</i></a>
+            <a href="#"><i class=" material-icons">chat_bubble</i></a>
+            <a href="#"><i class=" material-icons">create_new_folder</i></a>
+            <a href="#"><i class=" material-icons">font_download</i></a>
+        </div>
+        <div class="col-3 header3">
+            <a href="#"><i class=" material-icons">account_box</i></a>
+            <a href="#"><i class=" material-icons">camera_alt</i></a>
+            <a href="#"><i class=" material-icons">chat_bubble</i></a>
+        </div>
+
 
     </div>
-    <div class="sidebar-left col-2">
+    <div class="sidebar-left col-3">
         <div class="sidebar-left1">
             <img src="hieu.jpg" alt="">
             <h5>Hiếu Nguyễn Văn</h5>
@@ -160,21 +200,16 @@
 
 
     </div>
-    <div class="content col-8">
-        <iframe width="300" height="150" src="https://www.youtube.com/embed/BsyMUEvQXA4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <iframe width="300" height="150" src="https://www.youtube.com/embed/pbQFB07hD9c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <iframe width="300" height="150" src="https://www.youtube.com/embed/ltporh7sG18" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <iframe width="300" height="150" src="https://www.youtube.com/embed/wTRah8756-o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <iframe width="300" height="150" src="https://www.youtube.com/embed/wTRah8756-o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <iframe width="700" height="150" src="https://www.youtube.com/embed/htFmraLvI30" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <h1>doremon nước nhật thời nguyên thủy lồng tiếng</h1>
-        Doraemon (Nhật: ドラえもん?) là một series manga của Nhật Bản do Fujiko Fujio sáng tác từ tháng 12 năm 1969 đến tháng 4 năm 1996 đăng trên tạp chí CoroCoro Comic của nhà xuất bản Shogakukan. Có tổng cộng 1345 chương truyện được tuyển chọn đóng gói đưa vào 45 tập tankōbon dưới ấn hiệu Tentōmushi Comics cũng do Shogakukan xuất bản; manga đã được dịch và xuất bản bằng nhiều ngôn ngữ trên thế giới bao gồm cả tiếng Việt của Nhà xuất bản Kim Đồng.
+    <div class="content col-6">
+        <img src="hinh-anh-nguoi-mau.jpg" alt="">
+
     </div>
-    <div class="sidebar-right col-2">
-        <img src="logoquangcao.jpg" alt="">
-        <img src="ric-win-logo-1.png" alt="">
-        <img src="bay-club-logo.png" alt="">
-        <img src="x8-club-logo.png" alt="">
+    <div class="sidebar-right col-3">
+        <p style="color: gray">bạn bè</p>
+        <a href="#">quảng cáo</a>
+        <a href="#">tin nhắn</a>
+        <a href="#">game</a>
+
     </div>
 </div>
 </body>
