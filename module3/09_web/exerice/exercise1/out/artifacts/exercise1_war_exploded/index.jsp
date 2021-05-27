@@ -20,5 +20,6 @@
     <input type = "submit" id = "submit" value = "Calculate Discount"/>
   </form>
 
+
   </body>
 </html>

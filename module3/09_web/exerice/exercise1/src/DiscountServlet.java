@@ -1,3 +1,4 @@
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,14 +16,20 @@ public class DiscountServlet extends HttpServlet {
 
         float discountAmount = (float) (listPrice * discountPercent* 0.01);
         float discountPrice =listPrice -discountAmount;
-        PrintWriter writer = response.getWriter();
-        writer.println("<html>");
-        writer.println("<h1>productDescription: " + productDescription + "</h1>");
-        writer.println("<h1>List Price: " + listPrice+ "</h1>");
-        writer.println("<h1>Discount Percent: " + discountPercent + "</h1>");
-        writer.println("<h1>discountAmount: " + discountAmount+ "</h1>");
-        writer.println("<h1>discountPrice: " + discountPrice + "</h1>");
-        writer.println("</html>");
+
+//        PrintWriter writer = response.getWriter();
+        request.setAttribute("DiscountAmount",discountAmount);
+        request.setAttribute("DiscountPrice",discountPrice);
+        RequestDispatcher requestDispatcher=request.getRequestDispatcher("index2.jsp");
+        requestDispatcher.forward(request,response);
+
+//        writer.println("<html>");
+//        writer.println("<h1>productDescription: " + productDescription + "</h1>");
+//        writer.println("<h1>List Price: " + listPrice+ "</h1>");
+//        writer.println("<h1>Discount Percent: " + discountPercent + "</h1>");
+//        writer.println("<h1>discountAmount: " + discountAmount+ "</h1>");
+//        writer.println("<h1>discountPrice: " + discountPrice + "</h1>");
+//        writer.println("</html>");
 
 
 
