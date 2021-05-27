@@ -6,22 +6,19 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Title</title>
 </head>
 <body>
-<%
-    String productDescription=request.getParameter("Product Description");
-    float listPrice=Float.parseFloat(request.getParameter("List Price"));
-    float discountPercent=Float.parseFloat(request.getParameter("Discount Percent"));
-    float discountAmount= (float) request.getAttribute("DiscountAmount");
-    float discountPrice= (float) request.getAttribute("DiscountPrice");
-%>
-<h3>Product Description: <%=productDescription%></h3>
-<h3>List Price: <%=listPrice%></h3>
-<h3>Discount Percent :<%=discountPercent%></h3>
-<h3>Discount Amount :<%=discountAmount%> </h3>
-<h3>Discount Price :<%=discountPrice%></h3>
+
+<h3>Product Description: <c:out value="${ProductDescription}"></c:out></h3>
+<h3>List Price: <c:out value="${ListPrice}"></c:out></h3>
+<h3>Discount Percent: <c:out value="${DiscountPercent}"></c:out></h3>
+<h3>Discount Amount: <c:out value="${DiscountAmount}"></c:out></h3>
+<h3>Discount Price: <c:out value="${DiscountPrice}"></c:out></h3>
+
+
 </body>
 </html>

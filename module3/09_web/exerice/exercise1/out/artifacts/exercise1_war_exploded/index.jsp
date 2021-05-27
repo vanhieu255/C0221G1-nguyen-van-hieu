@@ -9,7 +9,6 @@
 <html>
   <head>
     <title>Product Discount Calculator</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
   <body>
   <h2>Product Discount Calculator</h2>
