@@ -17,8 +17,8 @@
    <p>First operand:</p>
     <input type="text" name="number1">
       <p>Operator</p>
-    <select name="operator" id="operator">
-        <option value="add" name="=add">Addition</option>
+    <select name="operator">
+        <option value="add" name="add" >Addition</option>
         <option value="sub" name="sub">Subtraction</option>
         <option value="mul" name="mul">Multiplication</option>
         <option value="div" name="div">Division</option>
