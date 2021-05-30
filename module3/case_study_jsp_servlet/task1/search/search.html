@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+<body>
+
+
+<div class="col-sm-12">
+        <h5 class="card-title"><i class="fa fa-fw fa-search"></i> User</h5>
+    <form method="get">
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label> Name</label>
+                    <input type="text" name="username" id="username" class="form-control"  >
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label> Email</label>
+                    <input type="email" name="useremail" id="useremail" class="form-control" >
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label>Phone</label>
+                    <input type="tel" class="tel form-control" name="userphone" id="userphone" >
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label>Date</label>
+                    <div class="input-group">
+                        <input type="text" class="fromDate form-control" name="df" id="df" placeholder="dd">
+                        <div class="input-group-prepend"><span class="input-group-text">-</span></div>
+                        <input type="text" class="toDate form-control" name="dt" id="dt"  placeholder="mm">
+                        <div class="input-group-prepend"><span class="input-group-text">-</span></div>
+                        <input type="text" class="toDate form-control" name="dt" id="dh"  placeholder="yyyy">
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label> </label>
+                    <div>
+                        <button type="submit" name="submit" value="search" id="submit" class="btn btn-primary"><i class="fa fa-fw fa-search"></i> Search</button>
+                        <a href="" class="btn btn-danger"><i class="fa fa-fw fa-sync"></i> Clear</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

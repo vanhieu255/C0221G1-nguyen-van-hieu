@@ -13,10 +13,10 @@
 </head>
 <body>
 <h1>Product</h1>
-<form action="">
-    <input type="text" placeholder="Input Name" name="">
-    <input type="button" value="Search">
+<form  method="post" action="/product?action=search">
+    <input type="text" name="key"  ><input type="submit"value="Search">
 </form>
+<br>
 <p>
     <a href="/product?action=create">Create new product</a>
 </p>

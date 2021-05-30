@@ -24,10 +24,10 @@
     <fieldset>
         <legend>Product information</legend>
         <table>
-            <tr>
-                <td>Id: </td>
-                <td><input type="text" name="id" id="id" value="${requestScope["product"].getId()}"></td>
-            </tr>
+<%--            <tr>--%>
+<%--                <td>Id: </td>--%>
+<%--                <td><input type="text" name="id" id="id" value="${requestScope["product"].getId()}"></td>--%>
+<%--            </tr>--%>
             <tr>
                 <td>ProductName: </td>
                 <td><input type="text" name="productName" id="productNam" value="${requestScope["product"].getProductName()}"></td>

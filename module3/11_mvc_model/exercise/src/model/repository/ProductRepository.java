@@ -12,16 +12,18 @@ public class ProductRepository {
 
     static {
         products = new HashMap<>();
-        products.put(1, new Product(1, "iphoneX", 500,"blue", "iphone"));
-        products.put(2, new Product(2, "samsungA5", 600,"green", "samsung"));
-        products.put(3, new Product(3, "xaome", 700,"white", "xaome"));
-        products.put(4, new Product(4, "oppo", 800,"black", "oppo"));
-        products.put(5, new Product(5, "nokia", 300,"yellow", "nokia"));
+        products.put(1, new Product(1, "iphoneX", 500, "blue", "iphone"));
+        products.put(2, new Product(2, "samsungA5", 600, "green", "samsung"));
+        products.put(3, new Product(3, "xaome", 700, "white", "xaome"));
+        products.put(4, new Product(4, "oppo", 800, "black", "oppo"));
+        products.put(5, new Product(5, "nokia", 300, "yellow", "nokia"));
     }
+
     public List<Product> findByAll() {
 
         return new ArrayList<>(products.values());
     }
+
     public void save(Product product) {
         products.put(product.getId(), product);
     }
@@ -41,4 +43,14 @@ public class ProductRepository {
         products.remove(id);
     }
 
+
+    public List<Product> findByName(String name) {
+        List<Product> list = new ArrayList<>();
+        for (Product product : products.values()) {
+            if (product.getProductName().contains(name)) {
+                list.add(product);
+            }
+        }
+        return list;
+    }
 }
