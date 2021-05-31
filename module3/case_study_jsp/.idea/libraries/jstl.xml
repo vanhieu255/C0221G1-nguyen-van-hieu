@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="jstl">
+    <CLASSES>
+      <root url="file://E:/ly_thuyet/jstl" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://E:/ly_thuyet/jstl" recursive="false" />
+  </library>
+</component>

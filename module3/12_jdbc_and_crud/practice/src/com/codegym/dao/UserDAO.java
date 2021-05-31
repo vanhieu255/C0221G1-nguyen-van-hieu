@@ -8,8 +8,8 @@ import java.util.List;
 
 public class UserDAO implements IUserDAO {
     private String jdbcURL = "jdbc:mysql://localhost:3306/demo?useSSL=false";
-    private String jdbcUsername = "root";
-    private String jdbcPassword = "123456";
+    private String jdbcUsername ="root";
+    private String jdbcPassword ="12345678";
 
     private static final String INSERT_USERS_SQL = "INSERT INTO users" + "  (name, email, country) VALUES " +
             " (?, ?, ?);";
@@ -18,6 +18,7 @@ public class UserDAO implements IUserDAO {
     private static final String SELECT_ALL_USERS = "select * from users";
     private static final String DELETE_USERS_SQL = "delete from users where id = ?;";
     private static final String UPDATE_USERS_SQL = "update users set name = ?,email= ?, country =? where id = ?;";
+
 
     public UserDAO() {
     }
@@ -101,6 +102,8 @@ public class UserDAO implements IUserDAO {
         }
         return users;
     }
+
+
 
     public boolean deleteUser(int id) throws SQLException {
         boolean rowDeleted;
