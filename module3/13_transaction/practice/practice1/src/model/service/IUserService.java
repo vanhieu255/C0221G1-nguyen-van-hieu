@@ -21,4 +21,5 @@ public interface IUserService {
     User getUserById(int id);
 
     void insertUserStore(User user) throws SQLException;
+
 }
