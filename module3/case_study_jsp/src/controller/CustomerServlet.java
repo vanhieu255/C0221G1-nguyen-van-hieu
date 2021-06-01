@@ -113,7 +113,7 @@ public class CustomerServlet extends HttpServlet {
             dispatcher = request.getRequestDispatcher("error-404.jsp");
         } else {
             request.setAttribute("customer", customer);
-            dispatcher = request.getRequestDispatcher("view/view.jsp");
+            dispatcher = request.getRequestDispatcher("view.jsp");
         }
         try {
             dispatcher.forward(request, response);
@@ -132,7 +132,7 @@ public class CustomerServlet extends HttpServlet {
             dispatcher = request.getRequestDispatcher("error-404.jsp");
         } else {
             request.setAttribute("customer", customer);
-            dispatcher = request.getRequestDispatcher("view/delete.jsp");
+            dispatcher = request.getRequestDispatcher("delete.jsp");
         }
         try {
             dispatcher.forward(request, response);
@@ -152,7 +152,7 @@ public class CustomerServlet extends HttpServlet {
             dispatcher = request.getRequestDispatcher("error-404.jsp");
         } else {
             request.setAttribute("customer", customer);
-            dispatcher = request.getRequestDispatcher("view/edit.jsp");
+            dispatcher = request.getRequestDispatcher("edit.jsp");
         }
         try {
             dispatcher.forward(request, response);
@@ -171,7 +171,7 @@ public class CustomerServlet extends HttpServlet {
 
         Customer customer = new Customer(id, name, email, address);
         this.customerService.save(customer);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("view/create.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("create.jsp");
         request.setAttribute("message", "New customer was created");
         try {
             dispatcher.forward(request, response);
@@ -183,7 +183,7 @@ public class CustomerServlet extends HttpServlet {
     }
 
     private void showCreateForm(HttpServletRequest request, HttpServletResponse response) {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("view/create.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("create.jsp");
         try {
             dispatcher.forward(request, response);
         } catch (ServletException e) {
@@ -197,7 +197,7 @@ public class CustomerServlet extends HttpServlet {
         List<Customer> customers = this.customerService.findAll();
         request.setAttribute("customers", customers);
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("view/list.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("list.jsp");
         try {
             dispatcher.forward(request, response);
         } catch (ServletException e) {
