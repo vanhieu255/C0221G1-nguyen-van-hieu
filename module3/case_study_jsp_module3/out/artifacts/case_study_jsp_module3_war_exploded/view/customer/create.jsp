@@ -28,50 +28,84 @@
         <div class="col-md-3"></div>
         <div class="col-md-6">
             <h1>Add Customer</h1>
-            <form action="">
+            <form action="" method="post">
                 <div class="mb-3 row">
-                    <label class="col-md-2 col-form-label">Name</label>
+                    <label class="col-md-2 col-form-label">IdKhachHang</label>
                     <div class="col-md-10">
-                        <input type="text" class="form-control" >
+                        <input type="text" class="form-control " name="idkhachhang" >
                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <label class="col-md-2 col-form-label">Date</label>
-                    <div class="col-md-4">
-                        <div class="input-group">
-                            <input type="text" class="fromDate form-control"  placeholder="dd">
-                            <div class="input-group-prepend"><span class="input-group-text">-</span></div>
-                            <input type="text" class="toDate form-control" placeholder="mm">
-                            <div class="input-group-prepend"><span class="input-group-text">-</span></div>
-                            <input type="text" class="toDate form-control"  placeholder="yyyy">
-                        </div>
+                    <label class="col-md-2 col-form-label">IdLoaiKhach</label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control " name="idloaikhach" >
                     </div>
+                </div>
+                <div class="mb-3 row">
+                    <label class="col-md-2 col-form-label">HoTen</label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control " name="hoten" >
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label class="col-md-2 col-form-label">NgaySinh</label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control" name="ngaysinh" >
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label class="col-md-2 col-form-label ">SoCmnd</label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control " name="socmnd" >
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label class="col-md-2 col-form-label ">SDT</label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control" name="sdt" >
+                    </div>
+                </div>
 
-                </div>
                 <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label">Address</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" >
+                    <label class="col-md-2 col-form-label">Email</label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control " name="email" >
                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label">Email</label>
-                    <div class="col-sm-10">
-                        <div class="input-group">
-                            <div class="input-group-prepend "><span class="input-group-text">@</span></div>
-                            <input type="text" class="form-control " >
-                        </div>
+                    <label class="col-md-2 col-form-label ">DiaChi</label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control" name="diachi" >
                     </div>
                 </div>
+
+
+
+
+
+
+
+<%--                <div class="mb-3 row">--%>
+<%--                    <label class="col-md-2 col-form-label">Date</label>--%>
+<%--                    <div class="col-md-4">--%>
+<%--                        <div class="input-group">--%>
+<%--                            <input type="text" class="fromDate form-control"  placeholder="dd">--%>
+<%--                            <div class="input-group-prepend"><span class="input-group-text">-</span></div>--%>
+<%--                            <input type="text" class="toDate form-control" placeholder="mm">--%>
+<%--                            <div class="input-group-prepend"><span class="input-group-text">-</span></div>--%>
+<%--                            <input type="text" class="toDate form-control"  placeholder="yyyy">--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+
+<%--                </div>--%>
+
                 <div class="mb-3 row">
-                    <label class="col-sm-2 col-form-label">Phone</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" >
-                    </div>
-                </div>
-                <div class="mb-3 row">
-                    <div class="col-md-12">
-                        <button id="btn-save" name="btn-save" class="btn btn-success">Save</button>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-10 d-flex justify-content-between">
+<%--                        <button id="btn-save" name="btn-save" class="btn btn-success">Save</button>--%>
+                        <input type="submit" class="btn btn-success" value="Save">
+                        <a href="/customers" class="btn btn-success">Back to list Customer</a>
+
                     </div>
                 </div>
 

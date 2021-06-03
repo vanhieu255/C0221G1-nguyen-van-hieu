@@ -1,34 +1,76 @@
 package model.bean;
 
 public class Customer {
-    private int id;
-    private String name;
+    private int idKhachHang;
+    private int idLoaiKhach;
+    private String hoTen;
+    private String ngaySinh;
+    private String soCmnd;
+    private String sdt;
     private String email;
-    private String address;
+    private String diaChi;
+
+
     public Customer() {
     }
 
-    public Customer(int id, String name, String email, String address) {
-        this.id = id;
-        this.name = name;
+    public Customer(int idKhachHang, int idLoaiKhach, String hoTen, String ngaySinh, String soCmnd, String sdt, String email, String diaChi) {
+        this.idKhachHang = idKhachHang;
+        this.idLoaiKhach = idLoaiKhach;
+        this.hoTen = hoTen;
+        this.ngaySinh = ngaySinh;
+        this.soCmnd = soCmnd;
+        this.sdt = sdt;
         this.email = email;
-        this.address = address;
+        this.diaChi = diaChi;
     }
 
-    public int getId() {
-        return id;
+    public int getIdKhachHang() {
+        return idKhachHang;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdKhachHang(int idKhachHang) {
+        this.idKhachHang = idKhachHang;
     }
 
-    public String getName() {
-        return name;
+    public int getIdLoaiKhach() {
+        return idLoaiKhach;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setIdLoaiKhach(int idLoaiKhach) {
+        this.idLoaiKhach = idLoaiKhach;
+    }
+
+    public String getHoTen() {
+        return hoTen;
+    }
+
+    public void setHoTen(String hoTen) {
+        this.hoTen = hoTen;
+    }
+
+    public String getNgaySinh() {
+        return ngaySinh;
+    }
+
+    public void setNgaySinh(String ngaySinh) {
+        this.ngaySinh = ngaySinh;
+    }
+
+    public String getSoCmnd() {
+        return soCmnd;
+    }
+
+    public void setSoCmnd(String soCmnd) {
+        this.soCmnd = soCmnd;
+    }
+
+    public String getSdt() {
+        return sdt;
+    }
+
+    public void setSdt(String sdt) {
+        this.sdt = sdt;
     }
 
     public String getEmail() {
@@ -39,11 +81,11 @@ public class Customer {
         this.email = email;
     }
 
-    public String getAddress() {
-        return address;
+    public String getDiaChi() {
+        return diaChi;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setDiaChi(String diaChi) {
+        this.diaChi = diaChi;
     }
 }
