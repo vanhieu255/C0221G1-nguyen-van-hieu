@@ -64,13 +64,13 @@
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Employee</a>
+              <a class="nav-link" href="/employees">Employee</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/customers">Customer</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="">Service</a>
+              <a class="nav-link" href="/services">Service</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Contract</a>

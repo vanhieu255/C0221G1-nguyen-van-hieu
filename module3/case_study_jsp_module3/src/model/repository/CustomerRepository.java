@@ -13,7 +13,11 @@ import java.util.Map;
 
 public class CustomerRepository {
     BaseRepository baseRepository=new BaseRepository();
-    private static final String SELECT_ALL_CUSTOMER = "select * from khach_hang";
+//    private static final String SELECT_ALL_CUSTOMER = "select * from khach_hang";
+    private static final String SELECT_ALL_CUSTOMER = "  select id_khach_hang,ten_loai_khach,ho_ten,ngay_sinh,so_cmnd,sdt,email,dia_chi\n" +
+        "    from khach_hang\n" +
+        "    join loai_khach on khach_hang.id_loai_khach=loai_khach.id_loai_khach";
+
     private static final String INSERT_CUSTOMER = "INSERT INTO khach_hang" +
             "  (id_khach_hang,id_loai_khach, ho_ten,ngay_sinh,so_cmnd,sdt,email,dia_chi) VALUES " +
             " (?, ?, ?,?,?,?,?,?);";
@@ -36,14 +40,14 @@ public class CustomerRepository {
             // Step 4: Process the ResultSet object.
             while (rs.next()) {
                 int idKhachHang = rs.getInt("id_khach_hang");
-                int idLoaiKhach = rs.getInt("id_loai_khach");
+                String tenLoaiKhach = rs.getString("ten_loai_khach");
                 String hoTen=rs.getString("ho_ten");
                 String ngaySinh= rs.getString("ngay_sinh");
                 String soCmnd = rs.getString("so_cmnd");
                 String sdt = rs.getString("sdt");
                 String email = rs.getString("email");
                 String diaChi = rs.getString("dia_chi");
-                customer.add(new Customer(idKhachHang,idLoaiKhach,hoTen,ngaySinh,soCmnd,sdt,email,diaChi));
+                customer.add(new Customer(idKhachHang,tenLoaiKhach,hoTen,ngaySinh,soCmnd,sdt,email,diaChi));
             }
         } catch (SQLException e) {
             e.printStackTrace();

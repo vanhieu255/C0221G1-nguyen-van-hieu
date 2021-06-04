@@ -7,9 +7,10 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<link rel="stylesheet" href="bootstrap/bootstrap-5.0.1-dist/css/bootstrap.min.css">
-<script src="bootstrap/bootstrap-5.0.1-dist/js/bootstrap.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="assert/bootstrap/bootstrap-5.0.1-dist/css/bootstrap.min.css">
+<script src="assert/bootstrap/bootstrap-5.0.1-dist/js/bootstrap.min.js"></script>
+<%--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>--%>
+<link rel="stylesheet" href="assert/datatables/css/dataTables.bootstrap4.min.css">
 <html>
 <head>
     <title>Title</title>
@@ -32,10 +33,11 @@
                     </form>
                 </div>
             </nav>
-            <table border="1" class="table table-success table-striped">
+            <table  class="table table-success table-striped table-bordered" id="tableCustomer" >
+                <thead>
                 <tr>
                     <td>IdKhachHang</td>
-                    <td>IdLoaiKhach</td>
+                    <td>TenLoaiKhach</td>
                     <td>HoTen</td>
                     <td>NgaySinh</td>
                     <td>SoCMND</td>
@@ -45,11 +47,13 @@
                     <td>Edit</td>
                     <td>Delete</td>
                 </tr>
+                </thead>
+                <tbody>
                 <c:forEach var="customer" items="${customers}"  >
                     <tr>
 <%--                        <td><a href="/customers?action=view&id=${customer.getId()}">${customer.getName()}</a></td>--%>
                         <td>${customer.idKhachHang}</td>
-                        <td>${customer.idLoaiKhach}</td>
+                        <td>${customer.tenLoaiKhach}</td>
                         <td>${customer.hoTen}</td>
                         <td>${customer.ngaySinh}</td>
                         <td>${customer.soCmnd}</td>
@@ -63,6 +67,7 @@
                         </button></td>
                     </tr>
                 </c:forEach>
+                </tbody>
             </table>
             <!-- Button trigger modal -->
 <%--            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">--%>
@@ -99,9 +104,25 @@
             </script>
 
 
+            <script src="assert/jquery/jquery-3.5.1.min.js"></script>
+            <script src="assert/datatables/js/jquery.dataTables.min.js"></script>
+            <script src="assert/datatables/js/dataTables.bootstrap4.min.js"></script>
+
+
+            <script>
+                $(document).ready(function () {
+                    $('#tableCustomer').dataTable({
+                        "dom":"lrtip",
+                        "lengthChange":false,
+                        "pageLength":5
+                    });
+
+                });
+            </script>
         </div>
     </div>
 </div>
+
 
 
 </body>
