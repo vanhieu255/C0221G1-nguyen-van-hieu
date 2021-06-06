@@ -1,7 +1,6 @@
 package model.repository;
 
-import model.bean.Customer;
-import model.bean.Employee;
+import model.bean.*;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,11 +11,10 @@ import java.util.List;
 
 public class EmployeeRepository {
     BaseRepository baseRepository=new BaseRepository();
-    private static final String SELECT_ALL_EMPLOYEE = "select id_nhan_vien,ho_ten,ten_vi_tri,trinhdo,ten_bo_phan,ngay_sinh,so_cmnd,luong,sdt,email,dia_chi\n" +
-            "from nhan_vien\n" +
-            "join vi_tri on nhan_vien.id_vi_tri=vi_tri.id_vi_tri\n" +
-            "join trinh_do on nhan_vien.id_trinh_do=trinh_do.id_trinh_do\n" +
-            "join bo_phan on nhan_vien.id_bo_phan=bo_phan.id_bo_phan;";
+    private static final String SELECT_ALL_EMPLOYEE = "select *from nhan_vien";
+    private final String SELECT_ALL_EMPLOYEE_POSITION = "select * from vi_tri";
+    private final String SELECT_ALL_EMPLOYEE_EDUCATION = "select * from trinh_do";
+    private final String SELECT_ALL_CUSTOMER_DIVISION = "select * from bo_phan";
     private static final String INSERT_EMPLOYEE = "INSERT INTO nhan_vien" +
             "  (id_nhan_vien,ho_ten,id_vi_tri,id_trinh_do,id_bo_phan,ngay_sinh,so_cmnd,luong,sdt,email,dia_chi) VALUES " +
             " (?, ?, ?,?,?,?,?,?,?,?,?);";
@@ -44,16 +42,16 @@ public class EmployeeRepository {
             while (rs.next()) {
                 int idNhanVien = rs.getInt("id_nhan_vien");
                 String hoTen = rs.getString("ho_ten");
-                String tenViTri = rs.getString("ten_vi_tri");
-                String tenTrinhDo = rs.getString("trinhdo");
-                String tenBoPhan = rs.getString("ten_bo_phan");
+                int idViTri = rs.getInt("id_vi_tri");
+                int idTrinhDo = rs.getInt("id_trinh_do");
+                int idBoPhan = rs.getInt("id_bo_phan");
                 String ngaySinh=rs.getString("ngay_sinh");
                 String soCmnd= rs.getString("so_cmnd");
                 String luong= rs.getString("luong");
                 String sdt = rs.getString("sdt");
                 String email = rs.getString("email");
                 String diaChi = rs.getString("dia_chi");
-                employee.add(new Employee(idNhanVien,hoTen,tenViTri,tenTrinhDo,tenBoPhan,ngaySinh,soCmnd,luong,sdt,email,diaChi));
+                employee.add(new Employee(idNhanVien,hoTen,idViTri,idTrinhDo,idBoPhan,ngaySinh,soCmnd,luong,sdt,email,diaChi));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -189,6 +187,54 @@ public class EmployeeRepository {
             rowDeleted = statement.executeUpdate() > 0;
         }
         return rowDeleted;
+    }
+    public List<EmployeePosition> findAllEmployeePosition() {
+        List<EmployeePosition> employeePositions = new ArrayList<>();
+        try {
+            Connection connection = baseRepository.connectDataBase();
+            PreparedStatement statement = connection.prepareStatement(SELECT_ALL_EMPLOYEE_POSITION);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                int idViTri = resultSet.getInt("id_vi_tri");
+                String tenViTri = resultSet.getString("ten_vi_tri");
+                employeePositions.add(new EmployeePosition(idViTri,tenViTri));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return employeePositions;
+    }
+    public List<EmployeeEducation> findAllEmployeeEducation() {
+        List<EmployeeEducation> employeeEducations = new ArrayList<>();
+        try {
+            Connection connection = baseRepository.connectDataBase();
+            PreparedStatement statement = connection.prepareStatement(SELECT_ALL_EMPLOYEE_EDUCATION);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                int idTrinhDo = resultSet.getInt("id_trinh_do");
+                String trinhDo = resultSet.getString("trinhdo");
+                employeeEducations.add(new EmployeeEducation(idTrinhDo,trinhDo));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return employeeEducations;
+    }
+    public List<EmployeeDivision> findAllEmployeeDivision() {
+        List<EmployeeDivision> employeeDivisions = new ArrayList<>();
+        try {
+            Connection connection = baseRepository.connectDataBase();
+            PreparedStatement statement = connection.prepareStatement(SELECT_ALL_CUSTOMER_DIVISION);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                int idBoPhan = resultSet.getInt("id_bo_phan");
+                String tenBoPhan= resultSet.getString("ten_bo_phan");
+                employeeDivisions.add(new EmployeeDivision(idBoPhan,tenBoPhan));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return employeeDivisions;
     }
 
 

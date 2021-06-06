@@ -39,9 +39,9 @@
                 <tr>
                     <td>IdNhanVien</td>
                     <td>HoTen</td>
-                    <td>TenViTri</td>
-                    <td>TenTrinhDo</td>
-                    <td>TenBoPhan</td>
+                    <td>IdViTri</td>
+                    <td>IdTrinhDo</td>
+                    <td>IdBoPhan</td>
                     <td>NgaySinh</td>
                     <td>SoCMND</td>
                     <td>Luong</td>
@@ -58,9 +58,24 @@
                             <%--                        <td><a href="/customers?action=view&id=${customer.getId()}">${customer.getName()}</a></td>--%>
                         <td>${employee.idNhanVien}</td>
                         <td>${employee.hoTen}</td>
-                                <td>${employee.tenViTri}</td>
-                                <td>${employee.tenTrinhdo}</td>
-                                <td>${employee.tenBoPhan}</td>
+<%--                                <td>${employee.tenViTri}</td>--%>
+<%--                                <td>${employee.tenTrinhdo}</td>--%>
+<%--                                <td>${employee.tenBoPhan}</td>--%>
+                                <c:forEach var="position" items="${employeePositions}">
+                                    <c:if test="${position.idViTri == employee.idViTri}">
+                                        <td>${position.tenViTri}</td>
+                                    </c:if>
+                                </c:forEach>
+                                <c:forEach var="education" items="${employeeEducations}">
+                                    <c:if test="${education.idTrinhDo == employee.idTrinhDo}">
+                                        <td>${education.trinhDo}</td>
+                                    </c:if>
+                                </c:forEach>
+                                <c:forEach var="division" items="${employeeDivisions}">
+                                    <c:if test="${division.idBoPhan == employee.idBoPhan}">
+                                        <td>${division.tenBoPhan}</td>
+                                    </c:if>
+                                </c:forEach>
                         <td>${employee.ngaySinh}</td>
                         <td>${employee.soCmnd}</td>
                         <td>${employee.luong}</td>

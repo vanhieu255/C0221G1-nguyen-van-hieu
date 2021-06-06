@@ -1,15 +1,17 @@
 package model.service;
 
 
-import model.bean.Service;
+import model.bean.*;
 
 import java.sql.SQLException;
 import java.util.List;
 
 public interface ServiceService {
     List<Service> findAll();
+    public  List<ServiceType> findAllServiceType();
+    public  List<ServiceTypeRent> findAllServiceTypeRent();
 
-//    void save(Customer customer) throws SQLException;
+    void save(Service service) throws SQLException;
 //
 //    List<Customer> selectCustomerByName(String name);
 //

@@ -1,7 +1,6 @@
 package controller;
 
-import model.bean.Customer;
-import model.bean.Employee;
+import model.bean.*;
 import model.service.CustomerService;
 import model.service.CustomerServiceImpl;
 import model.service.EmployeeService;
@@ -20,6 +19,9 @@ import java.util.List;
     @WebServlet(name = "EmployeeServlet", urlPatterns ={"/employees"})
 public class EmployeeServlet extends HttpServlet {
     private EmployeeService employeeService = new EmployeeServiceImpl();
+        private List<EmployeePosition> employeePositions = employeeService.findAllEmployeePosition();
+        private List<EmployeeEducation> employeeEducations = employeeService.findAllEmployeeEducation();
+        private List<EmployeeDivision> employeeDivisions= employeeService.findAllEmployeeDivision();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
@@ -141,16 +143,21 @@ public class EmployeeServlet extends HttpServlet {
         private void deleteEmployees(HttpServletRequest request, HttpServletResponse response) throws SQLException {
             int id = Integer.parseInt(request.getParameter("id"));
             employeeService.deleteEmployee(id);
-            List<Employee> employeeList = employeeService.findAll();
-            request.setAttribute("employees", employeeList);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("view/employee/list.jsp");
             try {
-                dispatcher.forward(request, response);
-            } catch (ServletException e) {
-                e.printStackTrace();
+                response.sendRedirect("/employees");
             } catch (IOException e) {
                 e.printStackTrace();
             }
+//            List<Employee> employeeList = employeeService.findAll();
+//            request.setAttribute("employees", employeeList);
+//            RequestDispatcher dispatcher = request.getRequestDispatcher("view/employee/list.jsp");
+//            try {
+//                dispatcher.forward(request, response);
+//            } catch (ServletException e) {
+//                e.printStackTrace();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
         }
 
         private void showEditForm(HttpServletRequest request, HttpServletResponse response) {
@@ -158,6 +165,9 @@ public class EmployeeServlet extends HttpServlet {
            Employee existingEmployee= employeeService.selectEmployee(id);
             RequestDispatcher dispatcher = request.getRequestDispatcher("view/employee/edit.jsp");
             request.setAttribute("employee", existingEmployee);
+            request.setAttribute("employeePositions",employeePositions);
+            request.setAttribute("employeeEducations",employeeEducations);
+            request.setAttribute("employeeDivisions",employeeDivisions);
             try {
                 dispatcher.forward(request, response);
             } catch (ServletException e) {
@@ -169,6 +179,9 @@ public class EmployeeServlet extends HttpServlet {
 
         private void showCreateForm(HttpServletRequest request, HttpServletResponse response) {
             RequestDispatcher dispatcher = request.getRequestDispatcher("view/employee/create.jsp");
+            request.setAttribute("employeePositions",employeePositions);
+            request.setAttribute("employeeEducations",employeeEducations);
+            request.setAttribute("employeeDivisions",employeeDivisions);
             try {
                 dispatcher.forward(request, response);
             } catch (ServletException e) {
@@ -181,6 +194,9 @@ public class EmployeeServlet extends HttpServlet {
         private void listEmployee(HttpServletRequest request, HttpServletResponse response) {
         List<Employee> employees = this.employeeService.findAll();
         request.setAttribute("employees", employees);
+        request.setAttribute("employeePositions",employeePositions);
+        request.setAttribute("employeeEducations",employeeEducations);
+        request.setAttribute("employeeDivisions",employeeDivisions);
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/employee/list.jsp");
         try {

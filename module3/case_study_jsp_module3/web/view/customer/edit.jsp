@@ -10,8 +10,8 @@
 <html>
 <head>
     <title>Title</title>
-    <link rel="stylesheet" href="bootstrap/bootstrap-5.0.1-dist/css/bootstrap.min.css">
-    <script src="bootstrap/bootstrap-5.0.1-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="assert/bootstrap/bootstrap-5.0.1-dist/css/bootstrap.min.css">
+    <script src="assert/bootstrap/bootstrap-5.0.1-dist/js/bootstrap.min.js"></script>
     <style>
         .col-md-6{
             padding: 0px;
@@ -33,7 +33,7 @@
                     <label class="col-md-2 col-form-label">IdKhachHang</label>
                     <div class="col-md-10">
                         <c:if test="${customer != null}">
-                        <input type="hidden" class="form-control " name="idkhachhang" value="<c:out value='${customer.idKhachHang}' />" >
+                        <input type="hidden" class="form-control " name="idKhachHang" value="<c:out value='${customer.idKhachHang}' />" >
                         </c:if>
                     </div>
                 </div>
@@ -41,21 +41,37 @@
                     <label class="col-md-2 col-form-label">IdLoaiKhach</label>
                     <div class="col-md-10">
 
-                        <input type="text" class="form-control " name="idloaikhach" value="<c:out value='${customer.idLoaiKhach}' />">
+<%--                        <input type="text" class="form-control " name="idLoaiKhach" value="<c:out value='${customer.idLoaiKhach}' />">--%>
+                        <select name="idLoaiKhach" class="form-control" >
+                            <c:forEach var="type" items="${customerTypes}">
+                                <option value="${type.idLoaiKhach}">${type.tenLoaiKhach}</option>
+                            </c:forEach>
+                        </select>
 
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-md-2 col-form-label">HoTen</label>
                     <div class="col-md-10">
-                            <input type="text" class="form-control " name="hoten" value="<c:out value='${customer.hoTen}' />">
+                            <input type="text" class="form-control " name="hoTen" value="<c:out value='${customer.hoTen}' />">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label class="col-md-2 col-form-label">GioiTinh</label>
+                    <div class="col-md-10">
+<%--                        <input type="text" class="form-control " name="hoten" value="<c:out value='${customer.hoTen}' />">--%>
+                             <select name="gioiTinh" class="form-control">
+                                    <option value="nam" ${customer.gioiTinh=="nam" ?"selected":""}>nam</option>
+                                 <option value="nu" ${customer.gioiTinh=="nu" ?"selected":""}>nu</option>
+
+                             </select>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-md-2 col-form-label">NgaySinh</label>
                     <div class="col-md-10">
 
-                            <input type="text" class="form-control " name="ngaysinh" value="<c:out value='${customer.ngaySinh}' />">
+                            <input type="text" class="form-control " name="ngaySinh" value="<c:out value='${customer.ngaySinh}' />">
 
                     </div>
                 </div>
@@ -63,7 +79,7 @@
                     <label class="col-md-2 col-form-label ">SoCmnd</label>
                     <div class="col-md-10">
 
-                            <input type="text" class="form-control "name="socmnd" value="<c:out value='${customer.soCmnd}' />">
+                            <input type="text" class="form-control "name="soCmnd" value="<c:out value='${customer.soCmnd}' />">
 
                     </div>
                 </div>
@@ -84,7 +100,7 @@
                 <div class="mb-3 row">
                     <label class="col-md-2 col-form-label ">DiaChi</label>
                     <div class="col-md-10">
-                        <input type="text" class="form-control "  name="diachi" value="<c:out value='${customer.diaChi}' />">
+                        <input type="text" class="form-control "  name="diaChi" value="<c:out value='${customer.diaChi}' />">
                     </div>
                 </div>
 

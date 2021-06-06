@@ -10,8 +10,8 @@
 <html>
 <head>
     <title>Title</title>
-    <link rel="stylesheet" href="bootstrap/bootstrap-5.0.1-dist/css/bootstrap.min.css">
-    <script src="bootstrap/bootstrap-5.0.1-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="assert/bootstrap/bootstrap-5.0.1-dist/css/bootstrap.min.css">
+    <script src="assert/bootstrap/bootstrap-5.0.1-dist/js/bootstrap.min.js"></script>
     <style>
         .col-md-6{
             padding: 0px;
@@ -32,31 +32,46 @@
                 <div class="mb-3 row">
                     <label class="col-md-2 col-form-label">IdKhachHang</label>
                     <div class="col-md-10">
-                        <input type="text" class="form-control " name="idkhachhang" >
+                        <input type="text" class="form-control " name="idKhachHang" >
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-md-2 col-form-label">IdLoaiKhach</label>
                     <div class="col-md-10">
-                        <input type="text" class="form-control " name="idloaikhach" >
+<%--                        <input type="text" class="form-control " name="idloaikhach" >--%>
+                     <select name="idLoaiKhach" class="form-control">
+                         <c:forEach var="type" items="${customerTypes}">
+                             <option value="${type.idLoaiKhach}">${type.tenLoaiKhach}</option>
+                         </c:forEach>
+
+                     </select>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-md-2 col-form-label">HoTen</label>
                     <div class="col-md-10">
-                        <input type="text" class="form-control " name="hoten" >
+                        <input type="text" class="form-control " name="hoTen" >
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label class="col-md-2 col-form-label">GioiTinh</label>
+                    <div class="col-md-10">
+                        <select name="gioiTinh" class="form-control">
+                            <option value="nam">nam</option>
+                            <option value="nu">nu</option>
+                        </select>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-md-2 col-form-label">NgaySinh</label>
                     <div class="col-md-10">
-                        <input type="text" class="form-control" name="ngaysinh" >
+                        <input type="text" class="form-control" name="ngaySinh" >
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-md-2 col-form-label ">SoCmnd</label>
                     <div class="col-md-10">
-                        <input type="text" class="form-control " name="socmnd" >
+                        <input type="text" class="form-control " name="soCmnd" >
                     </div>
                 </div>
                 <div class="mb-3 row">
@@ -75,7 +90,7 @@
                 <div class="mb-3 row">
                     <label class="col-md-2 col-form-label ">DiaChi</label>
                     <div class="col-md-10">
-                        <input type="text" class="form-control" name="diachi" >
+                        <input type="text" class="form-control" name="diaChi" >
                     </div>
                 </div>
 

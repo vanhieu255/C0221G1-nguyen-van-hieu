@@ -1,7 +1,6 @@
 package model.service;
 
-import model.bean.Customer;
-import model.bean.Employee;
+import model.bean.*;
 import model.repository.EmployeeRepository;
 
 import java.sql.SQLException;
@@ -37,5 +36,20 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public boolean deleteEmployee(int id) throws SQLException {
         return employeeRepository.deleteCustomer(id);
+    }
+
+    @Override
+    public List<EmployeePosition> findAllEmployeePosition() {
+        return employeeRepository.findAllEmployeePosition();
+    }
+
+    @Override
+    public List<EmployeeEducation> findAllEmployeeEducation() {
+        return employeeRepository.findAllEmployeeEducation();
+    }
+
+    @Override
+    public List<EmployeeDivision> findAllEmployeeDivision() {
+        return employeeRepository.findAllEmployeeDivision();
     }
 }

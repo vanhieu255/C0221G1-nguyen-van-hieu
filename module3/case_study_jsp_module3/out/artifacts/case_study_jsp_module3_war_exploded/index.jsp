@@ -38,8 +38,9 @@
       border: solid;
     }
   </style>
-  <link rel="stylesheet" href="bootstrap/bootstrap-5.0.1-dist/css/bootstrap.min.css">
-  <script src="bootstrap/bootstrap-5.0.1-dist/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/assert/bootstrap/bootstrap-5.0.1-dist/css/bootstrap.min.css">
+  <script src="/assert/bootstrap/bootstrap-5.0.1-dist/js/bootstrap.min.js"></script>
+
 
 
   <body>
@@ -47,7 +48,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-12 d-flex justify-content-between align-items-center" >
-          <img src="img/furuma2.png" alt="" class="img-fluid">
+          <img src="../img/furuma2.png" alt="" class="img-fluid">
           <h3>Nguyễn Văn Hiếu</h3>
         </div>
       </div>

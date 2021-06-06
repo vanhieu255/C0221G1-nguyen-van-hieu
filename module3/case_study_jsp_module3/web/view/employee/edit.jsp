@@ -10,8 +10,8 @@
 <html>
 <head>
     <title>Title</title>
-    <link rel="stylesheet" href="bootstrap/bootstrap-5.0.1-dist/css/bootstrap.min.css">
-    <script src="bootstrap/bootstrap-5.0.1-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="assert/bootstrap/bootstrap-5.0.1-dist/css/bootstrap.min.css">
+    <script src="assert/bootstrap/bootstrap-5.0.1-dist/js/bootstrap.min.js"></script>
     <style>
         .col-md-6{
             padding: 0px;
@@ -48,21 +48,33 @@
                     <label class="col-md-2 col-form-label">IdViTri</label>
                     <div class="col-md-10">
 
-                        <input type="text" class="form-control " name="idViTri" value="<c:out value='${employee.idViTri}' />">
+                        <select name="idViTri" class="form-control">
+                            <c:forEach var="position" items="${employeePositions}">
+                                <option value="${position.idViTri}">${position.tenViTri}</option>
+                            </c:forEach>
+                        </select>
 
                     </div>
                 </div><div class="mb-3 row">
                 <label class="col-md-2 col-form-label">IdTrinhDo</label>
                 <div class="col-md-10">
 
-                    <input type="text" class="form-control " name="idTrinhDo" value="<c:out value='${employee.idTrinhDo}' />">
+                    <select name="idTrinhDo" class="form-control">
+                        <c:forEach var="education" items="${employeeEducations}">
+                            <option value="${education.idTrinhDo}">${education.trinhDo}</option>
+                        </c:forEach>
+                    </select>
 
                 </div>
             </div><div class="mb-3 row">
                 <label class="col-md-2 col-form-label">IdBoPhan</label>
                 <div class="col-md-10">
 
-                    <input type="text" class="form-control " name="idBoPhan" value="<c:out value='${employee.idBoPhan}' />">
+                    <select name="idBoPhan" class="form-control">
+                        <c:forEach var="division" items="${employeeDivisions}">
+                            <option value="${division.idBoPhan}">${division.tenBoPhan}</option>
+                        </c:forEach>
+                    </select>
 
                 </div>
             </div>

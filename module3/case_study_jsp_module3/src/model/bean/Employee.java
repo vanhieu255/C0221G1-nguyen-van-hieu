@@ -9,7 +9,6 @@ public class Employee {
     private String tenViTri;
     private String tenTrinhdo;
     private String tenBoPhan;
-
     private String ngaySinh;
     private String soCmnd;
     private String luong;

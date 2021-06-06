@@ -5,16 +5,18 @@ public class Service {
     private String tenDichVu;
     private int dienTich;
     private int soTang;
-    private int soNguoiToiDa;
+    private String soNguoiToiDa;
     private String chiPhiThue;
     private int idKieuThue;
     private int idLoaiDichVu;
-    private String trangThai;
+    private String tieuChuanPhong;
+    private String tienNghiKhac;
+    private double dienTichHoBoi;
 
     public Service() {
     }
 
-    public Service(int idDichVu, String tenDichVu, int dienTich, int soTang, int soNguoiToiDa, String chiPhiThue, int idKieuThue, int idLoaiDichVu, String trangThai) {
+    public Service(int idDichVu, String tenDichVu, int dienTich, int soTang, String soNguoiToiDa, String chiPhiThue, int idKieuThue, int idLoaiDichVu, String tieuChuanPhong, String tienNghiKhac, double dienTichHoBoi) {
         this.idDichVu = idDichVu;
         this.tenDichVu = tenDichVu;
         this.dienTich = dienTich;
@@ -23,7 +25,9 @@ public class Service {
         this.chiPhiThue = chiPhiThue;
         this.idKieuThue = idKieuThue;
         this.idLoaiDichVu = idLoaiDichVu;
-        this.trangThai = trangThai;
+        this.tieuChuanPhong = tieuChuanPhong;
+        this.tienNghiKhac = tienNghiKhac;
+        this.dienTichHoBoi = dienTichHoBoi;
     }
 
     public int getIdDichVu() {
@@ -58,11 +62,11 @@ public class Service {
         this.soTang = soTang;
     }
 
-    public int getSoNguoiToiDa() {
+    public String getSoNguoiToiDa() {
         return soNguoiToiDa;
     }
 
-    public void setSoNguoiToiDa(int soNguoiToiDa) {
+    public void setSoNguoiToiDa(String soNguoiToiDa) {
         this.soNguoiToiDa = soNguoiToiDa;
     }
 
@@ -90,11 +94,27 @@ public class Service {
         this.idLoaiDichVu = idLoaiDichVu;
     }
 
-    public String getTrangThai() {
-        return trangThai;
+    public String getTieuChuanPhong() {
+        return tieuChuanPhong;
     }
 
-    public void setTrangThai(String trangThai) {
-        this.trangThai = trangThai;
+    public void setTieuChuanPhong(String tieuChuanPhong) {
+        this.tieuChuanPhong = tieuChuanPhong;
+    }
+
+    public String getTienNghiKhac() {
+        return tienNghiKhac;
+    }
+
+    public void setTienNghiKhac(String tienNghiKhac) {
+        this.tienNghiKhac = tienNghiKhac;
+    }
+
+    public double getDienTichHoBoi() {
+        return dienTichHoBoi;
+    }
+
+    public void setDienTichHoBoi(double dienTichHoBoi) {
+        this.dienTichHoBoi = dienTichHoBoi;
     }
 }

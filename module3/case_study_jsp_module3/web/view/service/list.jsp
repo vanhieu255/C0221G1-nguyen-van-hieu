@@ -16,11 +16,11 @@
     <link rel="stylesheet" href="assert/datatables/css/dataTables.bootstrap4.min.css">
 </head>
 <body>
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
             <div class="header text-center" >
-                <h1>Customers</h1>
+                <h1>Service</h1>
             </div>
 
             <nav class="navbar navbar-light bg-light">
@@ -44,7 +44,9 @@
                     <td>ChiPhiThue</td>
                     <td>IdKieuThue</td>
                     <td>IdLoaiDichVu</td>
-                    <td>TrangThai</td>
+                    <td>TieuChuanPhong</td>
+                    <td>TienNghiKhac</td>
+                    <td>DienTichHoBoi</td>
                     <td>Edit</td>
                     <td>Delete</td>
 
@@ -60,9 +62,20 @@
                         <td>${service.soTang}</td>
                         <td>${service.soNguoiToiDa}</td>
                         <td>${service.chiPhiThue}</td>
-                        <td>${service.idKieuThue}</td>
-                        <td>${service.idLoaiDichVu}</td>
-                        <td>${service.trangThai}</td>
+                                <c:forEach var="rentType" items="${serviceTypeRents}">
+                                    <c:if test="${rentType.idKieuThue == service.idKieuThue}">
+                                        <td>${rentType.tenKieuThue}</td>
+                                    </c:if>
+                                </c:forEach>
+
+                                <c:forEach var="type" items="${serviceTypes}">
+                                    <c:if test="${type.idLoaiDichVu == service.idLoaiDichVu}">
+                                        <td>${type.tenLoaiDichVu}</td>
+                                    </c:if>
+                                </c:forEach>
+                        <td>${service.tieuChuanPhong}</td>
+                        <td>${service.tienNghiKhac}</td>
+                        <td>${service.dienTichHoBoi}</td>
                         <td><a href="/services?action=edit&id=${service.idDichVu}" class="btn btn-success btn-sm">edit</a></td>
                             <%--                        <td><a href="/customers?action=delete&id=${customer.idKhachHang}" class="btn btn-danger btn-sm">delete</a></td>--%>
                         <td><button type="button" class="btn btn-danger btn-sm" onclick="sendDataToModal('${service.idDichVu}')"  data-bs-toggle="modal" data-bs-target="#exampleModal">
