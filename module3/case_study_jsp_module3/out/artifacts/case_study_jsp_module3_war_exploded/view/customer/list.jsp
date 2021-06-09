@@ -37,22 +37,24 @@
             <table class="table table-success table-striped table-bordered" id="tableCustomer">
                 <thead>
                 <tr>
-                    <td>IdKhachHang</td>
-                    <td>IdLoaiKhach</td>
-                    <td>HoTen</td>
-                    <td>GioiTinh</td>
-                    <td>NgaySinh</td>
-                    <td>SoCMND</td>
+                    <td>STT</td>
+                    <td>Id Khách Hàng</td>
+                    <td>Loại Khách</td>
+                    <td>Họ và Tên</td>
+                    <td>Giới Tính</td>
+                    <td>Ngày Sinh</td>
+                    <td>Số CMND</td>
                     <td>SDT</td>
                     <td>Email</td>
-                    <td>Dia Chi</td>
-                    <td>Edit</td>
-                    <td>Delete</td>
+                    <td>Đia Chỉ</td>
+                    <td>Sửa</td>
+                    <td>Xóa</td>
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach var="customer" items="${customers}">
+                <c:forEach var="customer" items="${customers}" varStatus="status">
                     <tr>
+                        <td><c:out value="${status.count}"></c:out></td>
                             <%--                        <td><a href="/customers?action=view&id=${customer.getId()}">${customer.getName()}</a></td>--%>
                         <td>${customer.idKhachHang}</td>
                             <%--                        <td>${customer.idLoaiKhach}</td>--%>
@@ -69,14 +71,14 @@
                         <td>${customer.sdt}</td>
                         <td>${customer.email}</td>
                         <td>${customer.diaChi}</td>
-                        <td><a href="/customers?action=edit&id=${customer.idKhachHang}" class="btn btn-success btn-sm">edit</a>
+                        <td><a href="/customers?action=edit&id=${customer.idKhachHang}" class="btn btn-success btn-sm">Sửa</a>
                         </td>
                             <%--                        <td><a href="/customers?action=delete&id=${customer.idKhachHang}" class="btn btn-danger btn-sm">delete</a></td>--%>
                         <td>
                             <button type="button" class="btn btn-danger btn-sm"
                                     onclick="sendDataToModal('${customer.idKhachHang}')" data-bs-toggle="modal"
                                     data-bs-target="#exampleModal">
-                                Delete
+                                Xóa
                             </button>
                         </td>
                     </tr>

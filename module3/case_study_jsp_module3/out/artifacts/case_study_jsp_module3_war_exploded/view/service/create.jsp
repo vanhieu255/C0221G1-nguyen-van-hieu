@@ -131,7 +131,7 @@
                     <div class="col-md-10 d-flex justify-content-between">
                         <%--                        <button id="btn-save" name="btn-save" class="btn btn-success">Save</button>--%>
                         <input type="submit" class="btn btn-success" value="Save">
-                        <a href="/customers" class="btn btn-success">Back to list Customer</a>
+                        <a href="/services" class="btn btn-success">Back to list service</a>
 
                     </div>
                 </div>

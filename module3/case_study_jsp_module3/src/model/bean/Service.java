@@ -16,6 +16,11 @@ public class Service {
     public Service() {
     }
 
+    public Service(int idDichVu, String tenDichVu) {
+        this.idDichVu = idDichVu;
+        this.tenDichVu = tenDichVu;
+    }
+
     public Service(int idDichVu, String tenDichVu, int dienTich, int soTang, String soNguoiToiDa, String chiPhiThue, int idKieuThue, int idLoaiDichVu, String tieuChuanPhong, String tienNghiKhac, double dienTichHoBoi) {
         this.idDichVu = idDichVu;
         this.tenDichVu = tenDichVu;

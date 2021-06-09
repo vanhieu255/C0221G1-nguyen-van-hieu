@@ -37,6 +37,11 @@ public class Employee {
     public Employee() {
     }
 
+    public Employee(int idNhanVien, String hoTen) {
+        this.idNhanVien = idNhanVien;
+        this.hoTen = hoTen;
+    }
+
     public String getTenBoPhan() {
         return tenBoPhan;
     }

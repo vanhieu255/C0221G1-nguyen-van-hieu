@@ -59,12 +59,13 @@ public class CustomerServlet extends HttpServlet {
         String ngaySinh = request.getParameter("ngaySinh");
         String soCmnd = request.getParameter("soCmnd");
         String sdt = request.getParameter("sdt");
-        String email = request.getParameter("sdt");
+        String email = request.getParameter("email");
         String diaChi = request.getParameter("diaChi");
 
         Customer book = new Customer(idKhachHang,idLoaiKhach,hoTen,gioiTinh, ngaySinh,soCmnd,sdt,email,diaChi);
         customerService.updateCutomer(book);
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/customer/edit.jsp");
+        request.setAttribute("message","Customer was Edited");
         dispatcher.forward(request, response);
     }
 
@@ -163,6 +164,7 @@ public class CustomerServlet extends HttpServlet {
         Customer newCustomer = new Customer(idKhachHang, idLoaiKhach, hoTen,gioiTinh,ngaySinh,soCmnd,sdt,email,diaChi);
                 customerService.save(newCustomer);
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/customer/create.jsp");
+        request.setAttribute("message","New customer was created");
         request.setAttribute("customerTypes",customerType);
         dispatcher.forward(request, response);
     }

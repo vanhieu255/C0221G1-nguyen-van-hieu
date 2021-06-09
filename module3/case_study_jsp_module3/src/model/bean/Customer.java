@@ -14,7 +14,12 @@ public class Customer {
 
     public Customer() {
     }
-//    public Customer(int idKhachHang, String tenLoaiKhach, String hoTen, String ngaySinh, String soCmnd, String sdt, String email, String diaChi) {
+
+    public Customer(int idKhachHang, String hoTen) {
+        this.idKhachHang = idKhachHang;
+        this.hoTen = hoTen;
+    }
+    //    public Customer(int idKhachHang, String tenLoaiKhach, String hoTen, String ngaySinh, String soCmnd, String sdt, String email, String diaChi) {
 //        this.idKhachHang = idKhachHang;
 //        this.tenLoaiKhach = tenLoaiKhach;
 //        this.hoTen = hoTen;
