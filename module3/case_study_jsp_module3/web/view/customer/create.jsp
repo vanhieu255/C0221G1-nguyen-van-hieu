@@ -239,7 +239,7 @@
 <%--tao bảng mới --%>
 
 <div class="signup-form">
-<%--    <form action="/examples/actions/confirmation.php" method="post">--%>
+
         <form action="" method="post">
         <h3>Add Customer </h3>
         <div class="form-group">

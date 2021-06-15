@@ -19,16 +19,6 @@ public class Customer {
         this.idKhachHang = idKhachHang;
         this.hoTen = hoTen;
     }
-    //    public Customer(int idKhachHang, String tenLoaiKhach, String hoTen, String ngaySinh, String soCmnd, String sdt, String email, String diaChi) {
-//        this.idKhachHang = idKhachHang;
-//        this.tenLoaiKhach = tenLoaiKhach;
-//        this.hoTen = hoTen;
-//        this.ngaySinh = ngaySinh;
-//        this.soCmnd = soCmnd;
-//        this.sdt = sdt;
-//        this.email = email;
-//        this.diaChi = diaChi;
-//    }
 
 
     public Customer(int idKhachHang, int idLoaiKhach, String hoTen, String gioiTinh, String ngaySinh, String soCmnd, String sdt, String email, String diaChi) {
