@@ -11,7 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-<form action="/Multiplication"method="post">
+<form action="/multiplication"method="post">
     <span>Input USD :</span>
     <input type="`text`" name="usd">
     <span>Input Rate : </span>

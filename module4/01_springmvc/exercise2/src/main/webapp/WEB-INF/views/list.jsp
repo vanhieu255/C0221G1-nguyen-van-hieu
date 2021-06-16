@@ -12,7 +12,7 @@
 </head>
 <body>
 <h2>Vietnamese Dictionary</h2>
-<form action="/Dictionary" method="post">
+<form action="/dictionary" method="post">
     <input type="text" name="search" placeholder="Enter your word: "/>
     <input type = "submit" id = "submit" value = "Search"/>
 </form>

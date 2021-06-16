@@ -17,7 +17,7 @@ public class DictionaryController {
         return "list";
 
     }
-    @PostMapping(value="/Dictionary")
+    @PostMapping(value="/dictionary")
     public String check(@RequestParam String search, Model model){
         model.addAttribute("result",checkService.checkDictionary(search));
         return "result";
