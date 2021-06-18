@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <th>Index</th>
+        <th>Count</th>
+        <th>Size</th>
+        <th>Current</th>
+        <th>Even</th>
+        <th>Odd</th>
+        <th>First</th>
+        <th>Last</th>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Address</th>
+    </tr>
+    <tr th:each="customer ,loopState :${listCustomer}">
+        <td th:text="${loopState.index}"></td>
+        <td th:text="${loopState.count}"></td>
+        <td th:text="${loopState.size}"></td>
+        <td th:text="${loopState.current}"></td>
+        <td th:text="${loopState.even}"></td>
+        <td th:text="${loopState.odd}"></td>
+        <td th:text="${loopState.first}"></td>
+        <td th:text="${loopState.last}"></td>
+        <td th:text="${customer.id}"></td>
+        <td th:text="${customer.name}"></td>
+        <td th:text="${customer.address}"></td>
+    </tr>
+</table>
+</body>
+</html>
