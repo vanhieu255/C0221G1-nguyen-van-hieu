@@ -2,6 +2,7 @@
 <html lang="en">
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="/layout :: head">
+
 </head>
 <body>
 <h3>List Product</h3>
@@ -42,18 +43,60 @@
         <td th:text="${product.describe}"></td>
         <td th:text="${product.producer}"></td>
         <td><a th:href="@{/{id}/edit(id=${product.getId()})}">edit</a></td>
-        <td><a th:href="@{/{id}/delete(id=${product.getId()})}">delete</a></td>
+<!--        <td><a th:href="@{/{id}/delete(id=${product.getId()})}">delete</a></td>-->
+        <td>
+            <button type="button" class="btn btn-danger btn-sm"
+
+               th:data-id="${product.id}"      onclick="sendDataToModal(this.getAttribute('data-id'))" data-toggle="modal"
+                    data-target="#exampleModal">
+                Delete
+            </button>
+        </td>
         <td><a th:href="@{/{id}/view(id=${product.getId()})}">view</a></td>
-
     </tr>
-
-
-
 </table>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <form th:action="@{/delete}" method="post">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input hidden type="text" name="id" id="id">
+                    <p>Bạn có muốn xóa Product không</p>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <input type="hidden" name="action" value="delete">
+                    <button type="submit" class="btn btn-primary">OK</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+    function sendDataToModal(id) {
+        document.getElementById("id").value = id;
+    }
+</script>
 
 
 
 
 <footer th:replace="/layout :: footer"></footer>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+
+<!-- Latest compiled and minified Bootstrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
 </body>
 </html>

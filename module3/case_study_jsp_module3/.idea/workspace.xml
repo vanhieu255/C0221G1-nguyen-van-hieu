@@ -7,45 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6327d12b-be2b-4576-92a5-b58ea085ac19" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../bai_tap_chuan_bi_thi/bai_tap_chuan_bi_thi.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai_tap_chuan_bi_thi/src/controller/EmployeeServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai_tap_chuan_bi_thi/src/model/bean/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai_tap_chuan_bi_thi/src/model/repository/BaseRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai_tap_chuan_bi_thi/src/model/repository/EmployeeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai_tap_chuan_bi_thi/src/model/service/EmployeeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai_tap_chuan_bi_thi/src/model/service/EmployeeServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai_tap_chuan_bi_thi/web/view/create.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai_tap_chuan_bi_thi/web/view/edit.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai_tap_chuan_bi_thi/web/view/list.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai_thi/bai_thi.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai_thi/src/controller/ProductServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai_thi/src/model/bean/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai_thi/src/model/bean/ProductCategory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai_thi/src/model/repository/BaseRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai_thi/src/model/repository/ProductRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai_thi/src/model/service/ProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai_thi/src/model/service/ProductServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai_thi/web/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai_thi/web/view/create.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai_thi/web/view/edit.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bai_thi/web/view/list.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../module4/01_springmvc/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../module4/01_springmvc/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../module4/01_springmvc/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../module4/01_springmvc/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../module4/01_springmvc/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../module4/01_springmvc/src/main/java/com/example/AppConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../module4/01_springmvc/src/main/java/com/example/AppInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../module4/01_springmvc/src/main/java/com/example/controller/GreetingController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../module4/01_springmvc/src/main/webapp/WEB-INF/views/greeting.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../module4/example1/src/main/java/com/example/controller/GreetingController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../module4/example1/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../module4/example1/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../module4/example1/src/main/webapp/WEB-INF/views/greeting.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../module4/example1/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/bean/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/bean/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/view/customer/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/view/customer/create.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/view/customer/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/view/customer/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4/01_springmvc/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../module4/01_springmvc/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4/02_springcontroller/practice/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../module4/02_springcontroller/practice/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4/03_viewandthymeleaf/exercise/src/main/webapp/WEB-INF/views/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../module4/03_viewandthymeleaf/exercise/src/main/webapp/WEB-INF/views/list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +49,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -218,6 +184,8 @@
       <workItem from="1623116451118" duration="313000" />
       <workItem from="1623116799255" duration="32705000" />
       <workItem from="1623573292084" duration="7227000" />
+      <workItem from="1623967714404" duration="126000" />
+      <workItem from="1624001527453" duration="1869000" />
     </task>
     <servers />
   </component>

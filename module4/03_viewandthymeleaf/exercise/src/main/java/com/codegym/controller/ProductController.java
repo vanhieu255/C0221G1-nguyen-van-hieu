@@ -18,14 +18,14 @@ import java.util.List;
 public class ProductController {
     private IProductService iProductService=new ProductService();
     @GetMapping(value = "")
-    public String list(Model model){
+    public String showList(Model model){
         List<Product>products=iProductService.findAll();
         model.addAttribute("products",products);
         return "list";
 
     }
     @GetMapping(value = "/create")
-    public String create(Model model){
+    public String showCreateForm(Model model){
         model.addAttribute("product",new Product());
         return "create";
     }
@@ -37,7 +37,7 @@ public class ProductController {
         return "redirect:/";
     }
     @GetMapping(value = "{id}/edit")
-    public String edit(@PathVariable int id,Model model){
+    public String showEditForm(@PathVariable int id,Model model){
         model.addAttribute("product",iProductService.findById(id));
 
         return "edit";
@@ -48,19 +48,20 @@ public class ProductController {
         redirectAttributes.addFlashAttribute("success","edit success");
         return "redirect:/";
     }
-    @GetMapping(value = "{id}/delete")
-    public String delete(@PathVariable int id ,Model model){
-        model.addAttribute("product",iProductService.findById(id));
-        return "delete";
-    }
-    @PostMapping(value = "/remove")
-    public String remove(Product product,RedirectAttributes redirectAttributes){
-        iProductService.remove(product.getId());
-        redirectAttributes.addFlashAttribute("success","delete product success");
+    @PostMapping(value ="/delete")
+    public String showDeleteForm(@RequestParam int id,RedirectAttributes redirectAttributes){
+      iProductService.remove(id);
+      redirectAttributes.addFlashAttribute("success","delete success");
         return "redirect:/";
     }
+//    @PostMapping(value = "/remove")
+//    public String remove(Product product,RedirectAttributes redirectAttributes){
+//        iProductService.remove(product.getId());
+//        redirectAttributes.addFlashAttribute("success","delete product success");
+//        return "redirect:/";
+//    }
     @GetMapping(value = "/{id}/view")
-    public String view(@PathVariable int id ,Model model){
+    public String showViewForm(@PathVariable int id ,Model model){
         model.addAttribute("product",iProductService.findById(id));
         return "view";
     }
