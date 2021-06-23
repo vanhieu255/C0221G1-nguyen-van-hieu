@@ -1,9 +1,6 @@
-package com.codegym.exercise.model.entity;
+package com.codegym.model.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Blog {
@@ -13,21 +10,26 @@ public class Blog {
     private String title;
     private String content;
     private String opinion;
+    @ManyToOne(targetEntity = Category.class)
+    @JoinColumn(name = "catelogy_id")
+    private Category category;
 
     public Blog() {
     }
 
-    public Blog(String title, String content, String opinion) {
+    public Blog(String title, String content, String opinion, Category category) {
         this.title = title;
         this.content = content;
         this.opinion = opinion;
+        this.category = category;
     }
 
-    public Blog(Integer id, String title, String content, String opinion) {
+    public Blog(Integer id, String title, String content, String opinion, Category category) {
         this.id = id;
         this.title = title;
         this.content = content;
         this.opinion = opinion;
+        this.category = category;
     }
 
     public Integer getId() {
@@ -61,6 +63,15 @@ public class Blog {
     public void setOpinion(String opinion) {
         this.opinion = opinion;
     }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
 }
 
 

@@ -1,26 +1,40 @@
-package com.codegym.exercise.controller;
+package com.codegym.controller;
 
-import com.codegym.exercise.model.entity.Blog;
-import com.codegym.exercise.model.repository.IBlogRepository;
-import com.codegym.exercise.model.service.IBlogService;
+import com.codegym.model.entity.Blog;
+import com.codegym.model.entity.Category;
+import com.codegym.model.service.IBlogService;
+import com.codegym.model.service.ICategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class BlogController {
 @Autowired
     private IBlogService blogService;
-@GetMapping(value = "/blogs")
-    public String showBlog(Model model){
-    List<Blog> blog=blogService.findAll();
+@Autowired
+private ICategoryService categoryService;
 
+    @ModelAttribute("catagory")
+    public Iterable<Category> catagorys(){
+        return categoryService.findAll();
+    }
+@GetMapping(value = "/blogs")
+
+    public String showBlog(@RequestParam("search") Optional<String> search, Model model,@PageableDefault(value = 3) Pageable pageable){
+    Page<Blog> blog;
+    if(search.isPresent()){
+        blog = blogService.findAllByTitleContaining(search.get(), pageable);
+    } else {
+        blog = blogService.findAll(pageable);
+    }
     model.addAttribute("blog",blog);
     return "list";
 
@@ -42,27 +56,27 @@ public class BlogController {
 }
 
 @GetMapping(value = "/edit-blog/{id}")
-    public String showEditBlog(@PathVariable int id, Model model){
-    Blog blog=blogService.findById(id);
+    public String showEditBlog(@PathVariable Integer id, Model model){
+    Optional<Blog> blog=blogService.findById(id);
     model.addAttribute("blog",blog);
     return "edit";
 }
 @PostMapping(value = "/edit-blog")
     public String updateBlog(@ModelAttribute Blog blog, Model model){
-    blogService.update(blog);
+    blogService.save(blog);
     model.addAttribute("blog",blog);
     model.addAttribute("message","edit Blog success");
     return "edit";
 }
 @GetMapping(value = "/delete-blog/{id}")
-    public String showDeleteBlog(@PathVariable int id ,Model model){
-    Blog blog =blogService.findById(id);
+    public String showDeleteBlog(@PathVariable Integer id ,Model model){
+    Optional<Blog> blog =blogService.findById(id);
     model.addAttribute("blog",blog);
     return "delete";
 }
 @PostMapping(value="/delete-blog")
     public String removeBlog(@ModelAttribute Blog blog,Model model){
     blogService.remove(blog.getId());
-    return "redirect:/";
+    return "redirect:/blogs";
 }
 }

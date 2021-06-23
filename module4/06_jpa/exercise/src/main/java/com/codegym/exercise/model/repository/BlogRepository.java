@@ -1,16 +1,17 @@
 package com.codegym.exercise.model.repository;
 
 import com.codegym.exercise.model.entity.Blog;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.EntityManager;
-import javax.persistence.NoResultException;
-import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
+import javax.persistence.*;
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Repository
+@Transactional
 public class BlogRepository implements IBlogRepository {
+
     @PersistenceContext
     private EntityManager em;
     @Override
@@ -32,8 +33,17 @@ public class BlogRepository implements IBlogRepository {
 
     @Override
     public void save(Blog blog) {
-            em.persist(blog);
+
+
+            if (blog.getId() != null) {
+
+                em.merge(blog);
+            } else {
+                em.persist(blog);
+            }
+
     }
+
 
     @Override
     public void remove(int id) {
