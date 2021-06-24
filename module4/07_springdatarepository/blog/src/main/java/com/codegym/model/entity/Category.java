@@ -13,21 +13,10 @@ public class Category {
     private String name;
 
 
-    @OneToMany(targetEntity = Blog.class)
+    @OneToMany(mappedBy ="category" )
     private List<Blog> blog;
 
     public Category() {
-    }
-
-    public Category(String name, List<Blog> blog) {
-        this.name = name;
-        this.blog = blog;
-    }
-
-    public Category(Integer id, String name, List<Blog> blog) {
-        this.id = id;
-        this.name = name;
-        this.blog = blog;
     }
 
     public Integer getId() {
@@ -53,5 +42,4 @@ public class Category {
     public void setBlog(List<Blog> blog) {
         this.blog = blog;
     }
-
 }

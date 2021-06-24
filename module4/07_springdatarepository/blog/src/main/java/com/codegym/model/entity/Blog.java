@@ -10,26 +10,13 @@ public class Blog {
     private String title;
     private String content;
     private String opinion;
-    @ManyToOne(targetEntity = Category.class)
-    @JoinColumn(name = "catelogy_id")
+    @Column(name = "date", columnDefinition = "DATE")
+    private String date;
+    @ManyToOne
+    @JoinColumn(name = "catelogy_id",referencedColumnName = "id")
     private Category category;
 
     public Blog() {
-    }
-
-    public Blog(String title, String content, String opinion, Category category) {
-        this.title = title;
-        this.content = content;
-        this.opinion = opinion;
-        this.category = category;
-    }
-
-    public Blog(Integer id, String title, String content, String opinion, Category category) {
-        this.id = id;
-        this.title = title;
-        this.content = content;
-        this.opinion = opinion;
-        this.category = category;
     }
 
     public Integer getId() {
@@ -72,6 +59,13 @@ public class Blog {
         this.category = category;
     }
 
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
 }
 
 

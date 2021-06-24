@@ -8,7 +8,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.Optional;
 
 @Controller
 public class CategoryController {
@@ -36,4 +39,31 @@ public class CategoryController {
     model.addAttribute("message","create category success");
     return "/category/create";
 }
+@GetMapping(value="/edit-category/{id}")
+    public String showEditCategory(@PathVariable Integer id, Model model){
+    Optional<Category>category=categoryService.findById(id);
+    model.addAttribute("category",category);
+    return "/category/edit";
+}
+@PostMapping(value ="/edit-category")
+    public String editCategory(@ModelAttribute("category") Category category,Model model){
+    categoryService.save(category);
+    model.addAttribute("category",category);
+    model.addAttribute("message","edit category success");
+    return "/category/edit";
+}
+@GetMapping(value ="/delete-category/{id}")
+public String showDeleteCategory(@PathVariable Integer id, Model model){
+    Optional<Category>category=categoryService.findById(id);
+    model.addAttribute("category",category);
+    return "/category/delete";
+}
+@PostMapping(value ="/delete-category")
+    public String deleteCategory(@ModelAttribute("category")Category category,Model model){
+    categoryService.remove(category.getId());
+    return "redirect:/category";
+}
+
+
+
 }

@@ -19,6 +19,7 @@
         <th>Title</th>
         <th>content</th>
         <th>opinion</th>
+        <th>Date</th>
         <th>Category</th>
         <th>Edit</th>
         <th>Delete</th>
@@ -29,6 +30,7 @@
             <td th:text="${blog.title}"></td>
             <td th:text="${blog.content}"></td>
             <td th:text="${blog.opinion}"></td>
+            <td th:text="${blog.date}"></td>
             <td th:if="${blog.category}" th:text="${blog.category.name}"></td>
             <td th:unless="${blog.category}"></td>
             <td><a th:href="@{/edit-blog/__${blog.id}__ }">Edit</a></td>
@@ -38,9 +40,15 @@
 
 </table>
 <div>
-    <a th:href="@{'/blogs'(page=${blog.number - 1})}" th:if="${blog.hasPrevious()}">Previous</a>
+    <a th:href="@{'/blogs'(page=${blog.number - 1},search=${searchValue})}" th:if="${blog.hasPrevious()}">Previous</a>
     <span th:text="${blog.number + 1}"></span>/<span th:text="${blog.totalPages}"></span>
-    <a th:href="@{'/blogs'(page=${blog.number + 1})}" th:if="${blog.hasNext()}">Next</a>
+    <a th:href="@{'/blogs'(page=${blog.number + 1},search=${searchValue})}" th:if="${blog.hasNext()}">Next</a>
 </div>
+
+<p>
+    <span th:each="pageNo :${#numbers.sequence(0,blog.totalPages -1)}">
+        <a th:href="@{/blogs(page=${pageNo})}" th:text="${pageNo +1}"></a>
+    </span>
+</p>
 </body>
 </html>

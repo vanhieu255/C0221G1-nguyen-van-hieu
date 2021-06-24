@@ -12,8 +12,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.Optional;
+
 
 @Controller
 public class BlogController {
@@ -22,20 +22,25 @@ public class BlogController {
 @Autowired
 private ICategoryService categoryService;
 
-    @ModelAttribute("catagory")
-    public Iterable<Category> catagorys(){
+    @ModelAttribute("categorys")
+    public Iterable<Category> categorys(){
         return categoryService.findAll();
     }
 @GetMapping(value = "/blogs")
 
-    public String showBlog(@RequestParam("search") Optional<String> search, Model model,@PageableDefault(value = 3) Pageable pageable){
+    public String showBlog(@RequestParam("search") Optional<String> search, Model model, @PageableDefault(value = 2) Pageable pageable){
     Page<Blog> blog;
+    String searchValue="";
     if(search.isPresent()){
-        blog = blogService.findAllByTitleContaining(search.get(), pageable);
+        searchValue=search.get();
+        blog = blogService.findAllByTitleContaining(searchValue, pageable);
+
+
     } else {
         blog = blogService.findAll(pageable);
     }
     model.addAttribute("blog",blog);
+    model.addAttribute("searchValue",searchValue);
     return "list";
 
 }

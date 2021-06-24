@@ -27,4 +27,9 @@ public class CategoryService implements ICategoryService {
         categoryRepository.save(category);
     }
 
+    @Override
+    public void remove(Integer id) {
+        categoryRepository.deleteById(id);
+    }
+
 }
