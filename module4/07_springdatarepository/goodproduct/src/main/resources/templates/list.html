@@ -18,8 +18,9 @@
 </div>
 
 <div id="form">
-    <form th:action="@{/search}" method="post">
-        <input type="text" name="nameProduct" >
+    <form >
+        Search by name
+        <input type="text" name="search" >
         <input type="submit" value="Search">
     </form>
 </div>
@@ -57,13 +58,13 @@
     </tr>
 </table>
 <div>
-    <a th:href="@{'/'(page=${product.number - 1},search=${searchValue})}" th:if="${product.hasPrevious()}">Previous</a>
-    <span th:text="${product.number + 1}"></span>/<span th:text="${product.totalPages}"></span>
-    <a th:href="@{'/'(page=${product.number + 1},search=${searchValue})}" th:if="${product.hasNext()}">Next</a>
+    <a th:href="@{'/'(page=${products.number - 1},search=${searchValue})}" th:if="${products.hasPrevious()}">Previous</a>
+    <span th:text="${products.number + 1}"></span>/<span th:text="${products.totalPages}"></span>
+    <a th:href="@{'/'(page=${products.number + 1},search=${searchValue})}" th:if="${products.hasNext()}">Next</a>
 </div>
 
 <p>
-    <span th:each="pageNo :${#numbers.sequence(0,product.totalPages -1)}">
+    <span th:each="pageNo :${#numbers.sequence(0,products.totalPages -1)}">
         <a th:href="@{/product(page=${pageNo})}" th:text="${pageNo +1}"></a>
     </span>
 </p>

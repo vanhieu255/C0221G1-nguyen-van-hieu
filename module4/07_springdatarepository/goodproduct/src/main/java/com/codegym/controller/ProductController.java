@@ -23,9 +23,18 @@ public class ProductController {
     @Autowired
     private IProductService iProductService;
     @GetMapping(value = "")
-    public String showList(Model model,Pageable pageable){
-        Page<Product>products=iProductService.findAll(pageable);
-        model.addAttribute("products",products);
+    public String showList(@RequestParam("search") Optional<String> search, Model model, @PageableDefault(value = 2) Pageable pageable){
+        Page<Product> product;
+        String searchValue="";
+        if(search.isPresent()){
+            searchValue=search.get();
+            product = iProductService.findAllByNameProductContaining(searchValue, pageable);
+
+        } else {
+            product = iProductService.findAll(pageable);
+        }
+        model.addAttribute("products",product);
+        model.addAttribute("searchValue",searchValue);
         return "list";
 
     }
@@ -63,21 +72,21 @@ public class ProductController {
         model.addAttribute("product",iProductService.findById(id));
         return "view";
     }
-    @PostMapping(value = "/search")
-    public String search(@RequestParam("search") Optional<String> search, Model model, @PageableDefault(value = 2) Pageable pageable){
-        Page<Product> product;
-        String searchValue="";
-        if(search.isPresent()){
-            searchValue=search.get();
-            product = iProductService.findAllByNameProductContaining(searchValue, pageable);
-
-        } else {
-            product = iProductService.findAll(pageable);
-        }
-        model.addAttribute("product",product);
-        model.addAttribute("searchValue",searchValue);
-        return "list";
-
-    }
+//    @PostMapping(value = "/search")
+//    public String search(@RequestParam("search") Optional<String> search, Model model, @PageableDefault(value = 2) Pageable pageable){
+//        Page<Product> product;
+//        String searchValue="";
+//        if(search.isPresent()){
+//            searchValue=search.get();
+//            product = iProductService.findAllByNameProductContaining(searchValue, pageable);
+//
+//        } else {
+//            product = iProductService.findAll(pageable);
+//        }
+//        model.addAttribute("product",product);
+//        model.addAttribute("searchValue",searchValue);
+//        return "list";
+//
+//    }
 
 }
