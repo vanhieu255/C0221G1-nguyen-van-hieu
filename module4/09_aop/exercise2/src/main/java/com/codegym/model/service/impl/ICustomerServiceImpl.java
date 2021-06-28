@@ -32,4 +32,9 @@ customerRepository.save(customer);
     public Optional<Customer> findByCode(String code) {
         return customerRepository.findByCode(code);
     }
+
+    @Override
+    public void remove(Integer id) {
+        customerRepository.deleteById(id);
+    }
 }

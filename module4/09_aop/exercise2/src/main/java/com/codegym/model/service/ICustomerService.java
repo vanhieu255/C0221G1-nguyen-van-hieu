@@ -15,4 +15,5 @@ public interface ICustomerService {
     void save(Customer customer);
 
     Optional<Customer> findByCode(String code);
+    void remove(Integer id);
 }
