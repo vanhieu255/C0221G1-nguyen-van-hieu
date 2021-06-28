@@ -3,6 +3,7 @@ package com.codegym.model.service;
 import com.codegym.model.entity.Product;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.repository.query.Param;
 
 import java.util.Iterator;
 import java.util.List;
@@ -14,7 +15,7 @@ public interface IProductService {
     void save(Product product);
     void remove(Integer id);
     Page<Product> findAllByNameProductContaining(String nameProduct, Pageable pageable);
-
+    Page<Product> SearchProductByNameAndPrice(Pageable pageable , @Param("keySearch") String keySearch);
 
 
 

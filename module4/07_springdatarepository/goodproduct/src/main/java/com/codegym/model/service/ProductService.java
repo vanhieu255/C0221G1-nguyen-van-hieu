@@ -38,4 +38,9 @@ private IProductRepository productRepository;
     public Page<Product> findAllByNameProductContaining(String nameProduct, Pageable pageable) {
         return productRepository.findAllByNameProductContaining(nameProduct,pageable);
     }
+
+    @Override
+    public Page<Product> SearchProductByNameAndPrice(Pageable pageable, String keySearch) {
+        return productRepository.SearchProductByNameAndPrice(pageable,"%"+keySearch+"%");
+    }
 }

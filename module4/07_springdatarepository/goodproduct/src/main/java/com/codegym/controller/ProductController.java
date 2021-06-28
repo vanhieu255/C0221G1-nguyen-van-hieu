@@ -28,7 +28,7 @@ public class ProductController {
         String searchValue="";
         if(search.isPresent()){
             searchValue=search.get();
-            product = iProductService.findAllByNameProductContaining(searchValue, pageable);
+            product = iProductService.SearchProductByNameAndPrice(pageable,searchValue);
 
         } else {
             product = iProductService.findAll(pageable);
