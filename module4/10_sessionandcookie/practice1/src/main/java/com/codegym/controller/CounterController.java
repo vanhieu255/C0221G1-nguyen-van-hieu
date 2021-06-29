@@ -2,6 +2,7 @@ package com.codegym.controller;
 
 import com.codegym.model.entity.Counter;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
@@ -15,8 +16,10 @@ public class CounterController {
     }
 
     @GetMapping("/")
-    public String get(@ModelAttribute("counter") Counter counter) {
+    public String get(@ModelAttribute("counter") Counter counter , Model model) {
+
         counter.increment();
+        model.addAttribute("counter",counter);
         return "/index";
     }
 }
