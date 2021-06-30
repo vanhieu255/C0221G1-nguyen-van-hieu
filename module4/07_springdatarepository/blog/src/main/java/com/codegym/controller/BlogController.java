@@ -90,4 +90,10 @@ public class BlogController {
         blogService.remove(blog.getId());
         return "redirect:/blogs";
     }
+    @GetMapping(value = "/view-blog/{id}")
+    public String showViewBlog(@PathVariable Integer id,Model model){
+        Optional<Blog> blog=blogService.findById(id);
+        model.addAttribute("blog",blog);
+        return "view";
+    }
 }
