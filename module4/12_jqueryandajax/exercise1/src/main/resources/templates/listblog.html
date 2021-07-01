@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List Blog</title>
+    <link rel="stylesheet" href="css/mdb.min.css">
+    <!--    <script-->
+    <!--            type="text/javascript"-->
+    <!--            src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"-->
+    <!--    ></script>-->
+</head>
+<body>
+<div class="container mt-4">
+    <div class="row w-50 mx-auto">
+        <div class="col-lg-12">
+            <h2>Search Blog</h2>
+            <div class="form-outline mb-4">
+                <input type="text" id="search" class="form-control"/>
+                <label class="form-label" for="search">Name Title</label>
+            </div>
+            <button id="btnSearch" type="button" class="btn btn-primary btn-block">Search</button>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <div class="row w-50 mx-auto">
+        <div class="col-lg-12">
+            <h2>List Blog</h2>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Content</th>
+                    <th scope="col">Opinion</th>
+                    <th scope="col">Category</th>
+                </tr>
+                </thead>
+                <tbody id="tableBodyBlog">
+
+                </tbody>
+            </table>
+            <button id="more" onclick="showMore()">Next</button>
+        </div>
+    </div>
+</div>
+
+
+<script src="jquery/jquery-3.6.0.min.js"></script>
+
+
+<script>
+    $.ajax({
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        type: "GET", //GET, DELETE, PUT...
+        url: "http://localhost:8080/blogs",
+        success: function (resultSuccess) {
+            console.log("Success");
+            console.log(resultSuccess)
+            let list = resultSuccess.content;
+            console.log(list)
+            let resultHTML = "";
+            for (let i = 0; i < list.length; i++) {
+                resultHTML += "<tr>";
+                resultHTML += "<td>" + list[i].id + "</td>";
+                resultHTML += "<td>" + list[i].title + "</td>";
+                resultHTML += "<td>" + list[i].content + "</td>";
+                resultHTML += "<td>" + list[i].opinion + "</td>";
+                resultHTML += "<td>" + list[i].category.name + "</td>";
+                resultHTML += "</tr>";
+            }
+            console.log(resultHTML);
+            // innerHTML
+            $("#tableBodyBlog").html(resultHTML);
+        },
+        error: function (resultError) {
+            console.log("Error: ");
+            console.log(resultError);
+        }
+    });
+
+
+
+
+
+
+    $("#btnSearch").click(function () {
+
+
+        let titleName = $("#search").val();
+
+        $.ajax({
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            type: "GET", //GET, DELETE, PUT...
+            url: "http://localhost:8080/blogs?page="+(page)+"&search="+titleName,
+            success: function (resultSuccess) {
+                console.log("Success");
+                console.log(resultSuccess)
+                let list = resultSuccess.content;
+                console.log(list)
+                let resultHTML = "";
+                for (let i = 0; i < list.length; i++) {
+                    resultHTML += "<tr>";
+                    resultHTML += "<td>" + list[i].id + "</td>";
+                    resultHTML += "<td>" + list[i].title + "</td>";
+                    resultHTML += "<td>" + list[i].content + "</td>";
+                    resultHTML += "<td>" + list[i].opinion + "</td>";
+                    resultHTML += "<td>" + list[i].category.name + "</td>";
+                    resultHTML += "</tr>";
+                }
+                console.log(resultHTML);
+                // innerHTML
+                $("#tableBodyBlog").html(resultHTML);
+            },
+            error: function (resultError) {
+                console.log("Error: ");
+                console.log(resultError);
+            }
+
+
+        })
+    });
+
+    let page=0;
+    function showMore() {
+        page++;
+        $.ajax({
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            type: "GET", //GET, DELETE, PUT...
+            url: "http://localhost:8080/blogs?page="+page,
+            success: function (resultSuccess) {
+                console.log("Success");
+                console.log(resultSuccess)
+                let list = resultSuccess.content;
+                console.log(list)
+                let resultHTML = "";
+                for (let i = 0; i < list.length; i++) {
+                    resultHTML += "<tr>";
+                    resultHTML += "<td>" + list[i].id + "</td>";
+                    resultHTML += "<td>" + list[i].title + "</td>";
+                    resultHTML += "<td>" + list[i].content + "</td>";
+                    resultHTML += "<td>" + list[i].opinion + "</td>";
+                    resultHTML += "<td>" + list[i].category.name + "</td>";
+                    resultHTML += "</tr>";
+                }
+                console.log(resultHTML);
+                // innerHTML
+                $("#tableBodyBlog").html(resultHTML);
+            },
+            error: function (resultError) {
+                console.log("Error: ");
+                console.log(resultError);
+            }
+
+
+        })
+    }
+
+</script>
+
+
+</body>
+</html>
