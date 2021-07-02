@@ -8,29 +8,31 @@
 <p>
     <a href="/shopping-cart">Your cart</a>
 </p>
-<table border="1">
-    <tr>
-        <td></td>
-        <td>Name</td>
-        <td>Price</td>
-        <td>Description</td>
-        <td>Detail Product</td>
-<!--        <td>Add To Cart</td>-->
-    </tr>
-    <th:block th:each="product:${products}">
-        <tr>
-            <td><img style="width: 100px; height: 150px" th:src="${product.img}" alt=""></td>
-            <td th:text="${product.name}"></td>
-            <td th:text="${product.price}"></td>
-            <td th:text="${product.description}"></td>
-            <td><a th:href="@{/view-product/{id}(id=${product.id})}">Detail Product</a></td>
-<!--            <td><a th:href="@{/add/__${product.id}__(action='show')}">Add To Cart</a></td>-->
+<!--<table border="1">-->
+<!--    <tr>-->
+<!--        <td></td>-->
+<!--        <td>Name</td>-->
+<!--        <td>Price</td>-->
+<!--        <td>Description</td>-->
+<!--        <td>Detail Product</td>-->
+<!--&lt;!&ndash;        <td>Add To Cart</td>&ndash;&gt;-->
+<!--    </tr>-->
+<!--    <th:block th:each="product:${products}">-->
+<!--        <tr>-->
+<!--            <td><img style="width: 100px; height: 150px" th:src="${product.img}" alt=""></td>-->
+<!--            <td th:text="${product.name}"></td>-->
+<!--            <td th:text="${product.price}"></td>-->
+<!--            <td th:text="${product.description}"></td>-->
+<!--            <td><a th:href="@{/view-product/{id}(id=${product.id})}">Detail Product</a></td>-->
+<!--&lt;!&ndash;            <td><a th:href="@{/add/__${product.id}__(action='show')}">Add To Cart</a></td>&ndash;&gt;-->
 
-        </tr>
-    </th:block>
-</table>
+<!--        </tr>-->
+<!--    </th:block>-->
 
 
+
+
+<!--</table>-->
 <div class="card-group">
     <div class="card" th:each="product:${products}">
         <img class="card-img-top" th:src="${product.img}" alt="Card image cap">
@@ -42,5 +44,8 @@
         </div>
     </div>
 </div>
+
+
+
 </body>
 </html>
