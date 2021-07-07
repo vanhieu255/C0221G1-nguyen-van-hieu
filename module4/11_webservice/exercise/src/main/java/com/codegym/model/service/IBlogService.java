@@ -17,6 +17,7 @@ public interface IBlogService  {
     void save(Blog blog);
 
     void remove(Integer id);
+
     Page<Blog> findAllByTitleContaining(String title, Pageable pageable);
 
     List<Blog> findAllBlogByCategory(@Param("id") Integer id);

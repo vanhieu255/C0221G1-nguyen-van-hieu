@@ -9,20 +9,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-<%--    <title>Title</title>--%>
-<%--    <link rel="stylesheet" href="assert/bootstrap/bootstrap-5.0.1-dist/css/bootstrap.min.css">--%>
-<%--    <script src="assert/bootstrap/bootstrap-5.0.1-dist/js/bootstrap.min.js"></script>--%>
-<%--    <style>--%>
-<%--        .col-md-6{--%>
-<%--            padding: 0px;--%>
-<%--            margin: 0px;--%>
-<%--            text-align: center;--%>
-<%--            border: 1px solid;--%>
-<%--        }--%>
 
-<%--    </style>--%>
-
-<%--    tạo bảng mới --%>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
@@ -125,115 +112,6 @@
 
 </head>
 <body>
-<%--<div class="container-fluid">--%>
-<%--    <div class="row">--%>
-<%--        <div class="col-md-3"></div>--%>
-<%--        <div class="col-md-6">--%>
-<%--            <h1>Add Customer</h1>--%>
-<%--            <h3><c:if test="${message != null}">--%>
-<%--                <span>${message}</span>--%>
-<%--            </c:if></h3>--%>
-<%--            <form action="" method="post">--%>
-<%--                <div class="mb-3 row">--%>
-<%--                    <label class="col-md-2 col-form-label">IdKhachHang</label>--%>
-<%--                    <div class="col-md-10">--%>
-<%--                        <input type="text" class="form-control " name="idKhachHang" >--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--                <div class="mb-3 row">--%>
-<%--                    <label class="col-md-2 col-form-label">Loại Khách</label>--%>
-<%--                    <div class="col-md-10">--%>
-<%--&lt;%&ndash;                        <input type="text" class="form-control " name="idloaikhach" >&ndash;%&gt;--%>
-<%--                     <select name="idLoaiKhach" class="form-control">--%>
-<%--                         <c:forEach var="type" items="${customerTypes}">--%>
-<%--                             <option value="${type.idLoaiKhach}">${type.tenLoaiKhach}</option>--%>
-<%--                         </c:forEach>--%>
-
-<%--                     </select>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--                <div class="mb-3 row">--%>
-<%--                    <label class="col-md-2 col-form-label">Họ và Tên</label>--%>
-<%--                    <div class="col-md-10">--%>
-<%--                        <input type="text" class="form-control " name="hoTen" >--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--                <div class="mb-3 row">--%>
-<%--                    <label class="col-md-2 col-form-label">Giới Tính</label>--%>
-<%--                    <div class="col-md-10">--%>
-<%--                        <select name="gioiTinh" class="form-control">--%>
-<%--                            <option value="nam">nam</option>--%>
-<%--                            <option value="nu">nu</option>--%>
-<%--                        </select>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--                <div class="mb-3 row">--%>
-<%--                    <label class="col-md-2 col-form-label">Ngày Sinh</label>--%>
-<%--                    <div class="col-md-10">--%>
-<%--                        <input type="date" class="form-control" name="ngaySinh" >--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--                <div class="mb-3 row">--%>
-<%--                    <label class="col-md-2 col-form-label ">Số Cmnd</label>--%>
-<%--                    <div class="col-md-10">--%>
-<%--                        <input type="text" class="form-control " name="soCmnd" >--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--                <div class="mb-3 row">--%>
-<%--                    <label class="col-md-2 col-form-label ">SDT</label>--%>
-<%--                    <div class="col-md-10">--%>
-<%--                        <input type="text" class="form-control" name="sdt" >--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-
-<%--                <div class="mb-3 row">--%>
-<%--                    <label class="col-md-2 col-form-label">Email</label>--%>
-<%--                    <div class="col-md-10">--%>
-<%--                        <input type="text" class="form-control " name="email" >--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--                <div class="mb-3 row">--%>
-<%--                    <label class="col-md-2 col-form-label ">Địa Chỉ</label>--%>
-<%--                    <div class="col-md-10">--%>
-<%--                        <input type="text" class="form-control" name="diaChi" >--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-
-
-
-
-
-
-
-<%--&lt;%&ndash;                <div class="mb-3 row">&ndash;%&gt;--%>
-<%--&lt;%&ndash;                    <label class="col-md-2 col-form-label">Date</label>&ndash;%&gt;--%>
-<%--&lt;%&ndash;                    <div class="col-md-4">&ndash;%&gt;--%>
-<%--&lt;%&ndash;                        <div class="input-group">&ndash;%&gt;--%>
-<%--&lt;%&ndash;                            <input type="text" class="fromDate form-control"  placeholder="dd">&ndash;%&gt;--%>
-<%--&lt;%&ndash;                            <div class="input-group-prepend"><span class="input-group-text">-</span></div>&ndash;%&gt;--%>
-<%--&lt;%&ndash;                            <input type="text" class="toDate form-control" placeholder="mm">&ndash;%&gt;--%>
-<%--&lt;%&ndash;                            <div class="input-group-prepend"><span class="input-group-text">-</span></div>&ndash;%&gt;--%>
-<%--&lt;%&ndash;                            <input type="text" class="toDate form-control"  placeholder="yyyy">&ndash;%&gt;--%>
-<%--&lt;%&ndash;                        </div>&ndash;%&gt;--%>
-<%--&lt;%&ndash;                    </div>&ndash;%&gt;--%>
-
-<%--&lt;%&ndash;                </div>&ndash;%&gt;--%>
-
-<%--                <div class="mb-3 row">--%>
-<%--                    <div class="col-md-2"></div>--%>
-<%--                    <div class="col-md-10 d-flex justify-content-between">--%>
-<%--&lt;%&ndash;                        <button id="btn-save" name="btn-save" class="btn btn-success">Save</button>&ndash;%&gt;--%>
-<%--                        <input type="submit" class="btn btn-success" value="Save">--%>
-<%--                        <a href="/customers" class="btn btn-success">Back to list Customer</a>--%>
-
-<%--                    </div>--%>
-<%--                </div>--%>
-
-<%--            </form>--%>
-<%--        </div>--%>
-<%--        <div class="col-md-3"></div>--%>
-<%--    </div>--%>
-<%--</div>--%>
 
 
 <%--tao bảng mới --%>

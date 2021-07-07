@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="817e5457-72e8-40a0-a16b-7c1ca8faf668" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/customer-management/src/main/java/cg/wbd/grandemonstration/logger/Logger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/demo/src/main/java/com/codegym/config/WebSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/demo/src/main/java/com/codegym/controller/MainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/demo/src/main/java/com/codegym/model/entity/AppRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/demo/src/main/java/com/codegym/model/entity/AppUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/demo/src/main/java/com/codegym/model/entity/UserRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/demo/src/main/java/com/codegym/model/repository/AppUserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/demo/src/main/java/com/codegym/model/repository/UserRoleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/demo/src/main/java/com/codegym/model/service/UserDetailsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/demo/src/main/java/com/codegym/util/WebUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/demo/src/main/resources/templates/403Page.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/demo/src/main/resources/templates/_menu.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/demo/src/main/resources/templates/adminPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/demo/src/main/resources/templates/loginPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/demo/src/main/resources/templates/logoutSuccessfulPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/demo/src/main/resources/templates/userInfoPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/demo/src/main/resources/templates/welcomePage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/exercise/src/main/java/com/codegym/config/AppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/exercise/src/main/java/com/codegym/controller/CustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/exercise/src/main/java/com/codegym/controller/ProvinceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/exercise/src/main/java/com/codegym/model/entity/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/exercise/src/main/java/com/codegym/model/entity/Province.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/exercise/src/main/java/com/codegym/model/repository/ICustomerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/exercise/src/main/java/com/codegym/model/repository/IProvinceRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/exercise/src/main/java/com/codegym/model/service/CustomerServcie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/exercise/src/main/java/com/codegym/model/service/DuplicateEmailException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/exercise/src/main/java/com/codegym/model/service/ICustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/exercise/src/main/java/com/codegym/model/service/IGeneralService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/exercise/src/main/java/com/codegym/model/service/IProvinceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/exercise/src/main/java/com/codegym/model/service/ProvinceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/exercise/src/main/resources/msg/message_en.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/exercise/src/main/resources/msg/message_vi.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/exercise/src/main/resources/templates/customer/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/exercise/src/main/resources/templates/customer/delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/exercise/src/main/resources/templates/customer/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/exercise/src/main/resources/templates/customer/inputs-not-acceptable.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/exercise/src/main/resources/templates/customer/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/exercise/src/main/resources/templates/province/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/exercise/src/main/resources/templates/province/delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/exercise/src/main/resources/templates/province/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/exercise/src/main/resources/templates/province/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/exercise/src/main/resources/templates/province/view.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/practice/src/main/java/com/codegym/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/practice/src/main/java/com/codegym/security/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/practice/src/main/java/com/codegym/security/SecurityInit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/practice/src/main/resources/templates/admin.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/practice/src/main/resources/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../14_SpringSecurity/practice/src/main/resources/templates/user.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../15_authorizationApp/practice1/src/main/java/com/codegym/configuration/CustomSuccessHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../15_authorizationApp/practice1/src/main/java/com/codegym/controller/SecurityController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../15_authorizationApp/practice1/src/main/java/com/codegym/security/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../15_authorizationApp/practice1/src/main/java/com/codegym/security/SecurityInit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../15_authorizationApp/practice1/src/main/resources/templates/accessDenied.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../15_authorizationApp/practice1/src/main/resources/templates/admin.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../15_authorizationApp/practice1/src/main/resources/templates/dba.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../15_authorizationApp/practice1/src/main/resources/templates/welcome.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/java/com/codegym/controller/CustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/java/com/codegym/controller/MainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/java/com/codegym/model/entity/customer/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/java/com/codegym/model/entity/customer_type/CustomerType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/java/com/codegym/model/repository/customer_repository/CustomerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/java/com/codegym/model/service/customer_service/CustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/java/com/codegym/model/service/customer_service/CustomerServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/css/bootstrap-grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/css/bootstrap-grid.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/css/bootstrap-grid.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/css/bootstrap-grid.rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/css/bootstrap-grid.rtl.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/css/bootstrap-grid.rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/css/bootstrap-grid.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/css/bootstrap-reboot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/css/bootstrap-reboot.rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/css/bootstrap-reboot.rtl.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/css/bootstrap-reboot.rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/css/bootstrap-reboot.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/css/bootstrap-utilities.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/css/bootstrap-utilities.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/css/bootstrap-utilities.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/css/bootstrap-utilities.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/css/bootstrap-utilities.rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/css/bootstrap-utilities.rtl.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/css/bootstrap-utilities.rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/css/bootstrap-utilities.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/css/bootstrap.rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/css/bootstrap.rtl.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/css/bootstrap.rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/css/bootstrap.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/js/bootstrap.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/js/bootstrap.esm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/js/bootstrap.esm.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/js/bootstrap.esm.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/js/bootstrap.esm.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/js/bootstrap.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/bootstrap-5.0.1-dist/js/bootstrap.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/bootstrap/jquery/jquery-3.6.0.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/datatables/css/dataTables.bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/datatables/css/dataTables.bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/datatables/css/dataTables.bootstrap4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/datatables/css/dataTables.bootstrap4.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/datatables/css/dataTables.foundation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/datatables/css/dataTables.foundation.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/datatables/css/dataTables.jqueryui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/datatables/css/dataTables.jqueryui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/datatables/css/dataTables.semanticui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/datatables/css/dataTables.semanticui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/datatables/css/jquery.dataTables.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/datatables/css/jquery.dataTables.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/datatables/images/sort_asc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/datatables/images/sort_asc_disabled.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/datatables/images/sort_both.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/datatables/images/sort_desc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/datatables/images/sort_desc_disabled.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/datatables/js/dataTables.bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/datatables/js/dataTables.bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/datatables/js/dataTables.bootstrap4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/datatables/js/dataTables.bootstrap4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/datatables/js/dataTables.foundation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/datatables/js/dataTables.foundation.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/datatables/js/dataTables.jqueryui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/datatables/js/dataTables.jqueryui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/datatables/js/dataTables.semanticui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/datatables/js/dataTables.semanticui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/datatables/js/jquery.dataTables.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/datatables/js/jquery.dataTables.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/assert/jquery/jquery-3.5.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/css/mdb.dark.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/css/mdb.dark.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/css/mdb.dark.rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/css/mdb.dark.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/css/mdb.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/css/mdb.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/css/mdb.rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/css/mdb.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/jquery/jquery-3.6.0.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/jquery/mdb.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/js/bootstrap.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/js/bootstrap.esm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/js/bootstrap.esm.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/js/bootstrap.esm.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/js/bootstrap.esm.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/js/bootstrap.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/static/js/bootstrap.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/templates/customer/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy/src/main/resources/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module3/case_study_jsp_module3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module3/case_study_jsp_module3/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../01_springmvc/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../01_springmvc/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_springcontroller/practice/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../02_springcontroller/practice/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../05_orm/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../05_orm/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../07_springdatarepository/blog/src/main/resources/templates/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../07_springdatarepository/blog/src/main/resources/templates/view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer-management/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/customer-management/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer-management/src/main/java/cg/wbd/grandemonstration/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/customer-management/src/main/java/cg/wbd/grandemonstration/AppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer-management/src/main/java/cg/wbd/grandemonstration/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/customer-management/src/main/java/cg/wbd/grandemonstration/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer-management/src/main/java/cg/wbd/grandemonstration/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/customer-management/src/main/java/cg/wbd/grandemonstration/service/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer-management/src/main/java/cg/wbd/grandemonstration/service/impl/CustomerServiceImplWithSpringData.java" beforeDir="false" afterPath="$PROJECT_DIR$/customer-management/src/main/java/cg/wbd/grandemonstration/service/impl/CustomerServiceImplWithSpringData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../11_webservice/exercise/src/main/java/com/codegym/model/service/IBlogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../11_webservice/exercise/src/main/java/com/codegym/model/service/IBlogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../12_jqueryandajax/exercise1/src/main/resources/templates/listblog.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../12_jqueryandajax/exercise1/src/main/resources/templates/listblog.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1utG595gBzrULBs12WaCDjWgOJE" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="817e5457-72e8-40a0-a16b-7c1ca8faf668" name="Default Changelist" comment="" />
+      <created>1625477285973</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1625477285973</updated>
+      <workItem from="1625477287204" duration="14000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+</project>
