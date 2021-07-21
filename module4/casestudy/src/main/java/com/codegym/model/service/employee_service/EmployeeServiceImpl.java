@@ -19,6 +19,11 @@ private EmployeeRepository employeeRepository;
     }
 
     @Override
+    public Iterable<Employee> findAll() {
+        return employeeRepository.findAll();
+    }
+
+    @Override
     public Optional<Employee> findById(Integer id) {
         return employeeRepository.findById(id);
     }

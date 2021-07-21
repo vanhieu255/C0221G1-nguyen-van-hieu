@@ -8,6 +8,7 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 public class CustomerDto {
+    private Integer id;
     @NotBlank(message = "customerName not null")
     @Size(min = 1,max = 50,message = "size from 0 to 50")
     @Pattern(regexp = "[a-zA-Z]{1,50}",message = "false customerName")
@@ -20,7 +21,7 @@ public class CustomerDto {
     @Pattern(regexp = "\\d{9}|\\d{12}",message = "false customerIdCard ")
     private String customerIdCard;
     @NotBlank(message = "customerPhone not null")
-    @Pattern(regexp = "(090|091)d{7}||(84)+(90|91)d{7}" ,message = "false customerPhone")
+    @Pattern(regexp = "(090|091)\\d{7}||(84)+(90|91)\\d{7}" ,message = "false customerPhone")
     private String customerPhone;
     @NotBlank(message = "customerEmail not null")
     @Email(message = "false Email")
@@ -28,15 +29,15 @@ public class CustomerDto {
     @NotBlank(message = "customerAddress not null")
     private String customerAddress;
     @NotBlank(message = "customerCode not null")
-    @Pattern(regexp = "(KH-)(0-9){4}")
+    @Pattern(regexp = "(KH-)\\d{4}")
     private String customerCode;
     private boolean flag=true;
-    @NotBlank(message = "customerType")
     private CustomerType customerType;
     public CustomerDto() {
     }
 
-    public CustomerDto(@NotBlank(message = "customerName not null") @Size(min = 1, max = 50, message = "size from 0 to 50") @Pattern(regexp = "[a-zA-Z]{1,50}", message = "false customerName") String customerName, @NotBlank(message = "customerBirthDay not null") String customerBirthDay, @NotBlank(message = "customerGender not null") String customerGender, @NotBlank(message = "customerIdCard not null") @Pattern(regexp = "\\d{9}|\\d{12}", message = "false customerIdCard ") String customerIdCard, @NotBlank(message = "customerPhone not null") @Pattern(regexp = "(090|091)d{7}||(84)+(90|91)d{7}", message = "false customerPhone") String customerPhone, @NotBlank(message = "customerEmail not null") @Email(message = "false Email") String customerEmail, @NotBlank(message = "customerAddress not null") String customerAddress, @NotBlank(message = "customerCode not null") @Pattern(regexp = "(KH-)(0-9){4}") String customerCode, boolean flag, @NotBlank(message = "customerType") CustomerType customerType) {
+    public CustomerDto(Integer id, @NotBlank(message = "customerName not null") @Size(min = 1, max = 50, message = "size from 0 to 50") @Pattern(regexp = "[a-zA-Z]{1,50}", message = "false customerName") String customerName, String customerBirthDay, String customerGender, String customerIdCard, String customerPhone, String customerEmail, String customerAddress, String customerCode, boolean flag, CustomerType customerType) {
+        this.id = id;
         this.customerName = customerName;
         this.customerBirthDay = customerBirthDay;
         this.customerGender = customerGender;
@@ -127,5 +128,13 @@ public class CustomerDto {
 
     public void setCustomerType(CustomerType customerType) {
         this.customerType = customerType;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }

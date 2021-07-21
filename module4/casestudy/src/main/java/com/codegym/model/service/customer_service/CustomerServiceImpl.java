@@ -20,6 +20,11 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
+    public Iterable<Customer> findAll() {
+        return customerRepository.findAll();
+    }
+
+    @Override
     public Optional<Customer> findById(Integer id) {
         return customerRepository.findById(id);
     }
@@ -39,5 +44,10 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public Page<Customer> findAllByCustomerNameContaining(String name, Pageable pageable) {
         return customerRepository.findAllByCustomerNameContaining(name,pageable);
+    }
+
+    @Override
+    public Page<Customer> findAllCustomerByThreeColumn(String name, String name1, String name2, Pageable pageable) {
+        return customerRepository.findAllCustomerByThreeColumn(name,name1,name2,pageable);
     }
 }

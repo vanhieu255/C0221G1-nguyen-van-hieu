@@ -117,17 +117,19 @@
         </div>
     </div>
 
-    <form th:action="@{/save-customer}" th:object="${customer}" method="post">
+    <form th:action="@{/save-customer}" th:object="${customerDto}" method="post">
         <h3>Add Customer </h3>
         <div class="form-group">
             <input type="text" class="form-control" th:field="*{id}" placeholder="ID Customer" required="required" disabled>
         </div>
 
         <div class="form-group">
+            <p th:if="${#fields.hasErrors('customerName')}" th:errors="*{customerName}"></p>
             <input type="text" class="form-control" th:field="*{customerName}" placeholder="Customer Name" required="required">
         </div>
 
         <div class="form-group">
+            <p th:if="${#fields.hasErrors('customerBirthDay')}" th:errors="*{customerBirthDay}"></p>
             <input type="date" class="form-control" th:field="*{customerBirthDay}" placeholder="CustomerBirthDay" required="required">
         </div>
 
@@ -141,24 +143,28 @@
 
 
         <div class="form-group">
+            <p th:if="${#fields.hasErrors('customerIdCard')}" th:errors="*{customerIdCard}"></p>
             <input type="text" class="form-control" th:field="*{customerIdCard}" placeholder="CustomerIdCard" required="required">
         </div>
         <div class="form-group">
+            <p th:if="${#fields.hasErrors('customerPhone')}" th:errors="*{customerPhone}"></p>
             <input type="text" class="form-control" th:field="*{customerPhone}"  placeholder="CustomerPhone" required="required">
         </div>
         <div class="form-group">
+            <p th:if="${#fields.hasErrors('customerEmail')}" th:errors="*{customerEmail}"></p>
             <input type="email" class="form-control" th:field="*{customerEmail}" placeholder="Email" required="required">
         </div>
         <div class="form-group">
+            <p th:if="${#fields.hasErrors('customerAddress')}" th:errors="*{customerAddress}"></p>
             <input type="text" class="form-control"  th:field="*{customerAddress}"  placeholder="Customer Address" required="required">
         </div>
         <div class="form-group">
-            <input type="text" class="form-control"  th:field="*{customerCode}"  placeholder="Customer Code" required="required">
+            <p th:if="${#fields.hasErrors('customerCode')}" th:errors="*{customerCode}"></p>
+            <input type="text" class="form-control"  th:field="*{customerCode}" placeholder="Customer Code" required="required">
         </div>
-<!--        <div class="form-group">-->
-<!--            <input type="text" class="form-control"  th:field="*{flag}" >-->
-<!--        </div>-->
+
         <div class="form-group">
+            <p th:if="${#fields.hasErrors('customerType')}" th:errors="*{customerType}"></p>
             <select th:field="*{customerType}" class="form-control">
                 <option th:each="c: ${customerTypes}" th:value="${c.id}" th:text="${c.customerTypeName}"></option>
             </select>

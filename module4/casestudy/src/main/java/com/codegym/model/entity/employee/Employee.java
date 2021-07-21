@@ -1,11 +1,12 @@
 package com.codegym.model.entity.employee;
 
+import com.codegym.model.entity.contract.Contract;
 import com.codegym.model.entity.division.Division;
 import com.codegym.model.entity.education.Education;
 import com.codegym.model.entity.position.Position;
-import com.codegym.model.entity.use.User;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Employee {
@@ -32,14 +33,17 @@ public class Employee {
     @JoinColumn(name = "division_id", referencedColumnName = "id")
     private Division division;
 
-    @ManyToOne
-    @JoinColumn(name = "user_name", referencedColumnName = "user_name")
-    private User user;
+//    @ManyToOne
+//    @JoinColumn(name = "user_name", referencedColumnName = "userName")
+//    private User user;
+
+    @OneToMany(mappedBy = "employee")
+    private List<Contract> contracts;
 
     public Employee() {
     }
 
-    public Employee(Integer id, String employeeName, String employeeBirthDay, String employeeIdCard, Double employeeSalary, String employeePhone, String employeeEmail, String employeeAddress, Boolean flag, Position position, Education education, Division division, User user) {
+    public Employee(Integer id, String employeeName, String employeeBirthDay, String employeeIdCard, Double employeeSalary, String employeePhone, String employeeEmail, String employeeAddress, Boolean flag, Position position, Education education, Division division, List<Contract> contracts) {
         this.id = id;
         this.employeeName = employeeName;
         this.employeeBirthDay = employeeBirthDay;
@@ -52,7 +56,7 @@ public class Employee {
         this.position = position;
         this.education = education;
         this.division = division;
-        this.user = user;
+        this.contracts = contracts;
     }
 
     public Integer getId() {
@@ -151,12 +155,12 @@ public class Employee {
         this.division = division;
     }
 
-    public User getUser() {
-        return user;
+    public List<Contract> getContracts() {
+        return contracts;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setContracts(List<Contract> contracts) {
+        this.contracts = contracts;
     }
 }
 

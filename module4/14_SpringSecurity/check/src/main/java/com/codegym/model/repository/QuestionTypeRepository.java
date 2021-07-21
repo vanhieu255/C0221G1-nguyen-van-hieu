@@ -1,4 +1,7 @@
 package com.codegym.model.repository;
 
-public interface QuestionTypeRepository {
+import com.codegym.model.entity.QuestionType;
+import org.springframework.data.repository.PagingAndSortingRepository;
+
+public interface QuestionTypeRepository extends PagingAndSortingRepository<QuestionType ,Integer> {
 }

@@ -1,4 +1,4 @@
-package com.codegym.model.entity;
+package com.codegym.model.entity.use;
 
 import javax.persistence.*;
 

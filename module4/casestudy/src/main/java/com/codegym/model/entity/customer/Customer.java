@@ -1,8 +1,10 @@
 package com.codegym.model.entity.customer;
 
+import com.codegym.model.entity.contract.Contract;
 import com.codegym.model.entity.customer_type.CustomerType;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Customer {
@@ -22,6 +24,9 @@ public class Customer {
     @ManyToOne
     @JoinColumn(name="customer_type_id",referencedColumnName = "id")
     private CustomerType customerType;
+
+    @OneToMany(mappedBy = "customer")
+    private List<Contract> contracts;
 
 
     public Customer() {
@@ -127,5 +132,13 @@ public class Customer {
 
     public void setCustomerType(CustomerType customerType) {
         this.customerType = customerType;
+    }
+
+    public List<Contract> getContracts() {
+        return contracts;
+    }
+
+    public void setContracts(List<Contract> contracts) {
+        this.contracts = contracts;
     }
 }

@@ -1,10 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>List Customer</title>
+    <link rel="stylesheet" href="css/mdb.min.css">
+
+</head>
+
+
+<link rel="stylesheet" href="assert/bootstrap/bootstrap-5.0.1-dist/css/bootstrap.min.css">
+<script src="assert/bootstrap/bootstrap-5.0.1-dist/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="assert/datatables/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="jquery/jquery-3.6.0.min.js">
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+<html>
+<head>
+    <title>Title</title>
 </head>
 <body>
-$END$
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="header text-center">
+                <h1>List Question</h1>
+            </div>
+
+            <nav class="navbar navbar-light bg-light">
+                <div class="container-fluid">
+                    <a href="/create-question" class="btn btn-success btn-sm">Create new Question</a>
+                    <div class="notify">
+                        <div th:if="${message}">
+                            <span th:text="${message}"></span>
+                        </div>
+                    </div>
+
+                    <form class="d-flex mb-1">
+                        <input class="form-control me-3" type="search" placeholder="Title" aria-label="Search"
+                               name="search">
+
+                        <select name="search1" >
+                            <option value="1">Học Tập</option>
+                            <option value="2">Giao vụ</option>
+                            <option value="3">Khác</option>
+                            <option value=""></option>
+
+                        </select>
+                        <input type="submit" class="btn btn-outline-success" value="Search">
+                    </form>
+                </div>
+            </nav>
+            <table class="table table-success table-striped table-bordered" id="tableCustomer">
+                <thead>
+                <tr>
+                    <th scope="col">STT</th>
+                    <th scope="col">Id</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Content</th>
+                    <th scope="col">Answer</th>
+                    <th scope="col">DateCreated</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">QuestionType</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+
+
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="question,rowStar:${questions}">
+                        <td th:text="${rowStar.index+1}"></td>
+                        <td th:text="${question.id}"></td>
+                        <td th:text="${question.title}"></td>
+                        <td th:text="${question.content}"></td>
+                        <td th:text="${question.answer}"></td>
+                        <td th:text="${question.dateCreate}"></td>
+                        <td th:text="${question.status}"></td>
+                        <td th:text="${question.questionType.questionTypeName}"></td>
+                        <td><a th:href="@{/edit-question/{id}(id=${question.getId()})}"
+                               class="btn btn-success btn-sm">Edit</a></td>
+                        <!--                    <td><a th:href="@{/delete-customer/{id}(id=${customer.getId()})}">Delete</a></td>-->
+                        <td>
+                            <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
+                                    th:data-id="${question.id}" th:data-name="${question.title}" onclick="sendDataToModal(this.getAttribute('data-id'),this.getAttribute('data-name'))"
+                                    data-bs-target="#exampleModal">
+                                Delete
+                            </button>
+                        </td>
+
+                    <td>
+                        <button type="button" class="btn btn-black btn-sm" data-bs-toggle="modal"
+                                th:data-id="${question.id}" th:data-name="${question.title}" th:data-content="${question.content}" onclick="sendDataToModal1(this.getAttribute('data-id'),this.getAttribute('data-name'),this.getAttribute('data-content'))"
+                                data-bs-target="#exampleModal1">
+                            View
+                        </button>
+                    </td>
+
+
+
+
+                </tr>
+                </tbody>
+            </table>
+
+            <div>
+                <a th:href="@{'/questions'(page=${questions.number - 1},search=${searchValue},search1=${searchValue1})}"
+                   th:if="${questions.hasPrevious()}">Previous</a>
+                <span th:text="${questions.number + 1}"></span>/<span th:text="${questions.totalPages}"></span>
+                <a th:href="@{'/questions'(page=${questions.number + 1},search=${searchValue},search1=${searchValue1})}"
+                   th:if="${questions.hasNext()}">Next</a>
+            </div>
+
+
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                <form th:action="@{/delete-question}" method="get">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <input type="hidden" id="id" name="id">
+                                <p>Bạn có muốn xóa Question : Tiêu đề <span id="name" name="name" ></span> không </p>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Yes</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+            <script>
+                function sendDataToModal(id,name) {
+                    document.getElementById("id").value = id;
+                    document.getElementById("name").innerText=name;
+                }
+            </script>
+
+
+
+
+
+            <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                <form th:action="@{/view-question}" method="post">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel1">Modal title</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                         <span id="id1"></span>
+                                <p> Tiêu đề :<span id="name1"  ></span> </p>
+                                <p> Nội dung :<span id="content" name="content" ></span>  </p>
+
+
+                            </div>
+<!--                            <div class="modal-footer">-->
+<!--                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
+<!--                                <button type="submit" class="btn btn-primary">Yes</button>-->
+<!--                            </div>-->
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+            <script>
+                function sendDataToModal1(id,name,content) {
+                    document.getElementById("id1").innerText = id;
+                    document.getElementById("name1").innerText=name;
+                    document.getElementById("content").innerText=content;
+                }
+            </script>
+
+        </div>
+    </div>
+</div>
+
+
+
+
 </body>
 </html>
