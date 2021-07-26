@@ -1,0 +1,10 @@
+
+<div [style.background]="colorText">
+
+  {{student.id}}
+  {{student.name}}
+
+  <input type="text" [value]="student.name" (change)="changNameStudent($event.target.value)">
+  <input type="text" [(ngModel)]="student.id" >
+
+</div>

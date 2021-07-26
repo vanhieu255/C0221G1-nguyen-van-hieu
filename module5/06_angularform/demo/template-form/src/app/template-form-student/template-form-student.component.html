@@ -1,0 +1,38 @@
+<p>Create Student</p>
+<div class="container">
+  <div class="col-5">
+    <form #createStudentForm = "ngForm"
+    (ngSubmit)="onSubmit(createStudentForm)">
+      <div class="mb-3">
+        <label for="studentCode" class="form-label">Student Code</label>
+        <input type="text"
+               [(ngModel)]="student.studentCode"
+               name="studentCode"
+               class="form-control" id="studentCode" aria-describedby="emailHelp">
+
+      </div>
+      <div class="mb-3">
+        <label for="StudentName" class="form-label">Student Name</label>
+        <input type="text"
+               [(ngModel)]="student.studentName"
+               name="studentName"
+               class="form-control" id="StudentName">
+      </div>
+      <div class="mb-3">
+        <label for="StudentAddress" class="form-label">Student Address</label>
+        <input type="text"
+               [(ngModel)]="student.studentAddress"
+               name="studentAddress"
+               class="form-control" id="StudentAddress">
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+  </div>
+
+</div>
+

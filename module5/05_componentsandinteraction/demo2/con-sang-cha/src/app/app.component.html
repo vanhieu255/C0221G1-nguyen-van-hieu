@@ -1,0 +1,11 @@
+<h1>This is parent component</h1>
+<!--<h1>CountParent : {{countParent}}</h1>-->
+
+<!--<app-child (countChanged)="countChangeHandler($event)"></app-child>-->
+
+<button (click)="child.increment()"></button>
+<button (click)="child.decrement()"></button>
+
+<h1>Parent Count :{{child.count}}   </h1>
+
+<app-child #child></app-child>

@@ -1,0 +1,75 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="col-md-6 offset-md-3" novalidate>
+  <p>Email:</p>
+  <input type="text" class="form-control" formControlName="email" >
+  <div  class="alert alert-danger" role="alert" *ngIf="!email.valid && (email.dirty || email.touched)">
+    <div [hidden]="!email.errors.minlength">
+      <p style="color: red"> Email is min Length 5 </p>
+    </div>
+    <div [hidden]="!email.errors.required">
+      <p style="color: red">Email is required</p>
+    </div>
+  </div>
+
+<!--  <div formGroupName="pwGroup">-->
+    <p>password</p>
+    <input formControlName="password" type="text" class="form-control" name="password">
+    <div *ngIf="!password?.valid && (password?.dirty || password?.touched)">
+      <div [hidden]="!password.errors.minlength">
+        <p style="color: red"> Password is min Length 6</p>
+      </div>
+      <div [hidden]="!password.errors.required">
+        <p style="color: red">Password is required</p>
+      </div>
+    </div>
+
+    <p>confirmPassword</p>
+    <input formControlName="confirmPassword" type="text" class="form-control">
+<!--    <div class="alert alert-dange r" role="alert" *ngIf="registerForm.hasError('passwordnotmatch',  ['pwGroup']) && registerForm.get('pwGroup').touched"> Password does not match!-->
+<!--    </div>-->
+<!--  </div>-->
+
+  <p>Country:</p>
+  <select id="country" name="country"  formControlName="country" class="form-control">
+    <option *ngFor="let c of countryList">{{c.name}}</option>
+  </select>
+  <div class="alert alert-danger" role="alert" *ngIf="!country.valid && (country.dirty || country.touched)">
+    <div [hidden]="!email.errors.required">
+      <p style="color: red">Country is required</p>
+    </div>
+  </div>
+
+  <p>Age:</p>
+  <input type="text"  id="age" name="age" formControlName="age" class="form-control">
+  <div class="alert alert-danger" role="alert" *ngIf="!age.valid && (age.dirty || age.touched)">
+    <div [hidden]="!age.errors.required">
+      <p style="color: red">Age is required</p>
+    </div>
+    <div [hidden]="!age.errors.min">
+      <p style="color: red">Age is min 18 </p>
+    </div>
+  </div>
+
+  <p>gender:</p>
+  <input type="radio" value="male" id="gender" name="gender" formControlName="gender" class="form-control"> Male
+  <input type="radio" value="female" id="gender" name="gender" formControlName="gender" class="form-control"> Female
+  <div class="alert alert-danger" role="alert" *ngIf="!gender.valid && (gender.dirty || gender.touched)">
+    <div [hidden]="!age.errors.required">
+      <p style="color: red">Gender is required</p>
+    </div>
+  </div>
+
+  <p>Phone:</p>
+  <input type="text"  id="phone" name="phone" formControlName="phone" class="form-control">
+  <div class="alert alert-danger" role="alert" *ngIf="!phone.valid && (phone.dirty || phone.touched)">
+    <div [hidden]="!phone.errors.required">
+      <p style="color: red">Phone is required</p>
+    </div>
+    <div [hidden]="!phone.errors.pattern">
+      <p style="color: red">Phone error pattern</p>
+    </div>
+  </div>
+
+
+
+  <p><button type="submit" [disabled]="!registerForm.valid" class="form-control">Submit</button></p>
+</form>

@@ -1,0 +1,28 @@
+<h1>Check *Ngfor</h1>
+
+<ul *ngFor="let movie of moves,let i=index" >
+<li>{{movie.cast}}</li>
+  <li>{{movie.director}}</li>
+</ul>
+
+
+
+<table border="1">
+  <tr>
+    <th>Name</th>
+    <th>Mail</th>
+    <th>Skills</th>
+  </tr>
+  <tr *ngFor="let employee of employees">
+    <td>{{employee.name}}</td>
+    <td>{{employee.email}}</td>
+    <td>
+      <table>
+        <tr *ngFor="let skill of employee.skills">
+          <td>{{skill.skill}}</td>
+          <td>{{skill.exp}}</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,42 @@
+
+<div style="text-align:center">
+  <h1>List Student</h1>
+
+  <table class="table">
+    <thead>
+    <tr>
+      <th>id</th>
+      <th>Name</th>
+      <th>DateOfBirth</th>
+      <th>Point</th>
+      <th>Rank</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let student of arrayOfStudent| paginate: config">
+      <td>{{student.id}}</td>
+      <td>{{student.name}}</td>
+      <td>{{student.dateOfBirth}}</td>
+      <td>{{student.point}}</td>
+      <td>
+        <p *ngIf="student.point>=8">giỏi</p>
+        <p *ngIf="student.point<8">khá</p>
+      </td>
+
+    </tbody>
+  </table>
+<!--  <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>-->
+  <pagination-controls
+    [maxSize]="maxSize"
+    [directionLinks]="directionLinks"
+    [autoHide]="autoHide"
+    [responsive]="responsive"
+    [previousLabel]="labels.previousLabel"
+    [nextLabel]="labels.nextLabel"
+    [screenReaderPaginationLabel]="labels.screenReaderPaginationLabel"
+    [screenReaderPageLabel]="labels.screenReaderPageLabel"
+    [screenReaderCurrentLabel]="labels.screenReaderCurrentLabel"
+    (pageChange)="onPageChange($event)"></pagination-controls>
+
+</div>
+
