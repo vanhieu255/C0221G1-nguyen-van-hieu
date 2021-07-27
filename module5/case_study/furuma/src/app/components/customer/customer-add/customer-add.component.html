@@ -1,0 +1,35 @@
+<div class="container text-center">
+  <h1>Add Customer</h1>
+</div>
+<form [formGroup]="customerForm" (ngSubmit)="submit()">
+  <div class=" col-4 container text-center ">
+    <input type="text" class="form-control" id="idKhachHang" formControlName="idKhachHang" placeholder="idKhachHang">
+  </div>
+  <div class="col-4 container text-center">
+    <input type="text" class="form-control" id="idLoaiKhach" formControlName="idLoaiKhach" placeholder="idLoaiKhach">
+  </div>
+  <div class="col-4 container text-center">
+    <input type="text" class="form-control" id="hoTen" formControlName="hoTen" placeholder="hoTen">
+  </div>
+  <div class="col-4 container text-center">
+    <input type="text" class="form-control" id="ngaySinh" formControlName="ngaySinh" placeholder="ngaySinh">
+  </div>
+  <div class="col-4 container text-center">
+    <input type="text" class="form-control" id="soCMND" formControlName="soCMND" placeholder="soCMND">
+  </div>
+  <div class="col-4 container text-center">
+    <input type="text" class="form-control" id="sdt" formControlName="sdt" placeholder="sdt">
+  </div>
+  <div class="col-4 container text-center">
+    <input type="text" class="form-control" id="email" formControlName="email" placeholder="email">
+  </div>
+  <div class="col-4 container text-center">
+
+    <input type="text" class="form-control" id="diaChi" formControlName="diaChi" placeholder="diaChi">
+  </div>
+  <div class="col-4 container text-center">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+
+</form>
+

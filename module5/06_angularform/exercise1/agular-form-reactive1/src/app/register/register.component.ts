@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
     email: new FormControl('', [Validators.required, Validators.minLength(6)]),
     pwGroup: new FormGroup({
       password: new FormControl('', [Validators.required, Validators.minLength(6)]),
-      confirmPassword: new FormControl('',[Validators.pattern()])}),
+      confirmPassword: new FormControl('')}, comparePassword),
     country: new FormControl('', [Validators.required]),
     age : new FormControl('', [Validators.required, Validators.min(18)]),
     gender: new FormControl('', [Validators.required]),

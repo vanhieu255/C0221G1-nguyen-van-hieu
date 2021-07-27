@@ -10,23 +10,25 @@
     </div>
   </div>
 
-<!--  <div formGroupName="pwGroup">-->
+  <div formGroupName="pwGroup">
     <p>password</p>
     <input formControlName="password" type="text" class="form-control" name="password">
-    <div *ngIf="!password?.valid && (password?.dirty || password?.touched)">
-      <div [hidden]="!password.errors.minlength">
-        <p style="color: red"> Password is min Length 6</p>
-      </div>
-      <div [hidden]="!password.errors.required">
-        <p style="color: red">Password is required</p>
-      </div>
+<!--    <div *ngIf="!password?.valid && (password?.dirty || password?.touched)">-->
+    <div *ngIf="registerForm.get('pwGroup').get('password').hasError('required')">
+      <p>error</p>
+<!--      <div [hidden]="!password.errors.minlength">-->
+<!--        <p style="color: red"> Password is min Length 6</p>-->
+<!--      </div>-->
+<!--      <div [hidden]="!password.errors.required">-->
+<!--        <p style="color: red">Password is required</p>-->
+<!--      </div>-->
     </div>
 
     <p>confirmPassword</p>
     <input formControlName="confirmPassword" type="text" class="form-control">
-<!--    <div class="alert alert-dange r" role="alert" *ngIf="registerForm.hasError('passwordnotmatch',  ['pwGroup']) && registerForm.get('pwGroup').touched"> Password does not match!-->
-<!--    </div>-->
-<!--  </div>-->
+    <div class="alert alert-dange " role="alert" *ngIf="registerForm.hasError('passwordnotmatch',  ['pwGroup']) && registerForm.get('pwGroup').touched"> Password does not match!
+    </div>
+  </div>
 
   <p>Country:</p>
   <select id="country" name="country"  formControlName="country" class="form-control">

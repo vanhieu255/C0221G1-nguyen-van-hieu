@@ -1,0 +1,36 @@
+<div class="container text-center">
+  <h1>Danh sách Khách Hàng</h1>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="search-customer">
+      <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="searching for a customers by all">
+    </div>
+    <table class="table table-striped">
+      <tr>
+        <td>STT</td>
+        <td>idKhachHang</td>
+        <td>idLoaiKhach</td>
+        <td>hoTen</td>
+        <td>ngaySinh</td>
+        <td>soCMND</td>
+        <td>sdt</td>
+        <td>email</td>
+        <td>diaChi</td>
+      </tr>
+      <tr *ngFor="let customer of customers | filter:searchText| paginate : config ; index as i ">
+        <td>{{i + 1}}</td>
+        <td>{{customer.idKhachHang}}</td>
+        <td>{{customer.idLoaiKhach}}</td>
+        <td>{{customer.hoTen}}</td>
+        <td>{{customer.ngaySinh}}</td>
+        <td>{{customer.soCMND}}</td>
+        <td>{{customer.sdt}}</td>
+        <td>{{customer.email}}</td>
+        <td>{{customer.diaChi}}</td>
+      </tr>
+    </table>
+    <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+  </div>
+</div>
+
