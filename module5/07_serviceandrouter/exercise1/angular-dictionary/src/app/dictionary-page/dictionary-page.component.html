@@ -1,0 +1,16 @@
+<h1>Translate VietNamese and English </h1>
+<input type="text" (change)="tranlate($event.target.value)">
+<p>Nghĩa của từ {{word}} : {{mean}}</p>
+
+<div>
+  <table>
+    <tr>
+      <th>Word</th>
+      <th>Detail</th>
+    </tr>
+    <tr *ngFor="let dictionary of listDictionary">
+      <td>{{dictionary.word}}</td>
+      <td><a [routerLink]="['/dictionary/detail',dictionary.word]">detail</a></td>
+    </tr>
+  </table>
+</div>

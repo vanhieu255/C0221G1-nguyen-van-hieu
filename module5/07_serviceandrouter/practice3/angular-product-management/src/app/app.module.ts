@@ -12,24 +12,24 @@ import { ProductEditComponent } from './product/product-edit/product-edit.compon
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 import { ProductComponent } from './product/product.component';
 import { ProductDeleteComponent } from './product/product-delete/product-delete.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSliderModule} from '@angular/material/slider';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {ProductModule} from './product/product.module';
+import {CategoryModule} from './category/category.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductListComponent,
-    ProductCreateComponent,
-    ProductEditComponent,
-    ProductDetailComponent,
-    ProductComponent,
-    ProductDeleteComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,
-    NgxPaginationModule,
-    FormsModule,
-    Ng2SearchPipeModule
+    ProductModule,
+    CategoryModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
