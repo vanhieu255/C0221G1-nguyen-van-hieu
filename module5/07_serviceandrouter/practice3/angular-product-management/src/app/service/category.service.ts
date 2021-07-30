@@ -5,9 +5,11 @@ import {Category} from '../model/category';
   providedIn: 'root'
 })
 export class CategoryService {
+
   categories: Category[] = [{
     id: 1,
-    name: 'IPhone'
+    name: 'IPhone',
+
   }, {
     id: 2,
     name: 'Samsung',
