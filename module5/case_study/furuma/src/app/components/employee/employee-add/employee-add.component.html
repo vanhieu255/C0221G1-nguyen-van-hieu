@@ -1,0 +1,51 @@
+<div class="container text-center">
+  <h1>Add Employee</h1>
+</div>
+<form [formGroup]="employeeForm" (ngSubmit)="submit()">
+  <div class=" col-4 container text-center ">
+    <input type="text" class="form-control" id="idKhachHang" formControlName="id" placeholder="idKhachHang">
+  </div>
+  <div class="col-4 container text-center">
+    <select formControlName="education" class="form-control">
+      <option *ngFor="let e of educations" [ngValue]="e">{{e.name}}</option>
+    </select>
+  </div>
+  <div class="col-4 container text-center">
+    <select formControlName="position" class="form-control">
+      <option *ngFor="let p of positions" [ngValue]="p">{{p.name}}</option>
+    </select>
+  </div>
+  <div class="col-4 container text-center">
+    <select formControlName="division" class="form-control">
+      <option *ngFor="let d of divisions" [ngValue]="d">{{d.name}}</option>
+    </select>
+  </div>
+  <div class="col-4 container text-center">
+    <input type="text" class="form-control" id="hoTen" formControlName="hoTen" placeholder="hoTen">
+  </div>
+  <div class="col-4 container text-center">
+    <input type="text" class="form-control" id="ngaySinh" formControlName="ngaySinh" placeholder="ngaySinh">
+  </div>
+  <div class="col-4 container text-center">
+    <input type="text" class="form-control" id="soCMND" formControlName="soCMND" placeholder="soCMND">
+  </div>
+  <div class="col-4 container text-center">
+    <input type="text" class="form-control" id="luong" formControlName="luong" placeholder="luong">
+  </div>
+  <div class="col-4 container text-center">
+    <input type="text" class="form-control" id="sdt" formControlName="sdt" placeholder="sdt">
+  </div>
+  <div class="col-4 container text-center">
+    <input type="text" class="form-control" id="email" formControlName="email" placeholder="email">
+  </div>
+  <div class="col-4 container text-center">
+
+    <input type="text" class="form-control" id="diaChi" formControlName="diaChi" placeholder="diaChi">
+  </div>
+  <div class="col-4 container text-center">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+
+</form>
+
+

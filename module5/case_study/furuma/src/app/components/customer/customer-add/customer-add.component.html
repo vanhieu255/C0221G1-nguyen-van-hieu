@@ -3,10 +3,12 @@
 </div>
 <form [formGroup]="customerForm" (ngSubmit)="submit()">
   <div class=" col-4 container text-center ">
-    <input type="text" class="form-control" id="idKhachHang" formControlName="idKhachHang" placeholder="idKhachHang">
+    <input type="text" class="form-control" id="idKhachHang" formControlName="id" placeholder="idKhachHang">
   </div>
   <div class="col-4 container text-center">
-    <input type="text" class="form-control" id="idLoaiKhach" formControlName="idLoaiKhach" placeholder="idLoaiKhach">
+    <select formControlName="customerType" class="form-control">
+      <option *ngFor="let c of customerTypes" [ngValue]="c">{{c.name}}</option>
+    </select>
   </div>
   <div class="col-4 container text-center">
     <input type="text" class="form-control" id="hoTen" formControlName="hoTen" placeholder="hoTen">

@@ -1,6 +1,8 @@
+import {CustomerType} from './customer-type';
+
 export interface Customer {
-  idKhachHang?: number;
-  idLoaiKhach?: number;
+  id?: number;
+  customerType?: CustomerType;
   hoTen?: string;
   ngaySinh?: string;
   soCMND?: string;

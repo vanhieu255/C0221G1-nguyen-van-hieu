@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {CustomerService} from "../../../services/customer.service";
-import {FormControl, FormGroup} from "@angular/forms";
+import {CustomerService} from '../../../services/customer.service';
+import {FormControl, FormGroup} from '@angular/forms';
+import {CustomerTypeService} from '../../../services/customer-type.service';
+import {CustomerType} from '../../../models/customer-type';
+import {Customer} from '../../../models/customer';
+
+
 
 @Component({
   selector: 'app-customer-add',
@@ -8,9 +13,11 @@ import {FormControl, FormGroup} from "@angular/forms";
   styleUrls: ['./customer-add.component.css']
 })
 export class CustomerAddComponent implements OnInit {
+  customerTypes: CustomerType [];
+  customerObj: Customer;
   customerForm: FormGroup = new FormGroup({
-    idKhachHang: new FormControl(),
-    idLoaiKhach: new FormControl(),
+    id: new FormControl(),
+    customerType: new FormControl(),
     hoTen: new FormControl(),
     ngaySinh: new FormControl(),
     soCMND: new FormControl(),
@@ -18,14 +25,22 @@ export class CustomerAddComponent implements OnInit {
     email: new FormControl(),
     diaChi: new FormControl(),
   });
-  constructor(private customerService: CustomerService) { }
+  constructor(private customerService: CustomerService, private customerTypeService: CustomerTypeService) { }
 
   ngOnInit(): void {
+    this.getAllCustomerType();
+  }
+  getAllCustomerType() {
+    this.customerTypeService.getAll().subscribe(next => {
+      this.customerTypes = next;
+    });
   }
   submit() {
-    const customer = this.customerForm.value;
-    this.customerService.saveCustomer(customer);
-    this.customerForm.reset();
+    this.customerObj = this.customerForm.value;
+    console.log(this.customerObj);
+    this.customerService.saveCustomer(this.customerObj).subscribe();
+
+
   }
 
 }

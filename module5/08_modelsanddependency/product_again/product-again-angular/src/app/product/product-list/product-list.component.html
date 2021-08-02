@@ -1,0 +1,42 @@
+<div class="container text-center">
+  <h1>Danh sách sản phẩm</h1>
+  <a routerLink="/product/create">Tạo mới sản phẩm</a>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="search-hero d-flex" >
+      <input class="form-control mr-2" type="text" name="search" [(ngModel)]="searchText"  autocomplete="off" placeholder="searching by name ">
+      <input class="form-control mr-2" type="text" name="search" [(ngModel)]="searchText1" autocomplete="off" placeholder="searching by price ">
+      <select [(ngModel)]="searchText2" class="form-control mr-2" >
+        <option [ngValue]="" selected ></option>
+        <option *ngFor="let c of categories" [ngValue]="c.name">{{c.name}}</option>
+      </select>
+
+      <button (click)="search()" class="form-control btn " >Search</button>
+
+    </div>
+    <table class="table table-striped">
+      <tr>
+        <th>STT</th>
+        <th>Tên</th>
+        <th>Giá</th>
+        <th>Mô tả</th>
+        <th>Category</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+            <tr *ngFor="let product of products |paginate: config ,index as i ">
+      <tr *ngFor="let product of products  index as i ">
+        <td>{{i + 1}}</td>
+        <td><a (click)="onDetailHandler(product)">{{product.name}}</a></td>
+        <td>{{product.price}}</td>
+        <td>{{product.description}}</td>
+        <td>{{product.category.name}}</td>
+        <td><a class="btn btn-success " (click)="onEditHandler(product)">Edit</a></td>
+        <td><a class="btn btn-danger " (click)="onDeleteHandler(product.id)">Delete</a></td>
+      </tr>
+    </table>
+        <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+  </div>
+</div>
+

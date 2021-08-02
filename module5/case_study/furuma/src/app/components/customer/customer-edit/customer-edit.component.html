@@ -1,1 +1,49 @@
-<p>customer-edit works!</p>
+<form [formGroup]= "customerForm"  (ngSubmit)="updateCustomer()">
+  <h1>Cập nhật khách hàng</h1>
+  <table>
+    <tr>
+      <td>Id:</td>
+      <td><input type="number" formControlName="id"></td>
+    </tr>
+    <tr>
+      <td>CustomerType</td>
+      <td>
+        <select formControlName="customerType" [compareWith]="compareFn">
+          <option *ngFor="let c of customerTypes" [ngValue]="c">{{c.name}}</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>hoTen:</td>
+      <td><input type="text" formControlName="hoTen"></td>
+    </tr>
+    <tr>
+      <td>ngaySinh</td>
+      <td><input type="text" formControlName="ngaySinh"></td>
+    </tr>
+    <tr>
+      <td>soCMND</td>
+      <td><input type="text" formControlName="soCMND"></td>
+    </tr>
+    <tr>
+      <td> sdt</td>
+      <td><input type="text" formControlName="sdt"></td>
+    </tr>
+    <tr>
+      <td>email</td>
+      <td><input type="text" formControlName="email"></td>
+    </tr>
+    <tr>
+      <td>diaChi</td>
+      <td><input type="text" formControlName="diaChi"></td>
+    </tr>
+
+    <tr>
+      <td><button mat-dialog-close="" type="submit">Cập nhật</button></td>
+      <td><button mat-dialog-close="">Cancel</button></td>
+    </tr>
+
+  </table>
+</form>
+
+

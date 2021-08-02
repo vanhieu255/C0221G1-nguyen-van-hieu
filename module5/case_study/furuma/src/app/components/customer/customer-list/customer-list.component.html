@@ -1,33 +1,39 @@
 <div class="container text-center">
   <h1>Danh sách Khách Hàng</h1>
+  <a routerLink="/customer/create">Thêm mới khách hàng</a>
 </div>
 <div class="container">
   <div class="row">
-    <div class="search-customer">
-      <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="searching for a customers by all">
+    <div class="search-customer d-flex">
+      <input class="form-control mr-2" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="searching by name">
+      <button class="form-control mr-2" (click)="search()" >Search</button>
     </div>
     <table class="table table-striped">
       <tr>
-        <td>STT</td>
-        <td>idKhachHang</td>
-        <td>idLoaiKhach</td>
-        <td>hoTen</td>
-        <td>ngaySinh</td>
-        <td>soCMND</td>
-        <td>sdt</td>
-        <td>email</td>
-        <td>diaChi</td>
+        <th>STT</th>
+        <th>idKhachHang</th>
+        <th>idLoaiKhach</th>
+        <th>hoTen</th>
+        <th>ngaySinh</th>
+        <th>soCMND</th>
+        <th>sdt</th>
+        <th>email</th>
+        <th>diaChi</th>
+        <th>Edit</th>
+        <th>Delete</th>
       </tr>
-      <tr *ngFor="let customer of customers | filter:searchText| paginate : config ; index as i ">
+      <tr *ngFor="let customer of customers | paginate : config ; index as i ">
         <td>{{i + 1}}</td>
-        <td>{{customer.idKhachHang}}</td>
-        <td>{{customer.idLoaiKhach}}</td>
-        <td>{{customer.hoTen}}</td>
+        <td>{{customer.id}}</td>
+        <td>{{customer.customerType.name}}</td>
+        <td><a (click)="onDetailHandler(customer)">{{customer.hoTen}}</a></td>
         <td>{{customer.ngaySinh}}</td>
         <td>{{customer.soCMND}}</td>
         <td>{{customer.sdt}}</td>
         <td>{{customer.email}}</td>
         <td>{{customer.diaChi}}</td>
+        <td><a class="btn btn-success " (click)="onEditHandler(customer)">Edit</a></td>
+        <td><a class="btn btn-danger " (click)="onDeleteHandler(customer.id)">Delete</a></td>
       </tr>
     </table>
     <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>

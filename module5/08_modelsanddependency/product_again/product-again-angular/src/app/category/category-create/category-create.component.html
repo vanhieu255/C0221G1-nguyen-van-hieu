@@ -1,0 +1,20 @@
+<form [formGroup]="categoryForm" (ngSubmit)="submit()">
+  <h1>Tạo sản phẩm mới</h1>
+  <table>
+    <tr>
+      <td>Mã danh mục sản phẩm:</td>
+      <td><input type="number" formControlName="id"></td>
+    </tr>
+    <tr>
+      <td>Tên danh mục sản phẩm:</td>
+      <td><input type="text" formControlName="name"></td>
+    </tr>
+
+    <tr>
+      <td></td>
+      <td><button>Tạo mới</button></td>
+    </tr>
+  </table>
+</form>
+<a routerLink="/category/list">Back Danh sách danh mục sản phẩm</a>|
+

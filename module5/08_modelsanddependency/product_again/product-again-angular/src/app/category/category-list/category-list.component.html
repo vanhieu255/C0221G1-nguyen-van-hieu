@@ -1,0 +1,19 @@
+<div class="container text-center">
+  <h1>Danh sách danh mục sản phẩm</h1>
+  <a routerLink="/category/create">Tạo mới sản phẩm</a>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Stt</th>
+      <th>Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let category of categories, index as i">
+      <td>{{i+1}}</td>
+      <td>{{category.name}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+

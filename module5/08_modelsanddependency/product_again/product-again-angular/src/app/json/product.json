@@ -1,0 +1,66 @@
+{
+  "products": [
+    {
+      "id": 5,
+      "name": "IPhone 11 Pro4",
+      "price": 1895000,
+      "description": "Like new",
+      "category": {
+        "id": 1,
+        "name": "IPhone"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Nokia2",
+      "price": 1500,
+      "description": "new",
+      "category": {
+        "id": 1,
+        "name": "IPhone"
+      }
+    },
+    {
+      "id": 7,
+      "name": "nokia33",
+      "price": 100,
+      "description": "new",
+      "category": {
+        "id": 2,
+        "name": "Samsung"
+      }
+    },
+    {
+      "id": 8,
+      "name": "vlog1",
+      "price": 10000,
+      "description": "97%",
+      "category": {
+        "id": 2,
+        "name": "Samsung"
+      }
+    }
+  ],
+  "category": [
+    {
+      "id": 2,
+      "name": "Samsung"
+    },
+    {
+      "id": 3,
+      "name": "LG"
+    },
+    {
+      "id": 4,
+      "name": "xaome"
+    },
+    {
+      "id": 1,
+      "name": "Iphone"
+    },
+    {
+      "id": 5,
+      "name": "readme"
+    }
+  ]
+}

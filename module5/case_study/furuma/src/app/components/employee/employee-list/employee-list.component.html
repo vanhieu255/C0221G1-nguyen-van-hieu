@@ -1,0 +1,49 @@
+<div class="container text-center">
+  <h1>Danh sách Nhân viên </h1>
+  <a routerLink="/customer/create">Thêm mới nhân viên</a>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="search-customer d-flex">
+      <input class="form-control mr-2" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="searching by name">
+      <button class="form-control mr-2" (click)="search()" >Search</button>
+    </div>
+    <table class="table table-striped">
+      <tr>
+        <th>STT</th>
+        <th>id</th>
+        <th>Education</th>
+        <th>Position</th>
+        <th>Division</th>
+        <th>hoTen</th>
+        <th>ngaySinh</th>
+        <th>soCMND</th>
+        <th>luong</th>
+        <th>sdt</th>
+        <th>email</th>
+        <th>diaChi</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+      <tr *ngFor="let employee of employees | paginate : config ; index as i ">
+        <td>{{i + 1}}</td>
+        <td>{{employee.id}}</td>
+        <td>{{employee.education.name}}</td>
+        <td>{{employee.position.name}}</td>
+        <td>{{employee.division.name}}</td>
+        <td><a (click)="onDetailHandler(employee)">{{employee.hoTen}}</a></td>
+        <td>{{employee.ngaySinh}}</td>
+        <td>{{employee.soCMND}}</td>
+        <td>{{employee.luong}}</td>
+        <td>{{employee.sdt}}</td>
+        <td>{{employee.email}}</td>
+        <td>{{employee.diaChi}}</td>
+        <td><a class="btn btn-success " (click)="onEditHandler(employee)">Edit</a></td>
+        <td><a class="btn btn-danger " (click)="onDeleteHandler(employee.id)">Delete</a></td>
+      </tr>
+    </table>
+    <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+  </div>
+</div>
+
+

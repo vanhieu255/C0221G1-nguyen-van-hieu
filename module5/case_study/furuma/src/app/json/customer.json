@@ -1,0 +1,298 @@
+{
+  "customer": [
+    {
+      "id": 1,
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "hoTen": "hiếu",
+      "ngaySinh": "2000-12-12",
+      "soCMND": "191875210",
+      "sdt": "0335448710",
+      "email": "hieu1@gmail.com",
+      "diaChi": "hue"
+    },
+    {
+      "id": 2,
+      "customerType": {
+        "id": 2,
+        "name": "Gold"
+      },
+      "hoTen": "hậu",
+      "ngaySinh": "2000-12-12",
+      "soCMND": "182547233",
+      "sdt": "0335448710",
+      "email": "hieu@gmail.com",
+      "diaChi": "đà nẵng"
+    },
+    {
+      "id": 3,
+      "customerType": {
+        "id": 3,
+        "name": "Silver"
+      },
+      "hoTen": "tùng",
+      "ngaySinh": "2000-12-12",
+      "soCMND": "146257842",
+      "sdt": "0335448710",
+      "email": "hieu@gmail.com",
+      "diaChi": "quảng nam"
+    },
+    {
+      "id": 4,
+      "customerType": {
+        "id": 4,
+        "name": "Member"
+      },
+      "hoTen": "tuấn",
+      "ngaySinh": "2000-12-12",
+      "soCMND": "191122354",
+      "sdt": "0335448710",
+      "email": "hieu@gmail.com",
+      "diaChi": "quảng trị"
+    },
+    {
+      "id": 5,
+      "customerType": {
+        "id": 5,
+        "name": "Platinum"
+      },
+      "ngaySinh": "2000-12-12",
+      "soCMND": "191472583",
+      "sdt": "0335448710",
+      "email": "hieu@gmail.com",
+      "diaChi": "hue"
+    },
+    {
+      "id": 6,
+      "customerType": {
+        "id": 5,
+        "name": "Platinum"
+      },
+      "hoTen": "thúy",
+      "ngaySinh": "2000-12-12",
+      "soCMND": "185641235",
+      "sdt": "0335448710",
+      "email": "hieu@gmail.com",
+      "diaChi": "đà nẵng"
+    }
+  ],
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Gold"
+    },
+    {
+      "id": 3,
+      "name": "Silver"
+    },
+    {
+      "id": 4,
+      "name": "Member"
+    },
+    {
+      "id": 5,
+      "name": "Platinum"
+    }
+  ],
+  "education": [
+    {
+      "id": 1,
+      "name": "Trung cấp"
+    },
+    {
+      "id": 2,
+      "name": "Cao đẳng"
+    },
+    {
+      "id": 3,
+      "name": "Đại học"
+    },
+    {
+      "id": 4,
+      "name": "sau đại học"
+    }
+  ],
+  "position": [
+    {
+      "id": 1,
+      "name": "Lễ tân"
+    },
+    {
+      "id": 2,
+      "name": "phục vụ"
+    },
+    {
+      "id": 3,
+      "name": "chuyên viên"
+    },
+    {
+      "id": 4,
+      "name": "giám sát"
+    },
+    {
+      "id": 5,
+      "name": "quản lý"
+    },
+    {
+      "id": 6,
+      "name": "giá đốc"
+    }
+  ],
+  "division": [
+    {
+      "id": 1,
+      "name": "Sale – Marketing"
+    },
+    {
+      "id": 2,
+      "name": "Hành Chính"
+    },
+    {
+      "id": 3,
+      "name": "Phục vụ"
+    },
+    {
+      "id": 4,
+      "name": "Quản lý"
+    }
+  ],
+  "employee": [
+    {
+      "id": 1,
+      "education": {
+        "id": 1,
+        "name": "Trung cấp"
+      },
+      "position": {
+        "id": 1,
+        "name": "Lễ tân"
+      },
+      "division": {
+        "id": 1,
+        "name": "Sale – Marketing"
+      },
+      "hoTen": "hiếu2",
+      "ngaySinh": "2000-12-12",
+      "soCMND": "191875210",
+      "luong": "300",
+      "sdt": "0335448710",
+      "email": "hieu1@gmail.com",
+      "diaChi": "hue"
+    },
+    {
+      "id": 2,
+      "education": {
+        "id": 1,
+        "name": "Trung cấp"
+      },
+      "position": {
+        "id": 1,
+        "name": "Lễ tân"
+      },
+      "division": {
+        "id": 1,
+        "name": "Sale – Marketing"
+      },
+      "hoTen": "hậu",
+      "ngaySinh": "2000-12-12",
+      "soCMND": "182547233",
+      "luong": "300",
+      "sdt": "0335448710",
+      "email": "hieu@gmail.com",
+      "diaChi": "đà nẵng"
+    },
+    {
+      "id": 3,
+      "education": {
+        "id": 1,
+        "name": "Trung cấp"
+      },
+      "position": {
+        "id": 1,
+        "name": "Lễ tân"
+      },
+      "division": {
+        "id": 1,
+        "name": "Sale – Marketing"
+      },
+      "hoTen": "tùng",
+      "ngaySinh": "2000-12-12",
+      "soCMND": "146257842",
+      "luong": "300",
+      "sdt": "0335448710",
+      "email": "hieu@gmail.com",
+      "diaChi": "quảng nam"
+    },
+    {
+      "id": 4,
+      "education": {
+        "id": 1,
+        "name": "Trung cấp"
+      },
+      "position": {
+        "id": 1,
+        "name": "Lễ tân"
+      },
+      "division": {
+        "id": 1,
+        "name": "Sale – Marketing"
+      },
+      "hoTen": "tuấn",
+      "ngaySinh": "2000-12-12",
+      "soCMND": "191122354",
+      "luong": "300",
+      "sdt": "0335448710",
+      "email": "hieu@gmail.com",
+      "diaChi": "quảng trị"
+    },
+    {
+      "id": 5,
+      "education": {
+        "id": 1,
+        "name": "Trung cấp"
+      },
+      "position": {
+        "id": 1,
+        "name": "Lễ tân"
+      },
+      "division": {
+        "id": 1,
+        "name": "Sale – Marketing"
+      },
+      "ngaySinh": "2000-12-12",
+      "soCMND": "191472583",
+      "luong": "300",
+      "sdt": "0335448710",
+      "email": "hieu@gmail.com",
+      "diaChi": "hue"
+    },
+    {
+      "id": 6,
+      "education": {
+        "id": 1,
+        "name": "Trung cấp"
+      },
+      "position": {
+        "id": 1,
+        "name": "Lễ tân"
+      },
+      "division": {
+        "id": 1,
+        "name": "Sale – Marketing"
+      },
+      "hoTen": "thúy",
+      "ngaySinh": "2000-12-12",
+      "soCMND": "185641235",
+      "luong": "300",
+      "sdt": "0335448710",
+      "email": "hieu@gmail.com",
+      "diaChi": "đà nẵng"
+    }
+  ]
+}
